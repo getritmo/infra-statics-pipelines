@@ -47,10 +47,10 @@ jobs:
   tag:
     name: Tag release
     runs-on: ubuntu-latest
-    environment: Github
+    environment: Github PRO
     needs: [distribution]
     steps:
-    
+
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
