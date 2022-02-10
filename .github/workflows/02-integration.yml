@@ -3,7 +3,7 @@ on:
     branches:
     - production
 
-name: 01-Integration
+name: 02-Integration
 
 env:
   BUILD_PATH: "./build"
