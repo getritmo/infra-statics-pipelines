@@ -1,0 +1,133 @@
+
+div#CybotCookiebotDialog * {
+  font-family: 'Gilroy Light';
+}
+div#CybotCookiebotDialogBodyContent {
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+  font-family: "Gilroy Light";
+}
+#CybotCookiebotDialogBodyContent div#CybotCookiebotDialogBodyContentText {
+  font-family: "Gilroy Light";
+}
+#CybotCookiebotDialogPoweredbyLink {
+  display: none;
+}
+
+h2#CybotCookiebotDialogBodyContentTitle {
+  font-family: "Brown SemiBold" !important;
+  font-weight: 100;
+}
+#CybotCookiebotDialogBodyLevelButtonAcceptWrapper a#CybotCookiebotDialogBodyLevelButtonAccept {
+  background: linear-gradient(180deg,$blueColor,$blueColor)!important;
+  border: 0 solid $blueColor !important;
+  border-radius: 20px !important;
+}
+
+#CybotCookiebotDialogBodyLevelButtonsSelectPane {
+  border: 0 !important;
+}
+#CybotCookiebotDialogBodyLevelDetailsWrapper {
+  background-color: transparent !important;
+  border: 0 !important;
+}
+
+#CybotCookiebotDialogBodyLevelDetailsButton {
+  white-space: nowrap !important;
+}
+
+#CybotCookiebotDialog {
+  box-shadow: none !important;
+  border-top: 1px solid #eee !important;
+  padding: 0 18px 18px;
+}
+
+#CybotCookiebotDialogBody {
+  padding-right: 0;
+}
+#CybotCookiebotDialogBodyLevelButtons {
+  margin: 0;
+}
+#CybotCookiebotDialogBodyContentText p {
+  font-size: 13px;
+  line-height: 16px;
+}
+#CybotCookiebotDialogBodyLevelButtonsSelectPane {
+  padding: 0 !important;
+}
+
+input[type="checkbox"] {
+  &.CybotCookiebotDialogBodyLevelButton {
+    + label {
+      background-image: url("/images/general/unchecked.jpg") !important;
+      position: relative;
+      background-size: 14px !important;
+    }
+    &:checked {
+      + label {
+        background-image: url("/images/general/checked.jpg") !important;
+        font-size: 11px!important;
+      }
+    }
+  }
+  &.CybotCookiebotDialogBodyLevelButton {
+    &.CybotCookiebotDialogBodyLevelButtonDisabled {
+      &:checked + label {
+        background-image: url("/images/general/checked.jpg");
+        background-size: 14px !important;
+      }
+    }
+  }
+}
+
+input[type="checkbox"].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled
++ label {
+  background-image: url("/images/general/unchecked.jpg");
+  position: relative;
+  background-size: 14px !important;
+}
+#CybotCookiebotDialogBody {
+  padding-right: 8px!important;
+  padding-left: 8px!important;
+}
+#CybotCookiebotDialogBodyLevelDetailsButton {
+  font-size: 8pt;
+}
+#CybotCookiebotDialogBodyLevelButtons {
+  margin-left: 0;
+  width: 100%;
+}
+
+#CybotCookiebotDialogBodyLevelButtonsSelectPane {
+  padding: 0 !important;
+}
+
+input[type="checkbox"] {
+  &.CybotCookiebotDialogBodyLevelButton {
+    + label {
+      background-image: url("/images/general/unchecked.jpg") !important;
+      position: relative;
+      background-size: 14px !important;
+    }
+    &:checked {
+      + label {
+        background-image: url("/images/general/checked.jpg") !important;
+      }
+    }
+  }
+  &.CybotCookiebotDialogBodyLevelButton {
+    &.CybotCookiebotDialogBodyLevelButtonDisabled {
+      &:checked + label {
+        background-image: url("/images/general/checked.jpg");
+        background-size: 14px !important;
+      }
+    }
+  }
+}
+
+input[type="checkbox"].CybotCookiebotDialogBodyLevelButton.CybotCookiebotDialogBodyLevelButtonDisabled
+  + label {
+  background-image: url("/images/general/unchecked.jpg");
+  position: relative;
+  background-size: 14px !important;
+}

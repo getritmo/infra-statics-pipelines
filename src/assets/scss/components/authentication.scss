@@ -1,0 +1,161 @@
+.login {
+  &__checkbox {
+    &--container {
+      label {
+        @include ff_text();
+        color: #000;
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 17px;
+        margin-top: 10px;
+        padding-left: 30px;
+        padding-top: 4px;
+        pointer-events: auto;
+        position: relative;
+        top: 0;
+
+        &.checkbox {
+          &::before {
+            top: 7px;
+          }
+
+          &::after {
+            top: 4px;
+          }
+        }
+
+      }
+
+      input {
+        opacity: 0;
+        position: absolute;
+        width: 0;
+
+        &:checked {
+          + label::before {
+            opacity: 1;
+          }
+        }
+
+        &:focus {
+          + label::after {
+            background: #fff;
+            border: 1px solid #666;
+          }
+        }
+      }
+    }
+  }
+
+  &__text {
+    &--item {
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    &--container {
+      &:hover {
+        .login__text--input {
+          border: 1px solid #666;
+        }
+      }
+    }
+
+    &--label {
+      @include ff_text();
+      padding-left: 16px;
+      top: 18px;
+
+      &.active {
+        top: 10px;
+      }
+    }
+
+    &--input {
+      appearance: none;
+      background: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #000;
+      display: inline-block;
+      font-family: 'Gilroy Light';
+      font-size: 16px;
+      height: 56px;
+      margin-bottom: 14px;
+      outline: none;
+      padding: 16px 16px 0;
+      transition: all .2s ease-in-out;
+      width: 100%;
+    }
+
+    &--error {
+      animation-duration: .6s;
+      animation-name: fadein;
+      color: #d65b53;
+      font-family: 'Gilroy Light';
+      margin-bottom: 12px;
+      margin-top: -5px;
+      padding-top: 0;
+    }
+  }
+
+  &__select {
+    &--item {
+      margin-bottom: 0;
+      padding: 0;
+    }
+
+    &--container {
+      &::after {
+        right: 18px !important;
+        top: 23px !important;
+      }
+
+      &:hover {
+        .login__select--input {
+          border: 1px solid #666;
+        }
+      }
+    }
+
+    &--label {
+      @include ff_text();
+      padding-left: 16px;
+      top: 18px;
+
+      &.active {
+        top: 10px;
+      }
+    }
+
+    &--input {
+      appearance: none;
+      background: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #000;
+      cursor: pointer;
+      display: inline-block;
+      font-family: 'Gilroy Light';
+      font-size: 16px;
+      height: 56px;
+      margin-bottom: 14px;
+      outline: none;
+      padding: 16px 16px 0;
+      transition: all .2s ease-in-out;
+      width: 100%;
+    }
+
+    &--error {
+      animation-duration: .6s;
+      animation-name: fadein;
+      color: #d65b53;
+      font-family: 'Gilroy Light';
+      margin-bottom: 12px;
+      margin-top: -5px;
+      padding-top: 0;
+    }
+  }
+}

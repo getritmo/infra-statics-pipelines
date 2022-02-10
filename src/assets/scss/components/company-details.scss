@@ -1,0 +1,109 @@
+.company-details {
+  &__details {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    max-width: 500px;
+    padding: 20px;
+    animation: fadein 0.6s;
+  }
+
+  &__title {
+   @include ff_headline();
+   color: $blueColor;
+   font-size: 18px;
+   letter-spacing: -0.21px;
+   margin: 0;
+ }
+
+  form {
+    animation-name: fadein;
+    animation-duration: 0.6s;
+    padding-bottom: 120px;
+  }
+
+  .form-group {
+    //padding-bottom: 10px;
+    .error {
+      position: absolute;
+      top: 7px;
+      right: 6px;
+      font-size: 10px;
+    }
+  }
+
+  .container {
+    margin: 0;
+    max-width: 700px;
+    padding: 0;
+    width: 100%;
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  &__submit {
+    align-items: center;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    left: 0;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+
+    @include respond-to(desktop) {
+      //position: absolute;
+      padding: 10px;
+      padding-left: 370px;
+      padding-right: 40px;
+    }
+
+    .btn {
+      margin: 0;
+    }
+
+    .checkbox__container label {
+      @include ff_headline();
+      font-size: 16px;
+    }
+  }
+
+  .row {
+    width: 100%;
+
+    .col-2 {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+
+      @include respond-to(desktop) {
+        width: calc(50% - 20px);
+
+        &:nth-child(2n) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  .error {
+    margin-bottom: 0;
+  }
+  .btn-secondary {
+    @include respond-to(mobile) {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,205 @@
+.newsletter-banner {
+  @include ff_headline();
+  border-top: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  padding: 20px 30px 12px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  &__header {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  
+  &__content {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 12px;
+  }
+  
+  &__footer {
+    float: right;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 18px;
+    padding: 0 20px;
+    text-align: center;
+    
+    a {
+      font-size: 10px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 4px;
+    position: absolute;
+  
+    @include respond-to(desktop) {
+      position: relative;
+      right: 0;
+      top: 0;
+    }
+  
+    @include respond-to(hover) {
+      &::after,
+      &::before {
+        opacity: 0.6;
+        right: 4px;
+        width: 16px;
+      }
+    }
+  
+    &::after,
+    &::before {
+      background-color: #000;
+      border-radius: 3px;
+      content: '';
+      height: 2px;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: rotate(45deg) translate(-50%, -50%);
+      transform-origin: 0% 0%;
+      transition: all 0.2s ease-in-out;
+      width: 14px;
+    }
+  
+    &::after {
+      transform: rotate(-45deg) translate(-50%, -50%);
+    }
+  }
+}
+
+.banner-slide-out {
+  animation: slide-out 0.5s forwards;
+}
+
+@keyframes slide-out {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-150%); }
+}
+
+
+
+.privacy-banner {
+  @include ff_text();
+  background-color: #eee;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  display: flex;
+  margin-top: 36px;
+  max-width: 850px;
+  overflow: hidden;
+  padding: 12px 12px 42px;
+  position: relative;
+  width: 100%;
+
+  @include respond_to(desktop) {
+    padding: 24px 12px 26px;
+  }
+
+  & + .accounts__section {
+    border-top: 0;
+  }
+
+  &__icon {
+    height: 24px;
+    margin-right: 12px;
+    width: 36px;
+
+    .asa {
+      stroke-width: 1px;
+      fill: $orange1;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &--title {
+      @include ff_headline();
+      font-size: 16px;
+      margin-bottom: 4px;
+      margin-right: 12px;
+    }
+
+    &--content {
+      font-size: 12px;
+      line-height: 18px;
+      margin-right: 12px;
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    margin-bottom: 12px;
+    padding: 4px;
+    position: absolute;
+    right: -6px;
+    top: 10px;
+
+    @include respond-to(hover) {
+      &::after,
+      &::before {
+        opacity: 0.6;
+        right: 4px;
+        width: 16px;
+      }
+    }
+
+    &::after,
+    &::before {
+      background-color: #000;
+      border-radius: 3px;
+      content: '';
+      height: 2px;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: rotate(45deg) translate(-50%, -50%);
+      transform-origin: 0% 0%;
+      transition: all 0.2s ease-in-out;
+      width: 14px;
+    }
+  
+    &::after {
+      transform: rotate(-45deg) translate(-50%, -50%);
+    }
+  }
+
+  &__learn {
+    bottom: 10px;
+    margin-bottom: 0;
+    position: absolute;
+    right: 24px;
+    transform-origin: 50% 50%;
+    padding: 0;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      right: 0;
+      height: 1px;
+      width: 0;
+      background: black ;
+      transition: all 0.2s ease-in-out;
+    }
+
+    @media (hover:hover) and (pointer: fine) {
+      &:hover {
+      &:after {
+        width: calc(100% - 13px);
+
+      }
+        //transform: scale(1.1);
+      }
+    }
+  }
+}

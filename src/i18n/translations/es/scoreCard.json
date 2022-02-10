@@ -1,0 +1,7 @@
+{
+  "score_card": {
+    "revenue_growth": "<b>Revenue Growth</b> (6 months){br}(Last 6 months revenue / Previous 6 month revenue)",
+    "revenue_growth_last_year": "<b>Revenue Growth</b> (compared to last year){br}(Last 6 months to previous year last 6 months)",
+    "revenue_trend": "Revenue trend"
+  }
+}

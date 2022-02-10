@@ -1,0 +1,171 @@
+$white: #ffffff;
+$black: #000000;
+$red: #D65B53;
+$orange: #e95a0c;
+$orange1: #FF7800;
+$blueColor: #2793FF;
+$blueColorHover: #0a3257;
+$green: #67B5A2;
+$green_dark: #429321;/* Primary button */
+
+$blueGradient: linear-gradient(180deg, #166dc1 2%, #104e89 100%);
+$blueGradientHeader: linear-gradient(180deg, #104E89 0%, #083662 100%);
+$backgroundGradientBlue: linear-gradient(180deg, #166dc1 2%, #104e89 100%);
+$backgroundGradientBlue2: linear-gradient(180deg, #69A7E3 2%, #2D69A3 100%);
+$gradientOrange: linear-gradient(-185deg, #f3db31 2%, $orange 100%);
+$gradientOrange3: linear-gradient(-5deg, $orange 2%, $orange1 100%);
+$gradientOrange2: linear-gradient(-360deg, #f3e15f 2%, #ffcb47 100%);
+
+$greenGradient: linear-gradient(180deg, #a5cf5a, #8DB642);
+$greenGradient2:linear-gradient(185deg, #cbeb92, #729139);
+
+$backgroundToBePayed: #bdd7f3;
+$gradientPending: #dfd9cb;
+$gradientAlreadyPayer: #67B5A2;
+
+//
+// General settings
+// --------------------------------------------------
+$root: '../'; // Relative to the `_assets` folder
+$images: '#{$root}images/';
+$images_c: '#{$root}images/component/';
+$images_m: '#{$root}images/misc/';
+
+$spacer: 1rem;
+//
+// Animations
+// --------------------------------------------------
+$animation: 0.2s;
+
+$easeDefault: cubic-bezier(0.19, 1, 0.22, 1);
+$easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+$easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
+$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
+$easeInOutExpo: cubic-bezier(1, 0, 0, 1);
+$easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
+$easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
+$easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
+$easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+$easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+//
+// Breakpoints
+// --------------------------------------------------
+
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+$break-larger: 1400px;
+$break-larger-big: 1600px;
+$break-larger-xbig: 1800px;
+
+//
+// Font sizes
+// --------------------------------------------------
+
+// TITLE BIG
+$title_big-size-small: 38px;
+$title_big-size-medium: 48px;
+$title_big-size-large: 55px;
+
+// Title big: line height
+$title_big-line-small: 42px;
+$title_big-line-medium: 53px;
+$title_big-line-large: 60px;
+
+// Subtitle: font size
+$title-size-small: 28px;
+$title-size-medium: 34px;
+$title-size-large: 40px;
+
+// Subtitle: line height
+$title-line-small: 36px;
+$title-line-medium: 40px;
+$title-line-large: 48px;
+
+// Subtitle: font size
+$subtitle-size-small: 22px;
+$subtitle-size-medium: 25px;
+$subtitle-size-large: 25px;
+
+// Subtitle: line height
+$subtitle-line-small: 28px;
+$subtitle-line-medium: 32px;
+$subtitle-line-large: 34px;
+
+// Intro: font size
+$intro-size-small: 20px;
+$intro-size-medium: 22px;
+$intro-size-large: 25px;
+
+// Intro: line height
+$intro-line-small: 26px;
+$intro-line-medium: 28px;
+$intro-line-large: 30px;
+
+// Text: font size
+$text-size-small: 16px;
+$text-size-medium: 17px;
+$text-size-large: 18px;
+
+// Text: line height
+$text-line-small: 24px;
+$text-line-medium: 26px;
+$text-line-large: 30px;
+
+//
+// Block margins
+// --------------------------------------------------
+$block-margin-mobile: 50px;
+$block-margin-tablet: 80px;
+$block-margin-desktop: 80px;
+$block-margin-desktop-big: 80px;
+
+$block-margin-mobile_item: 50px;
+$block-margin-tablet_item: 80px;
+$block-margin-desktop_item: 80px;
+$block-margin-desktop-big_item: 80px;
+
+$block-margin-next-mobile: 45px;
+$block-margin-next-tablet: 36px;
+$block-margin-next-desktop: 36px;
+$block-margin-next-desktop-big: 36px;
+
+/*/////////////////////////////////
+
+    Animation variables
+
+//////////////////////////////////*/
+
+// Base animation types
+// The icon will be moving to this direction when hovering.
+$animate-icon-direction: "right";
+
+// The underline will move from this direction when hovering.
+$animate-link-type: "left";
+
+// The background color will move from this direction when hovering.
+$animate-button-type: "left";
+
+// The image will move in a specific direction when hovering.
+$animate-image-type: "zoom";
+
+// Variables
+$animate-base-speed: 0.6s;
+$animate-base-speed-images: 2s;
+$animate-base-border-size: 2px;

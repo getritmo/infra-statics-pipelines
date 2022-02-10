@@ -1,0 +1,12 @@
+.lock-icon {
+  margin-bottom: 6px;
+}
+
+.header-icon {
+  margin-right: 10px;
+  vertical-align: middle;
+
+  @include respond-to(mobile) {
+    min-width: 50px;
+  }
+}

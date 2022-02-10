@@ -1,0 +1,46 @@
+{
+  "finance": {
+    "add": "Ajouter des fichiers",
+    "bs_documents": "<b>Relevés bancaires</b>:",
+    "dialog": {
+      "no": "Non",
+      "title": "Êtes-vous sûr de vouloir supprimer le document {filename}?",
+      "yes": "Oui"
+    },
+    "fs_documents": "<b>Documents financiers</b>:",
+    "no_bs_document": "Il n'y a pas de <b>relevés bancaires</b> aún",
+    "no_documents": "<b>Aucun document</b> n'a encore été téléchargé",
+    "no_fs_document": "Il n'y a pas de <b>documents financiers</b> aún"
+  },
+  "payments": {
+    "end_date": "Date de clôture",
+    "errors": {
+      "end_date": "Veuillez remplir la date de clôture (jj/mm/aaaa)",
+      "invoice": "Veuillez sélectionner la facture",
+      "invoice_number": "Veuillez indiquer le numéro de la facture",
+      "quantity": "Le montant doit être supérieur à 1000 €.",
+      "required": "Veuillez remplir ce champ",
+      "start_date": "Veuillez indiquer la date de création (jj/mm/aaaa)"
+    },
+    "help": {
+      "quantity": "Les valeurs sont exprimées en centimes (1000 = 10 €)"
+    },
+    "invoice_number": "Numéro de facture",
+    "layout_title": "Créer <b>Pago</b>",
+    "quantity": "Montant",
+    "start_date": "Date de création",
+    "status": {
+      "dispute_lost": "litige perdu",
+      "disputed": "en litige",
+      "initiated": "début",
+      "notified": "notification",
+      "processing": "en cours",
+      "succeeded": "effectué",
+      "to_review": "en cours de révision"
+    },
+    "title": "Créer un paiement"
+  },
+  "uploads": {
+    "title": "Télécharger le <b>fichier</b>."
+  }
+}

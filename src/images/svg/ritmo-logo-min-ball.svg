@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="118px" height="119px" viewBox="0 0 118 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ritmo-logo-min-ball</title>
+    <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WHITE-LOGO-WHITE" transform="translate(-254.000000, -110.000000)" fill="#E9A759" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="5">
+            <g id="ritmo-logo-min-ball" transform="translate(254.000000, 110.500000)">
+                <path d="M93.2969602,15.5082746 C80.0142491,15.5082746 73.52703,31.5714656 82.7941005,41.1474556 C92.3702147,50.4149405 108.433548,43.9277011 108.433548,30.6447556 C108.742592,22.3042504 101.637671,15.1993456 93.2969602,15.5082746 Z" id="ball"></path>
+            </g>
+        </g>
+    </g>
+</svg>

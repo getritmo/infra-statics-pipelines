@@ -1,0 +1,216 @@
+{
+  "applied": {
+    "accounts": "Conecta <b>tus cuentas</b>",
+    "creation_success": "Has realizado correctamente el proceso de creación de tu <b>cuenta</b>.",
+    "insight": {
+      "text1": "Te damos la bienvenida a Ritmo Insights, la <b>plataforma de growth analytics</b> que te ayudará a tomar mejores decisiones de negocio.",
+      "text2": "Para empezar a utilizar Ritmo Insights sólo tienes que <b>conectar tus cuentas de marketing y ventas</b>."
+    },
+    "prepare_offer": "Mientras tanto, conecta tus cuentas para que podamos prepararte la mejor oferta lo más rápido posible.",
+    "ritmo_insights": "Descubre {ri} ahora",
+    "ritmo_insights_explanation": "<b>RITMO</b> es una plataforma que da las herramientas para <b>acelerar el crecimiento de negocios digitales</b>:",
+    "ritmo_insights_insights": "La herramienta de growth analytics que te ayudará a tomar mejores decisiones de negocio. Conecta tus cuentas y empieza a mejorar el performance de tu negocio.",
+    "ritmo_insights_text_1": "Por el momento sólo financiamos empresas con una facturación mensual superior a los €10K, que estén dadas de alta en <b>España</b>, <b>Reino Unido</b> y/o <b>México</b>.{br}{br}Te avisaremos cuando tengamos un producto financiero ajustado a tus necesidades.{br}{br}Mientras tanto puedes utilizar {ri}, nuestra plataforma de growth analytics para e-commerce y marketplaces, <b>100% gratis.</b>",
+    "subtitle": "El equipo de Ritmo se pondrá en contacto contigo muy pronto.",
+    "title": "Bienvenid@ a bordo"
+  },
+  "company_info": {
+    "breadcrumb": {
+      "current": "Datos de la empresa",
+      "previous": "Mi Solicitud"
+    },
+    "complete_details": "Completa los detalles de <b>tu empresa</b>",
+    "confirm_details": "Confirma los detalles de tu negocio para poder prepararte una oferta formal.",
+    "edit_info": "Editar información de empresa",
+    "title": "Información de la empresa - RITMO App"
+  },
+  "company_item": {
+    "banking_accounts": "Cuentas <b>Bancarias</b>",
+    "contract": {
+      "accepted": "Contrato aceptado",
+      "chooseFile": "Elegir fichero",
+      "pending": "Pendiente de firma"
+    },
+    "contract_signal": "Firma de <b>Contrato</b>",
+    "direct_debit": "Domiciliación <b>bancaria</b>",
+    "download_contract": "Descargar contrato",
+    "download_offer": "Descargar oferta",
+    "finance_accounts": "<b>Cuentas de Finanzas</b>",
+    "marketing_accounts": "<b>Cuentas de Marketing</b>",
+    "no_banking": "No hay cuentas <b>bancarias</b> conectadas",
+    "no_direct_debit": "No hay domiciliación bancaria",
+    "no_files": "No hay archivos subidos",
+    "offer": {
+      "accepted": "Oferta aceptada"
+    },
+    "offers": "<b>Ofertas</b>",
+    "sales_accounts": "<b>Cuentas de Ventas</b>",
+    "text1": "El acuerdo de domiciliación bancaria se ha <b>autorizado correctamente</b>.",
+    "text2": "Los <b>repagos semanales</b> se harán en la cuenta acabada en <b>{last_four_digits}</b>.",
+    "text3": "La referencia del mandato es <b>{mandate_reference}</b>.",
+    "verification_admins": "Verificación <b> Administradores</b>"
+  },
+  "contract_signal": {
+    "breadcrumb": {
+      "current": "Firma de Contrato",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Todavía quedan pasos <b>por completar</b>",
+    "text10": "Continuar",
+    "text2": "Por favor, completa las tareas que se indican abajo para poder enviarte el contrato.",
+    "text3": "En menos de 24 horas recibirás <b>el contrato</b>",
+    "text4": "El equipo de Ritmo te enviará el contrato para firmarlo a través de Docusign.",
+    "text5": "Ya tenemos <b>el contrato listo :)</b>",
+    "text6": "Aquí tienes una copia del contrato para ser firmado con Ritmo.",
+    "text7": "Ya tenemos <b>el contrato listo :)</b>",
+    "text8": "Aquí tienes una copia del contrato de adelanto firmado con Ritmo.",
+    "text9": "Descargar Contrato",
+    "title": "Firma de <b>Contrato</b>"
+  },
+  "direct_debit": {
+    "breadcrumb": {
+      "current": "Domiciliación Bancaria",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Domiciliación <b>bancaria</b>",
+    "text10": "Domiciliación bancaria <b>autorizada</b>",
+    "text11": "El acuerdo de domiciliación bancaria se ha <b>autorizado correctamente</b>.",
+    "text12": "Los <b>repagos semanales</b> por el adelanto en marketing se harán automáticamente en la cuenta acabada en <b>{last4digits}</b>.",
+    "text13": "La referencia del mandato es <b>{mandate_reference}</b>.",
+    "text14": "Si tienes alguna pregunta no dudes en ponerte en contacto con nosotros en el correo",
+    "text2": "Todavía quedan pasos <b>por completar</b>",
+    "text3": "Por favor, completa las tareas que se indican abajo para poder enviarte el pago por domiciliación bancaria.",
+    "text4": "Autoriza el pago por <b>domiciliación bancaria</b>",
+    "text5": "El acuerdo de <b>domiciliación bancaria</b> no se ha podido autorizar correctamente.",
+    "text6": "Por favor, vuelve a intentarlo una vez más.",
+    "text7": "Por favor, para terminar el proceso de solicitud, necesitamos que autorices a Ritmo para habilitar el pago por domiciliación bancaria.",
+    "text8": "Autorizar",
+    "text9": "Si tienes alguna pregunta no dudes en ponerte en contacto con nosotros en el correo"
+  },
+  "finance_accounts": {
+    "breadcrumb": {
+      "current": "Cuentas de Finanzas",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Conecta todas tus <b>cuentas de Finanzas</b>",
+    "text2": "Para determinar si <b>podemos ofrecerte financiación</b> o no, necesitamos integrarnos con tus <b>cuentas de finanzas</b> y, que nos compartas algunos documentos"
+  },
+  "initial": {
+    "text1": "Log in erróneo",
+    "text2": "Posiblemente has ralizado Log In con tu cuenta de diferentes maneras en Auth0.",
+    "text3": "Haz Logout de <b>tu cuenta</b>"
+  },
+  "marketing_accounts": {
+    "breadcrumb": {
+      "current": "Cuentas de Marketing",
+      "previous": "Mi Solicitud"
+    },
+    "subtitle": "Nos integramos con tus <b>cuentas de marketing</b> para poder predecir tu retorno de la inversión para ofrecerte la mejor <b>oferta</b> posible.",
+    "title": "Conecta todas tus <b>cuentas de marketing</b>"
+  },
+  "my_advances": {
+    "advance_amount": "Importe del adelanto",
+    "amount_due": "Monto Adeudado",
+    "breadcrumb": {
+      "previous": "Mis Adelantos"
+    },
+    "commission_rate": "Comisión",
+    "deployment_date": "Fecha de desembolso",
+    "due_date": "Fecha",
+    "no_repayments": "Aún no tienes re pagos asociados a este deployment",
+    "outstanding": {
+      "text": "El <b>saldo pendiente</b> de pago es de <b>{amount}</b>",
+      "title": "Saldo pendiente"
+    },
+    "page_title": "Adelanto en inversión en",
+    "processing": {
+      "text_2": "Normalmente los reembolsos tardan hasta <b>4 días laborables</b> en procesarse.",
+      "text_plural": "Tienes <b>{paymentsAmount} reembolsos</b> que se están <b>procesando</b> con un importe <b>total de {amount}.</b>{br}",
+      "text_single": "Tienes <b>{paymentsAmount} reembolso</b> que se está <b>procesando</b> con un importe <b>total de {amount}.</b>{br}",
+      "title": "Procesando"
+    },
+    "refunded": {
+      "title": "Importe total repagado a la fecha",
+      "value": "Hasta la fecha has realizado exitósamente <b>{paymentsAmount} rembolsos</b> por un importe <b>total de {amount}</b>"
+    },
+    "repayments": "Tus <b>Repagos</b>",
+    "revenue": "Ingresos",
+    "revenue_share": "Factor del reembolso",
+    "start_date": {
+      "title": "Inicio del Seguimiento",
+      "tooltip": "La fecha del inicio del seguimiento de los ingresos es la fecha en la que empezamos a monitorear tus ingresos para calcular los repagos"
+    },
+    "text1": "Mi Adelanto",
+    "text1_inventory": "Adelanto de Inventario",
+    "text1_marketing": "Adelanto de Marketing",
+    "title": "Mis Adelantos",
+    "total_due": "Total a repagar"
+  },
+  "not_applied": {
+    "text1": "GRACIAS POR TU INTERÉS",
+    "text2": "<b>Lamentablemente, no cumples todos los requisitos para recibir financiación</b>",
+    "text3": "Ahora mismo sólo financiamos empresas con unos ingresos mensuales de 10K o más",
+    "text4": "De todas formas, estáte atento por que pronto empezaremos a trabajar con empresas que facturen por debajo de los 10K mensuales",
+    "text5": "Ahora mismo sólo financiamos empresas con sede fiscal en España.",
+    "text6": "De todas formas, muy pronto empezaremos a trabajar con empresas del resto del mundo.",
+    "text7": "Esperamos poder trabajar contigo muy pronto.",
+    "text8": "Volver a la página de inicio"
+  },
+  "offer": {
+    "breadcrumb": {
+      "current": "Mi Oferta",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Mi <b>oferta</b>",
+    "text10": "Descargar Oferta",
+    "text11": "Continuar",
+    "text12": "Aceptar Oferta",
+    "text2": "Todavía quedan pasos <b>por completar</b>",
+    "text3": "Por favor, completa las tareas que se indican abajo para poder prepararte la mejor oferta.",
+    "text4": "Estamos revisando <b>tu información</b>",
+    "text5": "Tu oferta aparecerá aquí.Recibirás un correo electrónico cuando la tengamos preparada.",
+    "text6": "Oferta <b>aceptada</b>",
+    "text7": "Hemos recibido la aceptación de la oferta.",
+    "text8": "Ofertas a la espera de tu <b>aprobación</b>",
+    "text9": "Aquí tienes la mejor oferta a partir del análisis de la performance de tu negocio."
+  },
+  "registration": {
+    "completing_registration": "Completando registro...",
+    "link1": "https://www.getritmo.com/politica-de-privacidad",
+    "link2": "https://www.getritmo.com/aviso-legal",
+    "link3": "https://www.getritmo.com/politica-de-cookies",
+    "text1": "Política de Privacidad",
+    "text2": "Aviso Legal",
+    "text3": "Política de Cookies"
+  },
+  "sales_accounts": {
+    "breadcrumb": {
+      "current": "Cuentas de Ventas",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Conecta todas tus <b>cuentas de ventas</b>",
+    "text2": "Nos integramos con tus <b>cuentas de ventas</b> para poder predecir tu potencial de ingresos y ofrecerte la mejor <b>oferta</b> posible."
+  },
+  "validating": {
+    "text1": "GRACIAS POR TU INTERÉS",
+    "text2": "<b>Lamentablemente, no cumples todos los requisitos para recibir financiación</b>",
+    "text3": "Ahora mismo sólo financiamos empresas con unos ingresos mensuales de 10K o más",
+    "text4": "De todas formas, estáte atento por que pronto empezaremos a trabajar con empresas que facturen por debajo de los 10K mensuales",
+    "text5": "Mientras tanto, si tus ingresos crecen nos encataria contar contigo.",
+    "text6": "Volver a la web"
+  },
+  "verification_admins": {
+    "breadcrumb": {
+      "current": "Verificación de Administradores",
+      "previous": "Mi Solicitud"
+    },
+    "text1": "Verificación <b>Administradores</b>",
+    "text2": "Todavía quedan pasos <b>por completar</b>",
+    "text3": "Por favor, completa las tareas que se indican abajo para poder verificar a los administradores de tu empresa.",
+    "text4": "Estamos verificando <b>la propiedad de tu empresa</b>",
+    "text5": "El equipo de Ritmo te enviará las instrucciones para proceder con la verificación de la propiedad de tu empresa.",
+    "text6": "Propiedad de la empresa <b>verificada correctamente</b>",
+    "text7": "Aquí tienes la documentación relativa a la verificación realizada de la propiedad de tu empresa.",
+    "text8": "Continuar"
+  }
+}

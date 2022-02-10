@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  portal-react:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      VIRTUAL_HOST: my.sbx.getritmo.com
+      VIRTUAL_PORT: 3000
+    expose:
+      - 3000
+    command: yarn start:developmentsbx
+
+  artifact-server:
+    image: ghcr.io/jefuller/artifact-server:latest
+    environment:
+      AUTH_KEY: foo
+    ports:
+      - "8080:8080
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

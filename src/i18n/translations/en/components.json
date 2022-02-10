@@ -1,0 +1,985 @@
+{
+  "UI": {
+    "errors": {
+      "decimalsError": "Use 1 or 2 decimal positions",
+      "fileRequired": "Please, select a file",
+      "inputRequired": "Please, fill in this field",
+      "notValidNumber": "This number is not valid",
+      "optionRequired": "Please, select an option"
+    }
+  },
+  "accounts": {
+    "accounts_added": "I have connected all my business accounts {account_type}"
+  },
+  "accounts_accounts": {
+    "available_accounts": "Accounts <b>Available</b>",
+    "banking": "Connect <b>Openbanking Accounts</b>",
+    "banking_connected": "<b>Openbanking</b> Accounts Connected",
+    "connected_accounts": "Accounts <b>Connected</b>",
+    "cta_openbanking": "Connect <b>your accounts</b>",
+    "finance_access": "We already have access to this <b>documentation</b>.",
+    "finance_read": "Read Only access to <b>ritmo_data@getritmo.com</b>",
+    "finance_shared": "<b>Shared financial</b> data:",
+    "mkt_access": "We already have access to these <b>marketing accounts</b> through <b>ritmo_data@getritmo.com</b>",
+    "sales_access": "We already have access to these <b>Shopping Platforms</b> through <b>ritmo_data@getritmo.com</b>",
+    "upload_bank_statement": "Upload <b>Bank Statements</b>",
+    "upload_finance_documents": "Upload <b>Finance Documents</b>"
+  },
+  "accounts_item": {
+    "add_view": "Add view",
+    "connected": "connected",
+    "connection_status": "Connection status:",
+    "delete": "delete",
+    "error": "error",
+    "other_accounts": "Other <b>accounts</b>",
+    "source_pending": "pending"
+  },
+  "accounts_items": {
+    "no_accounts": "<b>No account</b> has been connected yet"
+  },
+  "accounts_ri": {
+    "connected": "connected",
+    "not_connected": "not connected"
+  },
+  "activateDeployment": {
+    "selectMonitoringDates": "Select monitoring dates",
+    "selectOptionError": "Please, select one option",
+    "selectScenario": "Select a scenario"
+  },
+  "admin_accounts_items": "No connected accounts",
+  "amazon_ads": {
+    "header": "<b>Amazon Ads</b> permissions"
+  },
+  "amazon_seller": {
+    "close": "Close",
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Amazon Seller account</b>",
+    "header": "<b>Amazon Seller</b> permissions",
+    "p1": "We will need read-only access to your Amazon <em>vendor/seller</em> accounts to our <b>ritmo_data@getritmo.com</b> email address.",
+    "p10": "<b>3</b>.- Grant us access to the <b>reports section</b>",
+    "p11": "Once you grant us access, we will also need <b>access reports section</b>.",
+    "p12": "Manage reports access in <b>settings</b> > Accesses and selected \"<b>Manage accesses</b>\" to our user (<b>ritmo_data@getritmo.com</b>):",
+    "p2": "<b>1</b>.- Add <b>ritmo_data@getritmo.com</b> as user",
+    "p3": "Follow these steps to add us as a user:",
+    "p4": "<b>Settings</b> >> <b>User accesses</b> >> <b>Add new user</b>:",
+    "p5": "Name: <b>Ritmo Data</b>",
+    "p6": "Email Address: <b>ritmo_data@getritmo.com</b>",
+    "p7": "<b>2</b>.- Complete <b>form</b>",
+    "p8": "Once you grant us access, Amazon will request you to complete in the following form:",
+    "p9": "These is the data you will need to complete the form:",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "amazonseller": {
+    "account_connected": "Your account <b>{account}</b> is connected",
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Amazon Seller</b>",
+    "header": "<b>Amazon Seller</b> permissions",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "aov_info": {
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "p1": "AOV is the average value earned by each order.",
+    "p2": "It is calculated by dividing total sales by total number of transactions.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used. Note refunds are also included in the calculation.",
+    "title": "How is the <b>Average Order Value</b> calculated?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "app_store": {
+    "header": "<b>AppStore</b> permissions"
+  },
+  "available_accounts": {
+    "other_accounts": "Other <b>accounts</b>"
+  },
+  "available_manual_accounts": {
+    "balance": "<b>Balance</b> sheet",
+    "banking_movements": "<b>Openbanking</b> movements",
+    "profit_and_loss": "<b>Profit</b> and loss"
+  },
+  "balanceCashFlow_info": {
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "marketing_accounts": "Marketing Accounts",
+    "openbanking": "Marketing investments through Google ads in euros.",
+    "p1": "The cash flow is the net result of adding all the cash inflows (income) and subtracting all the cash outflows (expenses) that appear in the financial accounts that you have linked to <b>RITMO</b>.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "title": "How is <b>Cash Flow</b> calculated?",
+    "title_list_0": "Available <b>Open Banking</b> Accounts",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "banner": {
+    "newsletter": {
+      "button": "Subscribe",
+      "confirmation": {
+        "footer": "This banner will be automatically closed in <b>{seconds}</b> seconds",
+        "header": "<b>Congratulations!</b>",
+        "text": "You will receive our newsletter in your email from now on."
+      },
+      "error": {
+        "button": "Try again!",
+        "header": "<b>Ops!</b>",
+        "text": "Seems like there was a problem..."
+      },
+      "footer": "You can consult our Privace Policy",
+      "footerAnchor": "here",
+      "header": "<b>Stay tuned!</b>",
+      "text": "Suscribe here to get the latest news, updates and special offers"
+    },
+    "privacy": {
+      "learnMore": "+ Learn more",
+      "text": "We understand that sharing your business information can be intimidating, but we believe worrying about data security shouldn’t be a part of your application. All your data is 100% confidential, used exclusively for your application, encrypted and secured with the highest security standards.",
+      "title": "RITMO's Privacy & Data Protection Policy"
+    }
+  },
+  "bing_ads": {
+    "header": "<b>Bing Ads</b> permissions"
+  },
+  "blendedRoas_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "facebookads": "We use it to calculate investments in marketing, reported in euros.",
+    "go_to": "Go to",
+    "googleads": "We use it to calculate investments in marketing, reported in euros.",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "marketing_accounts": "Marketing Accounts",
+    "p1": "<b>Blended ROAS</b> or return on marketing investments equals the ratio between <b>sales</b> and <b>marketing spend</b>.",
+    "p2": "This indicator measures the efficiency of your marketing investments.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "shopify": "Only order data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How is <b>Blended Roas</b> calculated?",
+    "title_list_0": "Available <b>Marketing</b> Accounts",
+    "title_list_1": "Available <b>Shopping</b> platforms",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "cac_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "<b>Marketing investment</b>: sum of the total marketing investment of the marketing accounts connected to Ritmo (in the marketing accounts section).\n{br}{br}<b>New customers</b>: Number of people who bought for the first time in that month.",
+    "p1": "Average cost of acquiring a new customer.\n{br}{br}CAC = Marketing Investment / New Customers\n{br}{br}The CAC assumes that all marketing investment is directed to new customers, without taking into account retargeting campaigns.\n",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How is calculated the <b>Customer Acquisition Cost (CAC)</b>?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "card": {
+    "contract": {
+      "chooseFile": "Choose file",
+      "deployNum": "Number of deployments",
+      "download": "Download contract",
+      "firstDeployDate": "First deployment date",
+      "id": "Contract ID"
+    },
+    "offer": {
+      "deployNum": "Number of deployments",
+      "download": "Download offer",
+      "firstDeployDate": "First deployment date",
+      "id": "Offer ID",
+      "total_credit_limit": "Total credit limit"
+    }
+  },
+  "check_accounts": {
+    "btn_title": "Connect more accounts",
+    "go_to": "Go to",
+    "last_sync1": "We are synchronising data.{br}Come back tomorrow to view this chart",
+    "last_sync2": "If you wish, you can connect more accounts here.",
+    "marketing_accounts": "Marketing accounts",
+    "sales_accounts": "Shopping platforms",
+    "title": "To view this <b>metric</b>{br}you need to connect additional connectors"
+  },
+  "companyForm": {
+    "emails": "Emails",
+    "no_email": "No notification emails registered",
+    "notification_email": "Emails to send notifications",
+    "title": "Costumer data"
+  },
+  "company_info": {
+    "registrationType": "Registered with email/password",
+    "userEmail": "Email"
+  },
+  "company_info_form": {
+    "aditional_address": "Additional address (optional)",
+    "company_name": "Company name",
+    "fill_field": "Please complete this field",
+    "fiscal_address": "Fiscal address",
+    "required_fields": "Required fields",
+    "select_country": "Please select country",
+    "tax_number": "Tax ID"
+  },
+  "confirmDeployActivation": {
+    "selectedOption": "Selected option"
+  },
+  "confirm_overlay": {
+    "confirm_payment": "Do you want to proceed confirming the payments?",
+    "delete_account": "Do you want to proceed deleting your <b>{connector}</b> account?"
+  },
+  "confirm_payment": {
+    "dates": "Date Range",
+    "invoice": "Invoice File",
+    "title": "Is this payment correct?"
+  },
+  "content": "What can I do next?",
+  "conversionRate_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "googleanalytics": "We use Google Analytics to calculate daily sessions by adding the views from all of your visits.",
+    "magento": "Each order is counted as a transaction. Note refunds are also included in the calculation.",
+    "marketing_accounts": "Marketing accounts",
+    "or": "or ",
+    "p1": "The <b>conversion rate</b> indicates what % of your e-commerce´s sesssions convert into sales.",
+    "p2": "It is the ratio of total transactions across all of your shopping platforms connected to <b>RITMO</b> and total sessions of all visits in <b>Google Analytics</b> connected to <b>RITMO</b>.",
+    "prestashop": "Each order is counted as a transaction. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Each order is counted as a transaction. Note refunds are also included in the calculation.",
+    "stripe": "Each payment is counted as a transaction. Only executed payments are used. Note refunds are also included in the calculation.",
+    "title": "¿How is the <b>conversion rate</b> calculated?",
+    "title_list_0": "Available <b>Marketing</b> Accounts",
+    "title_list_1": "Available <b>Shopping</b> platforms",
+    "woocommerce": "Each order is counted as a transaction. Note refunds are also included in the calculation."
+  },
+  "create_account_form": {
+    "RIfinance_you": "Register for free and {br}start boosting your growth with {ri}",
+    "RIfinance_you_text": "Start turbo charging your <b>growth</b> in a matter of minutes",
+    "ahref1": "here",
+    "ahref2": "legal advise",
+    "all_fields_required": "Required fields",
+    "almost_have_it": "We are <b>almost there!</b>",
+    "checkbox1": "I accept receiving commercial communications and/or Newsletter from <b>RITMO</b> that fit my preferences. More info",
+    "checkbox2": "Privacy Policy",
+    "checkbox3": "Consent",
+    "fill_email": "Please provide a valid email",
+    "fill_field": "Please complete this field",
+    "fill_phone": "Please provide a valid phone number",
+    "finance_you": "How much funding {br} <b>are you eligible for?</b>",
+    "legal_notice_url": "https://www.getritmo.com/es/legal-notice",
+    "privacy_policy_url": "https://www.getritmo.com/en/privacy-policy",
+    "review_data": "Go Back",
+    "www": "Please provide a valid url with www."
+  },
+  "customers_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "All sales accounts connected to <b>RITMO</b> are considered.",
+    "p1": "Number of customers who made a purchase or payment (e.g. payment of a monthly subscription) in the selected period.\n",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How is calculated the amount of <b>Customers</b>?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "dashboard_buttons": {
+    "yearly": "Annual"
+  },
+  "default_content": {
+    "p": "Our team will reach out to you shortly in order to manage the access to this account."
+  },
+  "dialog": {
+    "confirm": "Yes",
+    "confirmAction": "confirm",
+    "contract": "contract",
+    "createContract": "Are you sure to create the contract from offer with id {offerId}?",
+    "delete": "Delete",
+    "deleteAction": "delete",
+    "manyItems": "Are you sure you want to {action} the following {type}?",
+    "manyPayments": "payments",
+    "offer": "offer",
+    "oneItem": "Are you sure you want to {action} {type} with id {id}?",
+    "payment": "payment"
+  },
+  "external_prevision_tooltip": {
+    "main_forecast": "Main forecast:"
+  },
+  "external_tooltip_growth": {
+    "yty_growth": "YoY Growth:"
+  },
+  "facebookads": {
+    "content1": "Go to Facebook Business Manager --> Business settings --> Add a partner to share reports.",
+    "content10": "create ad",
+    "content11": "manage catalogue",
+    "content12": "Facebook documentation here",
+    "content13": "with indications.",
+    "content14": "*** Bear in mind that you will need to enable",
+    "content15": "Facebook double authentication",
+    "content16": "in order to grant certain permissions",
+    "content17": "Select an account",
+    "content18": "Add Facebook Ads account",
+    "content2": "Add the Ritmo identifier: <b>2880393575523028</b>",
+    "content3": "We will need access to the following:",
+    "content4": "Advertising acount",
+    "content5": "view performance",
+    "content6": "Business page",
+    "content7": "page performance",
+    "content8": "revnues statistics",
+    "content9": "Product catalogue",
+    "header": "<b>Facebook Ads</b> permissions",
+    "no_property": "In order to continue, please select an <b>Account</b>. In case you want to continue without connecting your account {link}."
+  },
+  "faq_info": {
+    "ahref1": "Privacy Policy",
+    "response1": "The process for receiving a <b>RITMO</b> advance is very simple and all we need is data relating to the performance of your business.\n Once registered on our platform, you simply need to connect your <b>shopping platforms</b> (<em>Stripe, Shopify, PayPal, Google Pay, Apple Pay, Amazon pay, Woocomerce…</em>) and you <b>marketing accounts</b> (<em>Google Analytics, Google Ads y Facebook Ads, etc...</em>).\n In addition, through your <b>openbanking</b> services and accounting systems you can easily and quickly connect your financial information so we can get to know you better and offer you the best deal for your business.\n To give you peace of mind we use the strictest and most advanced criteria for security and confidentiality, ensuring your data is <b>100% safe</b>.\n Before we send you the funds we will also need to verify the identity of the key people in your organization through a photograph and ID card or passport. Mira nuestra",
+    "response2": "more details.",
+    "response3": "You can 100% trust how <b>RITMO</b> will use your data.\n We are fully aware of how important it is that the information you share with us remains <b>100% confidential</b>.\n We will simply use it to analyse the performance of your business and determine the amount of capital and the conditions for repayment. Mira nuestra",
+    "response4": "more details.",
+    "response5": "Before sending you a concrete proposal <b>RITMO</b> has to validate - in addition to your business performance data -,\n your identity and that of your company, carrying out the necessary authentication and security protocols\n {br}Mira nuestra",
+    "response6": "more details.",
+    "title1": "What data does <b>RITMO</b> need to make a decision?",
+    "title2": "How will my data be used?",
+    "title3": "What information does <b>RITMO</b> use to validate my business?"
+  },
+  "filter": {
+    "custom_period": "Custom period",
+    "last_12_months": "Last 12 Months",
+    "last_2_weeks": "Last 2 Week",
+    "last_3_months": "Last 3 Months",
+    "last_4_weeks": "Last 4 Weeks",
+    "last_7_days": "Last Week",
+    "month_to_date": "Current Month",
+    "year_to_date": "Current year"
+  },
+  "financeFilesContainer": {
+    "no_documents": "<b>No documents</b> uploaded yet",
+    "uploaded_documents": "<b>Uploaded documents</b>"
+  },
+  "footer": {
+    "ahref1": "Legal",
+    "content1": "© Copyright 2020 Ritmo {br} All rights reserved"
+  },
+  "free_agent": {
+    "header": "<b>FreeAgent</b> permissions"
+  },
+  "fresh_books": {
+    "header": "<b>FreshBooks</b> permissions"
+  },
+  "google_analytics": {
+    "add_google_account": "Add Analytics user",
+    "header": "<b>Google Analytics</b> permissions",
+    "no_property": "In order to continue, please select an <b>Account, Property and a single or multiple Views</b>. In case you want to continue without connecting your account {link}.",
+    "not_valid": "We couldn’t find any GA accounts for you to choose from. Please make sure that you are trying to connect a GA UA (Universal Analytics) account. In case you have a GA4 account, please contact Customer Support by sending an email to <b>customer_support@getritmo.com</b>",
+    "selected": "Selected"
+  },
+  "google_analytics_overlay": "We are redirecting you to <b>Google</b> so you can connect your accounts.",
+  "google_play": {
+    "header": "<b>Google Play</b> permissions"
+  },
+  "googleads": {
+    "accounts": "Accounts -",
+    "add_google_account": "Add Google account",
+    "content1": "We need the client IDs of all your active <b>Google Ads</b> accounts,\n so we can request access directly through our MCC.",
+    "content2": "Please send it to <b>ritmo_data@getritmo.com</b>, stating “My Google Ads ID” in the subject",
+    "content3": "Here are the indication to obtain your Google client ID:",
+    "header": "<b>Google Ads</b> permissions",
+    "no_property": "In order to continue, please select an <b>Account</b>. In case you want to continue without connecting your account {link}."
+  },
+  "graph_line": {
+    "header": "Collecting data",
+    "title1": "We are synchronizing the data,{br}this process may take a few minutes.",
+    "title2": "If you wish, you can connect more accounts here."
+  },
+  "holded": {
+    "header": "<b>Holded</b> permissions"
+  },
+  "kash_flow": {
+    "header": "<b>KashFlow</b> permissions"
+  },
+  "kpi": {
+    "aov": {
+      "long_title": "AOV",
+      "title": "AOV"
+    },
+    "aov_cohort": {
+      "long_title": "AOV",
+      "title": "AOV"
+    },
+    "balanceCashFlow": {
+      "long_title": "Cashflow",
+      "title": "Cashflow"
+    },
+    "blendedRoas": {
+      "long_title": "Blended ROAS",
+      "title": "Blended ROAS"
+    },
+    "cac": {
+      "long_title": "CAC",
+      "title": "CAC"
+    },
+    "conversionRate": {
+      "long_title": "Conversion Ratio",
+      "title": "Conversion Ratio"
+    },
+    "customers": {
+      "long_title": "Customers",
+      "title": "Customers"
+    },
+    "customers_cohort": {
+      "long_title": "Cohort Size",
+      "title": "Cohort Size"
+    },
+    "ltv": {
+      "long_title": "LTV",
+      "title": "LTV"
+    },
+    "ltv_cac": {
+      "long_title": "Lifetime Value - Cohort Analysis",
+      "title": "LTV:CAC"
+    },
+    "ltv_cohorts": {
+      "long_title": "Lifetime Value - Cohort Analysis",
+      "title": "LTV - Cohort Analysis"
+    },
+    "marketingSpend": {
+      "long_title": "Marketing Investment",
+      "title": "Marketing Investment"
+    },
+    "orders_cohort": {
+      "long_title": "Transactions",
+      "title": "Transactions"
+    },
+    "percentage_first_retention": {
+      "long_title": "% First Month retention",
+      "title": "% First Month retention"
+    },
+    "percentage_retention": {
+      "long_title": "% Retention",
+      "title": "% Retention"
+    },
+    "revenue": {
+      "long_title": "Revenue",
+      "title": "Revenue"
+    },
+    "revenue_cohort": {
+      "long_title": "Revenue",
+      "title": "Revenue"
+    },
+    "score_card": {
+      "long_title": "Scorecard",
+      "title": "Scorecard"
+    },
+    "sessions": {
+      "long_title": "Sessions",
+      "title": "Sessions"
+    },
+    "transactions": {
+      "long_title": "Transactions",
+      "title": "Transactions"
+    }
+  },
+  "login_bar": {
+    "have_account": "Already registered?",
+    "login": "Sign in"
+  },
+  "ltv_cac_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "For more information see the definitions of Lifetime Value (LTV) and Cost of Acquisition (CAC) in the tooltips of the scorecards above.",
+    "p1": "<b>LTV:CAC (Lifetime Value / Cost of Acquisition)</b>{br}The LTV:CAC ratio measures the efficiency of the marketing investment. The higher the ratio, the higher the efficiency.\n{br}{br}A ratio greater than 1 means that the company generates more revenue than expenses in its marketing campaigns, without taking into consideration the Cost of Goods Sold (COGS).\n{br}{br}Like Blended ROAS the LTV:CAC is used to optimize marketing campaigns, however, it is more precise since it considers: \nThat the Marketing Investment is mainly allocated to the acquisition of new customers.\nThe value that the customer generates over its lifetime.\n",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How <b>Lifetime Value / Cost of Acquisition</b> is calculated?",
+    "title_list_0": "Available <b>Marketing</b> accounts:",
+    "title_list_1": "Available <b>Shopping</b> platforms:",
+    "title_list_title": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "ltv_cohorts_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "You can see more details in the tooltip {icon} of each metric.",
+    "p1": "\n <p>The <b>LTV - Cohort Analysis</b> tool allows you to obtain information from the cohort perspective.</p>\n\n <p>The <b>size of the cohort is displayed on the left side,</b> next to the month of acquisition. <b>Different metrics for cohort analysis</b> (% retention, revenue, AOV, customers, transactions) <b>can be selected from the drop-down menu</b>.</p>\n\n <p>In addition, it displays the <b>performance metrics</b> to get insights and discover growth opportunities</p>\n ",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How to use the <b>LTV - Cohort Analysis</b> tool?",
+    "title_RI_accounts": "<b>Connected</b> accounts",
+    "title_list_0": "Available <b>Shopping</b> accounts:",
+    "title_list_1": "<b>Marketing</b> accounts available:",
+    "title_list_title": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "ltv_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "<b>Average order value</b>: It is calculated by dividing revenues by the sum of the orders of all the sales accounts you have connected to Ritmo.{br}{br}<b>Monthly transactions per customer</b>: The average number of transactions a customer makes per month. It considers all the sales accounts you have connected to Ritmo.{br}{br}<b>Average customer lifetime in months</b>: The average number of months a customer will make a transaction in his lifetime.",
+    "p1": "The total revenue expected to be earned over the life of each new customer.LTV = Average order value x Monthly transactions per customer x Average customer lifespan in months.{br}{br}LTV takes into account not only the customer's revenue at the time of acquisition, but also the sum of revenue from future purchases.{br}{br}Our model determines a Retention Rate for new customers to estimate future revenue. \n",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How <b>Customer Acquisition Cost (CAC)</b> is calculated?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "magento": {
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Magento account</b>",
+    "header": "<b>Magento</b> permissions",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "marketingSpend_info": {
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "facebookads": "Marketing investments through Facebook ads in euros.",
+    "go_to": "Go to",
+    "googleads": "Marketing investments through Google ads in euros.",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "marketing_accounts": "Marketing Accounts",
+    "p1": "It is the total investments in marketing through all platforms you have connected to <b>RITMO</b>.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "title": "How is total <b>Marketing Investments</b> calculated?",
+    "title_list_0": "Available <b>Marketing</b> Accounts",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "menu": {
+    "admin": "Admin",
+    "connectors": "My Connectors",
+    "contract_signal": "Contract Signature",
+    "dashboard": "Dashboard",
+    "direct_debit": "Direct Debit",
+    "faqs": "FAQ",
+    "forecast": "Forecast",
+    "insights": "RITMO Insights",
+    "ltv": "Lifetime Value (LTV)",
+    "offer": "My Offer",
+    "request": "My offer request",
+    "verification_admins": "Admins Verification"
+  },
+  "mercado_libre": {
+    "account_connected": "Your account <b>{account}</b> is connected",
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Mercado Libre</b>",
+    "header": "<b>Mercado Libre</b> permissions"
+  },
+  "mercado_overlay": {
+    "option": "Choose the country",
+    "title": "Choose the country of your <b>{store}</b> store"
+  },
+  "mercado_pago": {
+    "account_connected": "Your account <b>{account}</b> is connected",
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Mercado Pago</b>",
+    "header": "<b>Mercado Pago</b> permissions"
+  },
+  "modal_privacy": {
+    "table1": "Who collects your data?",
+    "table10": "Users are entitled to: - Access, request rectification of innacurate data, request erasure, oppose usage, request portability, limit treatment and not be subjected to automated individual decisions",
+    "table11": "Any questions?",
+    "table12": "Should you have any questions, suggestions, or wish to unsubscribe, please send us an email to:",
+    "table2": "RITMO CAPITAL, S.L. (“RITMO“ going forward)",
+    "table3": "How to we use your data?",
+    "table4": "For the sole purpose of providing our services",
+    "table5": "Why is RITMO legitimized to process your data?",
+    "table6": "RITMO is entitled to process your data in order to provide its services. RITMO is also entitled to process your data based on the consent requested from the User or on a legitimate interest, if applicable",
+    "table7": "Will RITMO share your data with third parties?",
+    "table8": "No data will be shared with third parties.",
+    "table9": "User´s rights regarding data",
+    "title": "Privacy Policy"
+  },
+  "my_advances": {
+    "no_deploys": "Ups! There are no advances deployed yet!",
+    "no_scenario_selected": "Ups! There are no scenarios selected"
+  },
+  "nutcache": {
+    "header": "<b>NutCache</b> permissions"
+  },
+  "offer": {
+    "aproved": "Your offer is approved",
+    "preaproved": "Your offer is preapproved"
+  },
+  "offerForm": {
+    "accepted": "Accepted offer",
+    "activate": "Activate",
+    "add_deploy": "+ Add deployment",
+    "add_option": "+ Add new option",
+    "cancelled": "Cancelled",
+    "commission": "Commission amount",
+    "commission_rate": "Commission Rate %",
+    "covenants": "Scenarios (covenants)",
+    "covenants_met": "Covenants met",
+    "created": "Created",
+    "deploy_date": "Deployment Date",
+    "deployed": "Deployed",
+    "end_date": "End of tracking date",
+    "errors": {
+      "beforeDeploy": "Monitoring dates should be lower than current deployment date",
+      "endAfterStart": "End should be after start date",
+      "fileRequired": "File is required",
+      "required": "This option is required",
+      "startBeforeDeploy": "Start date is before deploy date",
+      "startBeforeLastDeploy": "Deploy date should be after last deploy date"
+    },
+    "false": "No",
+    "files": "Uploaded files",
+    "first_repayment": "First Repayment Date",
+    "grace_period": "Grace Period",
+    "inventory": "Inventory",
+    "loan_amount": "Loan Amount",
+    "marketing": "Growth Capital Ecommerce",
+    "marketplace": "Growth Capital Marketplace Seller",
+    "monitoring": "Monitoring",
+    "pending_deployment": "Pending",
+    "required": "required",
+    "rev_target": "Revenue Target (covenant)",
+    "revenue_share": "Revenue Share %",
+    "saas": "Saas",
+    "start_date": "Start of tracking date",
+    "total_refund": "Total Refund Amount",
+    "true": "Yes",
+    "upload_files": "Upload files"
+  },
+  "offer_tooltip": {
+    "text1": "The <strong>advance</strong> is the total amount Ritmo will deploy in your account so you can invest in marketing campaigns.",
+    "text10": "The <strong>repayment period</strong> is the estimated time that will take you to fully repay Ritmo.",
+    "text11": "Based on your business metrics and our capital advance, our algorithm will estamte your future sales and the expected time that will take you to fully repay advanced amount and fee.",
+    "text12": "We adapt to your sales and, should these slow down, the repayment period will be extended.",
+    "text2": "Our forecast engine will estimate the optimal amount so you can grow you marketing investments efficiently.",
+    "text3": "The <strong>fee</strong> is the % applied to the advanced amount. This is a fixed commission Ritmo charges for deploying capital",
+    "text4": "There is no other cost, small prints, or hidden fees or charges.",
+    "text5": "No matter what happens from the day of the capital deplpoy, this fee will never change throughout the whole repayments period.",
+    "text6": "The <strong>total refund</strong> refers to the sum of capital advanced and fee, i.e. the total amount to be repaid.",
+    "text7": "The <strong>holdback rate</strong> is the % of sales that you will use to gradually pay Ritmo back.",
+    "text8": "The holdback rate will be set up by our algorithm based on the analysis on your business performance metrics.",
+    "text9": "We will execute a direct debit on your account on a weekly basis by applying the holdback rate to your weekly sales."
+  },
+  "overlay": {
+    "openbanking_uk": {
+      "bank": "Bank",
+      "placeholder": "Search for a bank name"
+    }
+  },
+  "overlay_403": {
+    "activate": "Activate",
+    "connection_problem": "Connection issues with your <b>{connector}</b> account.",
+    "facebookads_advice": "Activate “<b>Access Facebook ads and related statistics</b>” to connect your <b>Facebook Ads</b> account.",
+    "financeothers": "Other finance accounts",
+    "googleads_advice": "Please, remember to activate “<b>Manage your AdWords campaings</b>” to connect your <b>Google Ads</b> account.",
+    "googleads_alt": "Description about how to provide Google Ads credentials",
+    "googleads_image": "/images/errors/gads-en-EN.png",
+    "googleanalytics_advice": "Please, remember to activate “<b>See and download your Google Analytics data</b>” to connect your <b>Google Analytics</b> account.",
+    "googleanalytics_alt": "Description about how to provide Google Analytics credentials",
+    "googleanalytics_image": "/images/errors/gas-en-EN.png",
+    "marketingothers": "Other Marketing accounts",
+    "openbanking": "Openbanking",
+    "salesothers": "Other shopping platforms"
+  },
+  "panel": {
+    "createInvoiceOffer": {
+      "0": "Create Invoice Finance offer",
+      "1": "Review and confirm offer"
+    },
+    "createOffer": {
+      "0": "Create Growth Capital offer",
+      "1": "Review and confirm offer"
+    },
+    "createPayment": {
+      "0": "Create new payment",
+      "1": "Review and confirm payment"
+    },
+    "dialog": {
+      "accept": "Accept",
+      "cancel": "Cancel",
+      "lostData": "All files that were not uploaded will be lost and you may have to select them again.",
+      "sureToClose": "Are you sure you want to quit?"
+    },
+    "finance_accounts": "<b>Finance</b> accounts",
+    "form": {
+      "company": {
+        "update": "Edit company info",
+        "validate": "Review and confirm changes"
+      },
+      "if_offer": {
+        "add_option": "+ Add option",
+        "allowed_repayments": "Allowed repayment options",
+        "offer_details": "Offer details",
+        "period": "Terms (# of weeks)",
+        "repayment_options": "Allowed repayment options",
+        "total_credit_limit": "Total credit limit"
+      },
+      "payment": {
+        "create": "Create new payment",
+        "update": "Update payment",
+        "validate": "Review and confirm payment"
+      }
+    },
+    "info": {
+      "privacy": {
+        "content": "<p>You can rest assured about how we use your data.</p>\n <p>We know how important this data is to you. The information you share will be <b>100% confidential</b>. We will never sell or share it with anyone.{br}We strictly comply with the {link}.</p>\n <p>We use the same security standards used by the <b>US government</b> for the protection of its infrastructure and follow the recommendations of the <b>US Department of Commerce</b>.</p>\n <p>We only access the data to provide you with the best possible <b>offer</b>. And we only access it in read only mode, which means that we cannot edit or delete the information.</p>\n <p>You can remove access at <b>any time</b>.</p>",
+        "read": "Privacy Policy & Data Security"
+      }
+    },
+    "marketing_accounts": "<b>Marketing</b> accounts",
+    "sales_accounts": "<b>Shopping</b> platforms",
+    "selectOfferType": {
+      "0": "Create offer"
+    },
+    "updatePayment": {
+      "0": "Update payment",
+      "1": "Review and confirm payment"
+    },
+    "upload": {
+      "bankStatement": {
+        "content": "<p>In order to determine your eligibility we need you to upload your Bank Statements from the last 12 months.</p>\n            <p>We accept any file format: pdf, excel, spreadsheet or image. You can upload multiple files if needed.</p>",
+        "create": "Upload Bank Statements"
+      },
+      "chooseFiles": "Choose Files",
+      "csv": {
+        "Invoice has Cap and/or Floor": "the invoice has Cap and/or Floor",
+        "Invoice number already exists": "the invoice reference already exists",
+        "badRequest": "Wow!, there seems to have been an error. Please try again.",
+        "create": "Upload CSV file",
+        "error": "Error in the invoice {invoice}, {detail}",
+        "fileError": "The file is not correct. Check it and reload it.",
+        "ignored": "The invoice {invoice} was ignored because {detail}",
+        "sql: no rows in result set": "check that the data is correct.",
+        "success": "The invoice {invoice} was succesfully generated."
+      },
+      "error": "Wow, there seems to have been a mistake. Please, try again.",
+      "financeDocuments": {
+        "content": "<p>In order to determine your eligibility we need you to upload your Profit & Loss and Balance sheet from the last 2 closed fiscal years.</p>\n            <p>We would rather receive a pdf file, as other file types might be requested to revalidation.</p>",
+        "create": "Upload your finance documents"
+      },
+      "noSelectedFiles": "No files are selected yet",
+      "secureTransfer": "All data transferred to Ritmo is 100% confidential and secure",
+      "selectedFile": "Selected file:",
+      "selectedFiles": "You selected {number} files:",
+      "uploadFile": "Upload file",
+      "uploadFiles": "Upload files",
+      "wrong_extension": "Only {expectedExtension} files are allowed to be uploaded"
+    },
+    "viewContract": {
+      "0": "Contract details"
+    },
+    "viewInvoiceOffer": {
+      "0": "Offer details"
+    },
+    "viewOffer": {
+      "0": "Offer details",
+      "1": "Activate deployment",
+      "2": "Confirm deployment activation"
+    },
+    "viewPayment": {
+      "0": "Payment details"
+    }
+  },
+  "paymentForm": {
+    "endDate": "End Date",
+    "idDeployment": "My advance ID",
+    "incomeModified": "Introduced income of {originalIncome} has been modified to {modifiedIncome} so that the resulting comission quantity {quantity} is less than the outstanding balance.",
+    "layout_title": "Create <strong>Payment</strong>",
+    "loading": "Loading...",
+    "outstandingBalance": "Outstanding balance",
+    "paymentData": "Payment data",
+    "revenueShare": "Revenue Share (%)",
+    "startDate": "Start Date",
+    "title": "Create Payment"
+  },
+  "payments": {
+    "upload_csv": "Upload <b>CSV</b>"
+  },
+  "paypal": {
+    "account_connected": "Your <b>{account}</b> is now connected",
+    "ahref1": "PayPal documentation",
+    "content1": "We need access to <b>ritmo_data@getritmo.com</b> with the following permissions:{br}",
+    "content10": "Click add user:",
+    "content11": "Grant access to <b>ritmo_data@getritmo.com</b>, creating a PayPal user name not in use at present (the user name will be the same for the whole platform):",
+    "content12": "On the next widndow, select the following permissions:",
+    "content13": "Reports access",
+    "content14": "View balance, access funds movements",
+    "content15": "View analysis",
+    "content16": "Once the user is created, access the details of the new user, and add this phone number <b>+34635511860</b>",
+    "content2": "Reports access",
+    "content3": "View balance, access funds movements",
+    "content4": "View analysis",
+    "content5": "with indications.",
+    "content6": "Follow these steps:",
+    "content7": "Access your PayPal business account.",
+    "content8": "In the home menu, go to your profile (top right corner) and select <b>Account settings</b>.",
+    "content9": "Go to <b>Account and security</b> > <b>Access account</b> (default screen), look for <b>User admin</b> and select <b>Update</b>:",
+    "content_1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content_2": "Add another <b>Paypal account</b>",
+    "header": "<b>PayPal</b> permissions",
+    "image1": "images/accounts/paypal/en/paypal_1.png",
+    "image2": "images/accounts/paypal/en/paypal_2.png",
+    "image3": "images/accounts/paypal/en/paypal_3.png",
+    "image4": "images/accounts/paypal/en/paypal_4.png"
+  },
+  "percentage_first_retention_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "*Retention % includes retention of new and old customers, and in all months (not just the first month).",
+    "p1": "New Customers - First Month Retention Rate{br}Percentage of new customers who complete a transaction one month after their first purchase.{br}{br}New Customers - First Month Retention Rate is a specific part of % Retention*. The New Customers - First Month Retention Rate is analyzed separately because it allows us to observe impacts on new customers (actions and/or other effects) with greater clarity.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How is calculated the <b>Customer Acquisition Cost (CAC)</b>?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "percentage_retention_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "more_info": "All sales accounts connected to <b>RITMO</b> are considered.",
+    "p1": "Percentage of customers who make a transaction between one month and the next.\n{br}{br}This ratio shows the company's ability to generate customers who buy on a recurring basis from month to month.\n{br}{br}",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How is calculated the <b>% of retention</b>?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "prestashop": {
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Prestashop account</b>",
+    "header": "<b>Prestashop</b> permissions",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "quickbooks": {
+    "header": "<b>Quickbooks</b> permissions"
+  },
+  "revenue_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "p1": "Revenues is the sum of all payments processed through <b>Shopping platforms</b> you have connected to RITMO.",
+    "p2": "It´s a gross metric, without substracting refunds, in order for past data not to be altered.",
+    "p3": "Revenue date refers to the day the client confirmed the order.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How are <b>Revenues</b> calculated?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "ritmo_insights": {
+    "connected_accounts": "Accounts connected to <b>RITMO Insights</b>",
+    "dashboard": "Dashboard",
+    "ltv": "Lifetime Value (<b>LTV</b>)",
+    "score_card": "Scorecard",
+    "to": "to"
+  },
+  "sage": {
+    "header": "<b>Sage</b> permissions"
+  },
+  "sageone": {
+    "header": "<b>Sage Business</b> permissions"
+  },
+  "selectOfferForm": {
+    "growth_capital": "Growth Capital",
+    "invoice_finance": "Invoice Finance",
+    "select_product": "Select a product: "
+  },
+  "sessions_info": {
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "googleanalytics": "We use Google Analytics to calculate daily sessions by adding the views from all of your visits.",
+    "marketing_accounts": "Marketing Accounts",
+    "p1": "This is a metric directly extracted from <b>Google Analytics</b>. If you have connected several views, this refers to the sum of all of them.",
+    "p2": "By default, a <b>Google Analytics</b> session is defined as the time a user interacts with the website with a maximum inactivity period of 30 minutes.",
+    "p3": "After 30 minutes of inactivity, any visualized page by the same user will be treated as a new session.",
+    "title": "How are <b>Sessions</b> calculated?",
+    "title_list_0": "Available <b>Marketing</b> Accounts"
+  },
+  "shopify": {
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Shopify account</b>",
+    "header": "<b>Shopify</b> permissions",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "status": "Status",
+  "stripe": {
+    "account_connected": "Your <b>{account}</b> is now connected",
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Stripe account</b>",
+    "header": "<b>Stripe</b> permissions"
+  },
+  "table_loader": {
+    "go_to_page": "Go to page",
+    "header": {
+      "amount": "Amount",
+      "company_name": "Company Name",
+      "date": "Date",
+      "id": "ID",
+      "invoice": "Invoice",
+      "period": "Period",
+      "status": "Status"
+    },
+    "records": "Records",
+    "records_found": "Records found",
+    "select_filter": {
+      "all": "All",
+      "canceled": "Cancelled",
+      "dispute_lost": "Dispute lost",
+      "disputed": "Disputed",
+      "failed": "Failed",
+      "notified": "Notified",
+      "processing": "Processing",
+      "succeeded": "Succeeded",
+      "to_review": "Under review"
+    },
+    "show": "show"
+  },
+  "transactions_info": {
+    "amazonseller": "Only order data is used. Note refunds are also included in the calculation.",
+    "connect": "to connect to the missing accounts in order to maximize the performance of <b>RITMO Insights</b>.",
+    "go_to": "Go to",
+    "magento": "Only order data is used. Note refunds are also included in the calculation.",
+    "p1": "Transactions include the sum of all orders processed through the shopping platforms you have connected to <b>RITMO</b>.",
+    "p2": "It´s a gross metric, without substracting refunds, in order for past data not to be altered.",
+    "p3": "Transaction date refers to the day the client confirmed the order.",
+    "prestashop": "Only order data is used. Note refunds are also included in the calculation.",
+    "sales_accounts": "Shopping Platforms",
+    "shopify": "Only order data is used. Note refunds are also included in the calculation.",
+    "stripe": "Only completed payments data is used to calculate returns on investments. Note refunds are also included in the calculation.",
+    "title": "How are <b>Transactions</b> calculated?",
+    "title_list_0": "Available <b>Shopping</b> platforms:",
+    "woocommerce": "Only order data is used. Note refunds are also included in the calculation."
+  },
+  "validator": {
+    "company_details": "Company details",
+    "contract_signal": "Contract signature",
+    "offer": "My offer",
+    "verification_admins": "Admins verification"
+  },
+  "woocommerce": {
+    "content1": "Add all of your accounts so we can prepare the highest possible offer.",
+    "content2": "Add another <b>Woocommerce account</b>",
+    "header": "<b>Woocommerce</b> permissions",
+    "shop_connected": "Your shop <b>{shop}</b> is connected"
+  },
+  "xero": {
+    "header": "<b>Xero</b> permissions"
+  },
+  "zoho_books": {
+    "header": "<b>ZohoBooks</b> permissions"
+  }
+}

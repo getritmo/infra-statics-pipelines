@@ -1,0 +1,449 @@
+.ltv {
+  &__table {
+    display: inline-table;
+    flex-direction: column;
+    width: 100%;
+
+    &--detail {
+      @include ff_headline();
+      //border-left: 2px solid #ccc;
+      font-size: 14px;
+      left: 0;
+      padding: 0 0 6px;
+      position: relative;
+      top: 0;
+      white-space: nowrap;
+
+      @include respond-to(mobile) {
+        margin: 0 0 0 152px;
+      }
+    }
+
+    &--container {
+      display: flex;
+      overflow: auto;
+      position: relative;
+
+      @include respond-to(mobile) {
+        margin-left: -10px;
+        width: calc(100% + 30px);
+      }
+      @include respond-to(desktop) {
+        max-width: calc(100vw - 381px);
+      }
+    }
+
+    &--wrapper {
+      &:nth-child(1) {
+        border-right: 2px solid #ccc;
+
+        .ltv__table {
+          border-right: 2px solid #fff;
+        }
+      }
+
+      &:nth-child(2) {
+        border-left: 2px solid white;
+        overflow: auto;
+        overflow-y: visible;
+        padding-right: 20px;
+
+        @include respond-to(desktop) {
+          max-width: calc(100vw - 510px);
+          //padding-right: 70px;
+        }
+      }
+    }
+  }
+
+  &__row {
+    display: table-row;
+    height: 6px;
+    position: relative;
+    width: 100%;
+
+    &:hover {
+      .ltv__cell {
+        &::after {
+          background: rgba(0, 0, 0, .05);
+          opacity: 1;
+        }
+      }
+    }
+
+    &.data_0 {
+      .acquisition,
+      .value {
+        border-top: 2px solid transparent;
+      }
+    }
+  }
+
+  &__cell {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    display: table-cell;
+    font-size: 13px;
+    height: 50px;
+    line-height: 16px;
+    min-width: 70px;
+    padding: 0 10px;
+    position: relative;
+    vertical-align: middle;
+
+    &.active {
+      &::after {
+        background: rgba(0, 0, 0, .05);
+        opacity: 1;
+      }
+    }
+
+    &.first {
+      border: 0;
+      min-width: 5px;
+      padding: 0 3px;
+
+      &::before {
+        border-left: 1px solid #ccc;
+        border-left: 2px solid #ccc;
+        content: '';
+        height: calc(100% + 19px);
+        left: 2px;
+        position: absolute;
+        top: -19px;
+      }
+    }
+
+    &_label {
+      display: table-caption;
+      left: 20px;
+      position: absolute;
+      top: -16px;
+      white-space: nowrap;
+
+      &:nth-child(1) {
+        min-width: 340px;
+        width: 340px;
+      }
+
+      &:nth-child(2) {
+        margin-left: 912px;
+        min-width: 0;
+        width: auto;
+      }
+    }
+
+    &.label {
+      @include ff_headline();
+      background: #eee;
+      border: 2px solid white;
+      font-size: 14px;
+      text-align: center;
+
+      @include respond-to(mobile) {
+        font-size: 11px;
+      }
+
+      &.active {
+        background: #fff;
+      }
+
+      .labels & {
+        &:first-child {
+          max-width: 105px;
+          min-width: 105px;
+
+          @include respond-to(mobile) {
+            max-width: 90px;
+            min-width: 90px;
+          }
+        }
+      }
+
+      &.kpis {
+        background: #ccc;
+        padding-right: 0;
+
+        &.active {
+          background: #fff;
+        }
+      }
+    }
+
+    &.acquisition,
+    &.value {
+      @include ff_headline();
+      border: 0;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      border-top: 2px solid transparent;
+      font-size: 14px;
+      padding: 0;
+      position: relative;
+      text-align: center;
+
+      &::after {
+        background: rgba(0, 0, 0, .01);
+        //border: 1px solid #eee;
+        border-radius: 4px;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        right: 2px;
+        top: 0;
+        z-index: -1;
+      }
+
+
+      &.active {
+        &::after {
+          background: rgba(0, 0, 0, .05);
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        &::after {
+          background: rgba(255, 255, 255, .4);
+          opacity: 1;
+        }
+      }
+    }
+
+    &.acquisition {
+      border-right: 2px solid transparent;
+    }
+
+    &.value {
+      border-left: 2px solid transparent;
+    }
+
+    &--container {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      justify-content: center;
+
+      &-symbol {
+        height: 100%;
+        padding-right: 6px;
+        padding-top: 4px;
+      }
+    }
+
+    &.color {
+      @include ff_headline();
+      background: #fcfcfc;
+      border: 2px solid white;
+      font-size: 12px;
+      padding: 0;
+      position: relative;
+      text-align: center;
+
+      &.active {
+        &::after {
+          background: rgba(0, 0, 0, .05);
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        background: rgba(255, 255, 255, 0);
+        bottom: 1px;
+        content: '';
+        cursor: pointer;
+        left: 1px;
+        opacity: 0;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        transition: all 0.3s;
+      }
+
+      &:hover {
+        &::after {
+          background: rgba(255, 255, 255, 0.4);
+          opacity: 1;
+        }
+      }
+    }
+
+    &.color_20 {
+      background: #0f4e89;
+      color: white;
+    }
+
+    &.color_19 {
+      background: #1c588f;
+      color: white;
+    }
+
+    &.color_18 {
+      background: #296095;
+      color: white;
+    }
+
+    &.color_17 {
+      background: #34699b;
+      color: white;
+    }
+
+    &.color_16 {
+      background: #4072a1;
+    }
+
+    &.color_15 {
+      background: #4c7ba7;
+      color: white;
+    }
+
+    &.color_14 {
+      background: #5884ad;
+      color: white;
+    }
+
+    &.color_13 {
+      background: #648cb3;
+      color: white;
+    }
+
+    &.color_12 {
+      background: #7095b9;
+      color: white;
+    }
+
+    &.color_11 {
+      background: #7d9ebf;
+      color: white;
+    }
+
+    &.color_10 {
+      background: #88a7c3;
+    }
+
+    &.color_9 {
+      background: #94b0ca;
+    }
+
+    &.color_8 {
+      background: #a0b9d0;
+    }
+
+    &.color_7 {
+      background: #acc2d6;
+    }
+
+    &.color_6 {
+      background: #b8cadc;
+    }
+
+    &.color_5 {
+      background: #c4d3e2;
+    }
+
+    &.color_4 {
+      background: #d0dce8;
+    }
+
+    &.color_3 {
+      background: #dce5ee;
+    }
+
+    &.color_2 {
+      background: #e8eef4;
+    }
+
+    &.color_1 {
+      background: #f4f7fa;
+    }
+
+    &.color_0 {
+      background: #fff;
+
+      &::after {
+        border: 1px solid #eee;
+        border-radius: 4px;
+        border-radius: 0;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    &.color_00 {
+      background: #f9f9f9;
+    }
+
+    &.with-help {
+      padding-right: 0;
+    }
+  }
+
+  &__header {
+    &--help {
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 100%;
+      cursor: pointer;
+      display: inline-block;
+      height: 15px;
+      margin-left: 6px;
+      min-width: 15px;
+      position: relative;
+      transition: all 0.3s;
+      width: 15px;
+
+      @include respond-to(hover) {
+        background: #666;
+        border: 1px solid #666;
+
+        &::before {
+          color: #fff;
+        }
+      }
+
+      &.dark {
+        background: white;
+        border: 1px solid #eee;
+
+        &:hover {
+          background: #ccc;
+
+          &::before {
+            color: white;
+          }
+        }
+
+        &::before {
+          color: #999;
+        }
+      }
+
+      &::before {
+        @include ff_headline();
+        align-items: center;
+        color: #ccc;
+        content: '?';
+        display: flex;
+        font-size: 10px;
+        justify-content: center;
+        line-height: 15px;
+        position: absolute;
+        text-align: center;
+        width: 15px;
+
+        @include respond-to(desktop) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

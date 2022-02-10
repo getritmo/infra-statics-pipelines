@@ -1,0 +1,216 @@
+{
+  "applied": {
+    "accounts": "Connect <b>your accounts</b>",
+    "creation_success": "<b>Your account</b> was set up correctly.",
+    "insight": {
+      "text1": "Welcome to Ritmo Insights, the <b>growth analytics platform</b> that will help you make better business decisions.",
+      "text2": "To start using Ritmo Insights just <b>connect your marketing and sales accounts</b>."
+    },
+    "prepare_offer": "Get started by connecting your accounts so we can prepare your personalized offer.",
+    "ritmo_insights": "Try {ri} now",
+    "ritmo_insights_explanation": "<b>RITMO</b> is a platform that provides the tools to turbo charge the <b>growth of digital businesses</b>",
+    "ritmo_insights_insights": "And in a matter of minutes you'll be able to use {ri}, the growth analytics platform that will empower your decisions with data.",
+    "ritmo_insights_text_1": "At the moment we only finance companies registered in <b>Spain</b>, <b>UK</b> and/or <b>Mexico</b> with monthly revenues of more than €10.{br}{br}We will let you know when we have a financial product tailored to your needs.{br}{br}In the meantime, you can use {ri}, our growth analytics platform for e-commerce and marketplaces, <b>it is 100% free.</b>",
+    "subtitle": "Our team will be in touch shortly.",
+    "title": "Welcome onboard"
+  },
+  "company_info": {
+    "breadcrumb": {
+      "current": "Business information",
+      "previous": "My offer request"
+    },
+    "complete_details": "Complete your <b>business</b> details",
+    "confirm_details": "Confirm your business details in order to receive a formal offer.",
+    "edit_info": "Edit business information",
+    "title": "Your business information - RITMO App"
+  },
+  "company_item": {
+    "banking_accounts": "<b>Openbanking</b> Accounts",
+    "contract": {
+      "accepted": "Accepted contract",
+      "chooseFile": "Choose file",
+      "pending": "Signature pending"
+    },
+    "contract_signal": "<b>Contract</b> Signature",
+    "direct_debit": "<b>Direct Debit</b>",
+    "download_contract": "Download Contract",
+    "download_offer": "Download Offer",
+    "finance_accounts": "<b>Finance Accounts</b>",
+    "marketing_accounts": "<b>Marketing Accounts</b>",
+    "no_banking": "No <b>Openbanking</b> Accounts connected yet",
+    "no_direct_debit": "No Direct Debit",
+    "no_files": "No uploaded files yet",
+    "offer": {
+      "accepted": "Accepted offer"
+    },
+    "offers": "<b>Your Offer</b>",
+    "sales_accounts": "<b>Shopping Platforms</b>",
+    "text1": "Your direct debit has been <b>correctly set up</b>.",
+    "text2": "<b>Weekly repayments</b> will be debited on your account ending <b>{last_four_digits}</b>.",
+    "text3": "Your personal reference is <b>{mandate_reference}</b>.",
+    "verification_admins": "<b>Admins</b> Verification"
+  },
+  "contract_signal": {
+    "breadcrumb": {
+      "current": "Contract Signature",
+      "previous": "My offer request"
+    },
+    "text1": "We are still <b>missing a few details</b>",
+    "text10": "Continue",
+    "text2": "Please complete the below missing tasks so we can prepare your offer.",
+    "text3": "<b>Your offer</b> will be ready in 24 hours",
+    "text4": "We will send your contract via Docusign for your signature.",
+    "text5": "<b>Your contract is ready :)</b>",
+    "text6": "This is your contract with Ritmo to be signed.",
+    "text7": "<b>Your contract is ready :)</b>",
+    "text8": "This is your deployment contract signed by Ritmo.",
+    "text9": "Download Contract",
+    "title": "<b>Contract</b> Signature"
+  },
+  "direct_debit": {
+    "breadcrumb": {
+      "current": "Direct debit",
+      "previous": "My offer request"
+    },
+    "text1": "Direct <b>debit</b>",
+    "text10": "Direct debit <b>correctly set up</b>",
+    "text11": "Your direct debit has been <b>correctly set up</b>.",
+    "text12": "<b>Weekly repayments</b> following marketing advances will be debited on account ending <b>{last4digits}</b>.",
+    "text13": "Your personal reference is <b>{mandate_reference}</b>.",
+    "text14": "Please reach out to us via email should you have any questions.",
+    "text2": "We are still <b>missing a few details</b>",
+    "text3": "Please complete the below missing tasks so we can set up the direct debit.",
+    "text4": "Authorize <b>direct debit</b>",
+    "text5": "The <b>direct debit</b> couldn´t be set up correctly.",
+    "text6": "Please give it another try.",
+    "text7": "In order to complete your offer request, please authorize Ritmo to set up the direct debit.",
+    "text8": "Authorize",
+    "text9": "Please reach out to us via email should you have any questions."
+  },
+  "finance_accounts": {
+    "breadcrumb": {
+      "current": "Finance accounts",
+      "previous": "My offer request"
+    },
+    "text1": "Connect all of your <b>finance accounts</b>",
+    "text2": "In order to <b>determine your eligibility</b> and make the best possible financing offer, we will need to <b>connect your finance accounts and upload some documents</b>"
+  },
+  "initial": {
+    "text1": "Login error",
+    "text2": "You may have logged in differently in the past.. Auth0.",
+    "text3": "<b>Log out</b>"
+  },
+  "marketing_accounts": {
+    "breadcrumb": {
+      "current": "Marketing Accounts",
+      "previous": "My offer request"
+    },
+    "subtitle": "We connect to your <b>marketing accounts</b> to come up with your expected return on investments and present you the <b>best possible offer</b>.",
+    "title": "Connect all your <b>marketing accounts</b>"
+  },
+  "my_advances": {
+    "advance_amount": "Advance amount",
+    "amount_due": "Amount due",
+    "breadcrumb": {
+      "previous": "My Advances"
+    },
+    "commission_rate": "Commision rate",
+    "deployment_date": "Deployment date",
+    "due_date": "Due Date",
+    "no_repayments": "There are no payments with this deployment",
+    "outstanding": {
+      "text": "The <b>outstanding</b> or <b>remaining balance</b> of your advance is <b>{amount}</b>",
+      "title": "Outstanding"
+    },
+    "page_title": "Advance investment in",
+    "processing": {
+      "text_2": "Normally repayments take up to <b>4 working days</b> to process.",
+      "text_plural": "You have <b>{paymentsAmount} repayment</b> that is <b>processing</b> with a <b>total amount of {amount}</b>",
+      "text_single": "You have <b>{paymentsAmount} repayment</b> that is <b>processing</b> with a <b>total amount of {amount}</b>",
+      "title": "Processing"
+    },
+    "refunded": {
+      "title": "Total refund to date",
+      "value": "You have a total of <b>{paymentsAmount} successful processed repayments</b> with a <b>total refund amount of {amount}</b>"
+    },
+    "repayments": "Your <b>Repayments</b>",
+    "revenue": "Revenue",
+    "revenue_share": "Revenue Share",
+    "start_date": {
+      "title": "Monitoring Start Date",
+      "tooltip": "The revenue monitoring start date is th date where we tart monitoring your revenues to calculate the repayments"
+    },
+    "text1": "My Advance",
+    "text1_inventory": "Marketing Advance ",
+    "text1_marketing": "Marketing Advance ",
+    "title": "My Advances",
+    "total_due": "Total Due"
+  },
+  "not_applied": {
+    "text1": "THANK YOU FOR YOUR INTEREST",
+    "text2": "<b>Unfortunately, you don´t meet our eligibility criteria at this stage</b>",
+    "text3": "At this stage we only have capabilities to finance business with monthly sales of 10K or more.",
+    "text4": "Stay tunned as we hope to be able to lower this threshold very soon",
+    "text5": "At this stage we can only finance companies registered in Spain, UK, Netherlands, Sweden, Denmark and Mexico.",
+    "text6": "Stay tunned as we will be expanding to most other geographies very soon.",
+    "text7": "We look forward to being able to work with you very soon.",
+    "text8": "Back to home page"
+  },
+  "offer": {
+    "breadcrumb": {
+      "current": "My offer",
+      "previous": "My offer request"
+    },
+    "text1": "My <b>offer</b>",
+    "text10": "Download offer",
+    "text11": "Continue",
+    "text12": "Accept Offer",
+    "text2": "We are still <b>missing a few details</b>",
+    "text3": "Please complete the below missing tasks so we can prepare your offer.",
+    "text4": "We are currently reviewing <b>the information provided</b>",
+    "text5": "Your offer will be shown here. You will receive an email as soon as it is ready.",
+    "text6": "Offer <b>accepted</b>",
+    "text7": "We have received your offer confirmation.",
+    "text8": "These offer are still missing <b>your confirmation</b>",
+    "text9": "See here your personalized offer based on your business performance analysis."
+  },
+  "registration": {
+    "completing_registration": "Completing registration...",
+    "link1": "https://www.getritmo.com/en/privacy-policy",
+    "link2": "https://www.getritmo.com/en/legal-notice",
+    "link3": "https://www.getritmo.com/en/cookie-policy",
+    "text1": "Privacy Policy",
+    "text2": "Legal Notice",
+    "text3": "Cookie Policy"
+  },
+  "sales_accounts": {
+    "breadcrumb": {
+      "current": "Shopping Platforms",
+      "previous": "My offer request"
+    },
+    "text1": "Connect all your <b>Shopping Platforms</b>",
+    "text2": "We connect to your <b>shopping and payments platforms</b> and project your potential growth in order to prepare the <b>best possible offer</b>."
+  },
+  "validating": {
+    "text1": "THANK YOU FOR YOUR INTEREST",
+    "text2": "<b>Unfortunately, you don´t meet our eligibility criteria at this stage</b>",
+    "text3": "At this stage we only have capabilities to finance business with monthly sales of 10K or more",
+    "text4": "Stay tunned as we hope to be able to lower this threshold very soon",
+    "text5": "Meanwhile, we would love you to get in touch if your sales keep growing.",
+    "text6": "Back to home page"
+  },
+  "verification_admins": {
+    "breadcrumb": {
+      "current": "Verificación de Administradores",
+      "previous": "My offer request"
+    },
+    "text1": "<b>Admins</b> verification",
+    "text2": "We are still <b>missing a few details</b>",
+    "text3": "Please complete the below missing tasks so we can verify the identity of your company´s administrators.",
+    "text4": "We are currently verifying <b>the ownership of your company</b>",
+    "text5": "Our team will shortly send you instructions to verify the ownership of your company.",
+    "text6": "Company ownership <b>correctly verified</b>",
+    "text7": "See here all documentation related to your company´s owenrship verification.",
+    "text8": "Continue"
+  }
+}

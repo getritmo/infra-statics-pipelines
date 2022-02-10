@@ -1,0 +1,119 @@
+.link {
+  @include ff_text_bold();
+  color: $blueColor;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  text-decoration: none;
+
+  &:hover {
+    color: $blueColorHover;
+    text-decoration: none;
+
+    &:after {
+      width: 100%;
+      background: $blueColorHover;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background: $blueColor;
+    height: 1px;
+    width: 0;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s;
+  }
+
+  &__next {
+    &:before {
+      content: ">";
+      position: absolute;
+      right: -20px;
+      top: 0;
+    }
+    &:after {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  &__orange {
+    color: $orange;
+
+    &:after {
+      background-color: $orange;
+    }
+
+    @include respond-to(hover) {
+      color: $orange;
+
+      &:after {
+        background-color: $orange;
+      }
+    }
+  }
+
+  &__full {
+    &:after {
+      left: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      &:after {
+        width: 0;
+      }
+    }
+  }
+
+  &__add {
+    padding-left: 20px;
+
+    &:before {
+      content: "";
+      background-image: url("/images/svg/add-icon.svg");
+      background-size: cover;
+      left: 0;
+      height: 12px;
+      position: absolute;
+      transition: opacity 0.3s;
+      top: 4px;
+      width: 12px;
+      z-index: 2;
+    }
+
+    &:after {
+      left: 20px;
+      right: 0;
+      width: calc(100% - 25px);
+    }
+  }
+
+  &__back {
+    &:before {
+      border-left: 2px solid $blueColor;
+      border-top: 2px solid $blueColor;
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-left: 4px;
+      margin-right: 5px;
+      transform: rotate(-45deg);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    &:hover {
+      &:before {
+        // transform: translateX(-5px) rotate(-45deg);
+      }
+      &:after {
+        width: calc(100% - 15px);
+      }
+    }
+  }
+}

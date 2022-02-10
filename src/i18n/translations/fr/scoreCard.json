@@ -1,0 +1,7 @@
+{
+  "score_card": {
+    "revenue_growth": "<b>Croissance des revenus</b> (6 mois){br}(Revenus des 6 derniers mois / Revenus des 6 mois précédents)",
+    "revenue_growth_last_year": "<b>Croissance des revenus</b> (par rapport à l'année dernière){br}(6 derniers mois par rapport aux 6 derniers mois de l'année précédente)",
+    "revenue_trend": "Évolution des revenus"
+  }
+}

@@ -1,0 +1,3 @@
+[submodule ".github"]
+	path = .github
+	url = https://github.com/getritmo/infra-statics-pipelines.git

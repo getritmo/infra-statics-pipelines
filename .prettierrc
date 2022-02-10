@@ -1,0 +1,17 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "parser": "flow",
+  "semi": false,
+  "useTabs": false,
+  "editor.formatOnSave": true,
+  "stylelintIntegration": true,
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}

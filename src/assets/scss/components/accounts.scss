@@ -1,0 +1,1234 @@
+.accounts {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 60px;
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 60px;
+  }
+
+  @include respond-to(desktop) {
+    display: inline-block;
+    grid-template-columns: 0;
+  }
+
+  &__title-accounts {
+    @include ff_headline();
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+    b {
+      @include ff_headline();
+    }
+  }
+
+  &__title {
+    @include ff_text_bold();
+    font-size: 18px;
+    max-width: 590px;
+
+    b {
+      @include ff_text_bold();
+      color: $blueColor;
+    }
+
+    .admin & {
+      margin-top: 10px;
+    }
+  }
+  
+  &__section--openbanking {
+    max-width: 850px;
+  }
+
+  &__section {
+    margin-top: 50px;
+    max-width: 850px;
+
+    @include respond-to(desktop) {
+      margin-top: 50px;
+    }
+
+    &--group {
+      margin-top: 48px;
+    }
+
+    &--title {
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      line-height: 20px;
+      width: 100%;
+
+      &-text {
+        max-width: 85%;
+      }
+    }
+
+    &--finance {
+      margin-top: 0;
+      margin-left: -20px;
+      width: calc(100% + 60px);
+      max-width: 850px;
+      padding: 0 20px;
+
+      @include respond-to(desktop) {
+        padding: 0;
+        margin-left: 0;
+        width: 100%;
+      }
+
+      &-buttons {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+      }
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-files-group {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 24px;
+        width: 100%;
+
+        &.admin-view {
+          margin-top: 24px;
+
+          @include respond-to(desktop) {
+            margin-top: 16px;
+          }
+        }
+
+        &.user-view {
+          margin-top: 12px;
+         max-width: 100%;
+         width: 100%; 
+         min-width: 690px;
+          padding: 24px 0;
+        }
+      }
+
+      &-files-empty {
+        margin-left: -20px;
+        text-align: left;
+        margin-top: 20px;
+        width: calc(100% + 40px);
+        
+        @include respond-to(tablet) {
+          margin-left: 0;
+        } 
+      }
+
+      &-files {
+        @include ff_headline();
+        background: #f9f9f9;
+        background-color: #f9f9f9;
+        border-bottom: 1px dashed #eee;
+        border-top: 1px dashed #eee;
+        color: #000;
+        font-size: 14px;
+        max-width: 850px;
+        min-height: 60px;
+        padding: 20px;
+        width: 100%;
+  
+        @include respond-to(desktop) {
+          font-size: 16px;
+          padding: 30px 20px;
+        }
+  
+        b {
+          @include ff_headline();
+        }
+
+        &.user-view {
+          align-items: center;
+          background-color: transparent;
+          border-width: 0;
+          display: flex;
+          margin-bottom: 24px;
+          padding: 0;
+
+          @include respond-to(desktop) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .admin & {
+      margin-top: 20px;
+      overflow: auto;
+    }
+
+    .table__grid & {
+      max-width: 10000px;
+    }
+
+    &.admin {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    &.mobile-view {
+      display: flex;
+      width: 100%;
+
+      @include respond-to(desktop) {
+        display: none;
+      }
+    }
+
+
+    &.desktop-view {
+      display: none;
+
+      @include respond-to(desktop) {
+        display: block;
+      }
+    }
+
+    &.finance {
+      border-top: 1px solid #ccc;
+      margin-top: 0;
+      padding-top: 30px;
+    }
+
+
+
+    .btn-secondary {
+      min-width: 100%;
+
+      @include respond-to(tablet) {
+        min-width: 150px;
+      }
+
+      span {
+        letter-spacing: -.2px;
+      }
+    }
+  }
+
+  &__submit {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+
+    @include respond-to(tablet) {
+      align-items: center;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 50px;
+    }
+
+    @include respond-to(desktop) {
+      padding-left: 380px;
+      padding-right: 40px;
+    }
+    @include respond-to(desktop) {
+      padding-left: 500px;
+    }
+
+    .checkbox__container {
+      max-height: 60px;
+      overflow: hidden;
+      transition: all 0.3s;
+      /*min-height: 36px;*/
+
+      @include respond-to(desktop) {
+        align-items: center;
+      }
+
+      &.disabled {
+        max-height: 0;
+        min-height: 0;
+        opacity: 0;
+      }
+
+      label {
+        @include respond-to(mobile) {
+          margin-bottom: 10px;
+          padding-top: 0;
+        }
+      }
+    }
+
+    .btn {
+      margin: 0;
+    }
+
+    .checkbox__container label {
+      @include ff_text();
+      font-size: 14px;
+
+      @include respond-to(desktop) {
+        font-size: 15px;
+      }
+    }
+
+    .btn-secondary {
+      min-width: 100%;
+
+      @include respond-to(tablet) {
+        min-width: 150px;
+
+        span {
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  &__connected {
+    border-top: 1px solid transparent;
+    margin: 5px 0 0;
+    max-height: 1000px;
+    padding-top: 5px;
+    position: relative;
+    transition: all 0.3s;
+
+    @include respond-to(tablet) {
+      background: #fff;
+    }
+
+    & + .accounts__connected {
+      border-top: 1px solid #eee;
+    }
+
+    &.hidden {
+      margin: 0;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    &.transparent {
+      max-height: 0;
+      opacity: 0.3;
+      overflow: hidden;
+    }
+  }
+
+  &__no-accounts {
+    @include ff_headline();
+    background: #f9f9f9;
+    border-bottom: 1px dashed #eee;
+    border-top: 1px dashed #eee;
+    color: #000;
+    font-size: 14px;
+    padding: 20px;
+    
+    @include respond-to(tablet) {
+      text-align: center;
+    }
+    
+    @include respond-to(desktop) {
+      font-size: 16px;
+      padding: 30px 20px;
+    }
+
+    b {
+      @include ff_headline();
+    }
+  }
+
+  &__manual-list {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include respond-to(desktop) {
+      display: inline-block;
+      grid-template-columns: 0;
+      max-width: 840px;
+    }
+  }
+
+  &__list {
+    margin-left: -20px;
+    max-width: 850px;
+    width: calc(100% + 40px);
+
+    @include respond-to(tablet) {
+      border-radius: 10px;
+      margin-left: 0;
+      padding: 0;
+      width: 100%;
+
+      &.banks {
+        background: transparent;
+        padding: 0;
+      }
+
+    }
+    
+    &:first-child {
+      &.desktop-view {
+        border-bottom: 1px solid #999;
+      }
+    }
+    
+    &.user-finance-view {
+      border-radius: 0;
+      border-bottom: 1px dashed #ccc;
+      background: #f9f9f9;
+      border-top: 1px dashed #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      margin-bottom: 24px;    
+
+      @include respond-to(tablet) {
+        border-left: 1px dashed #ccc;
+        border-right: 1px dashed #ccc;
+        border-radius: 10px;
+        padding: 20px 30px;
+      }
+    }
+
+    &.banks {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .admin & {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    &--round {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      display: inline-block;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      padding: 0;
+      position: relative;
+      transition: all 0.3s;
+
+      @include  respond-to(desktop) {
+        margin-bottom: 15px;
+        margin-right: 15px;
+      }
+
+      &.transparent {
+        opacity: 0.3;
+      }
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    &--img {
+      margin: 10px;
+      max-width: 70px;
+      min-height: 70px;
+
+      &.openbanking_uk {
+        object-fit: contain;
+      }
+    }
+
+    &--remove {
+      background: #eee;
+      border: 0;
+      border-radius: 12px;
+      cursor: pointer;
+      line-height: 0;
+      outline: none;
+      padding: 7px;
+      position: absolute;
+      right: 3px;
+      top: 4px;
+
+      @include  respond-to(hover) {
+        transform: scale(1.2);
+      }
+
+      .delete-icon {
+        margin: 0;
+      }
+    }
+
+    &--item {
+      align-items: center;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      min-height: 49px;
+      position: relative;
+      // transition: all 0.3s ease-in-out;
+      width: 100%;
+      z-index: 1;
+
+      @include respond-to(hover) {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        z-index: 2;
+      }
+
+      + ul {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--spacer {
+      background-image: url(/images/svg/accounts-spacer-icon.svg);
+      background-size: cover;
+      display: inline-block;
+      height: 10px;
+      position: absolute;
+      right: 10px;
+      top: 4px;
+      width: 10px;
+    }
+
+    &--views {
+      animation: 0.9s fadein;
+      display: flex;
+
+      @include respond-to(desktop) {
+        padding-left: 160px;
+      }
+
+      &:first-child {
+        .accounts__list--views--container {
+          border-top: 0;
+        }
+      }
+
+      &--ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      &--container {
+        @include ff_text();
+        border-top: 1px solid #eee;
+        color: #000;
+        display: flex;
+        font-size: 12px;
+        justify-content: space-between;
+        letter-spacing: -0.14px;
+        padding: 15px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+          padding: 15px 10px;
+        }
+
+        .view,
+        .property,
+        .account {
+          display: inline-block;
+          max-width: 33.33%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          text-transform: uppercase;
+          white-space: nowrap;
+          width: 100%;
+        }
+
+        .property,
+        .account {
+          padding-right: 30px;
+          position: relative;
+        }
+
+        .view {
+          text-align: right;
+          text-transform: none;
+        }
+      }
+    }
+
+    &--sync {
+      @include ff_text();
+      color: #000;
+      font-size: 10px;
+      letter-spacing: -0.14px;
+      line-height: 16px;
+      max-width: 40px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+
+      @include  respond-to(tablet) {
+        max-width: 100%;
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      @include  respond-to(mobile) {
+        &:hover {
+          .help {
+            opacity: 1;
+          }
+        }
+      }
+
+      &--img {
+        margin-right: 10px;
+        vertical-align: middle;
+        width: 13px;
+
+        &--animated {
+          animation: rotation 2s infinite;
+          margin-right: 10px;
+          vertical-align: middle;
+          width: 13px;
+        }
+      }
+    }
+
+    &--name {
+      @include ff_text_bold();
+      color: #000;
+      font-size: 13px;
+      letter-spacing: -0.14px;
+      overflow: hidden;
+      pointer-events: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    &--actions {
+      align-items: center;
+      cursor: pointer;
+      display: inline-flex;
+      height: 47px;
+      justify-content: space-between;
+      min-width: 48px;
+      padding: 0 15px 0 10px;
+      position: relative;
+      width: 68px;
+
+      @include  respond-to(desktop) {
+        padding: 0 10px;
+        width: 80px;
+      }
+
+      @include respond-to(hover) {
+        .accounts__list--actions--items {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      @include respond-to(desktop) {
+        padding: 0 13px;
+        width: 62px;
+      }
+
+      &:hover {
+        .accounts__list--actions--items {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+
+      span {
+        background: #ccc;
+        border-radius: 10px;
+        display: inline-block;
+        height: 5px;
+        transition: all 0.3s;
+        width: 5px;
+      }
+
+      &--items {
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        bottom: calc(50% - -20px);
+        list-style: none;
+        margin: 0;
+        opacity: 0;
+        padding: 0 10px;
+        pointer-events: none;
+        position: absolute;
+        right: 10px;
+        transition: all 0.3s;
+
+        @include respond-to(hover) {
+          opacity: 1;
+          pointer-events: auto;
+        }
+
+        @include respond-to(desktop) {
+          right: 0;
+        }
+
+        &::after {
+          background: white;
+          border-bottom: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          bottom: -6px;
+          content: '';
+          height: 10px;
+          position: absolute;
+          right: 9px;
+          transform: rotate(-45deg);
+          width: 10px;
+
+          @include respond-to(desktop) {
+            right: 19px;
+          }
+        }
+      }
+
+      &--item {
+        letter-spacing: 0;
+        line-height: 10px;
+        padding: 0;
+        position: relative;
+
+        &:first-child {
+          &::after {
+            opacity: 0;
+          }
+        }
+
+        &::after {
+          border-top: 1px dashed #ccc;
+          content: '';
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+
+        button {
+          @include ff_text_bold();
+          align-items: center;
+          background: transparent;
+          border: 0;
+          color: #666;
+          cursor: pointer;
+          display: flex;
+          font-size: 10px;
+          justify-content: flex-end;
+          letter-spacing: 0;
+          line-height: 0;
+          outline: none;
+          padding: 10px 0;
+          position: relative;
+          text-decoration: none;
+          transition: all 0.3s;
+
+          @include respond-to(hover) {
+            color: black;
+
+            &::after {
+              right: 0;
+            }
+          }
+
+          &::after {
+            border-bottom: 1px dashed #ccc;
+            bottom: -4px;
+            content: '';
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            right: auto;
+            transition: all 0.3s;
+          }
+
+          div {
+            pointer-events: none;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      &:hover {
+        span {
+          background: #666;
+        }
+      }
+    }
+
+    &--status {
+      @include ff_text();
+      color: #000;
+      font-size: 10px;
+      font-weight: bold;
+      letter-spacing: -0.14px;
+      margin-bottom: 0;
+      max-width: calc(20% - 47px);
+      text-align: center;
+      width: 100%;
+
+      @include respond-to(desktop) {
+        font-size: 12px;
+        max-width: 40px;
+      }
+
+      @include respond-to(hover) {
+        .help {
+          opacity: 1;
+        }
+      }
+
+      span {
+        display: none;
+      }
+
+      &::before {
+        background-size: cover;
+        content: '';
+        display: inline-block;
+        height: 17px;
+        margin-right: 6px;
+        vertical-align: middle;
+        width: 17px;
+      }
+
+      .help {
+        color: black;
+        font-weight: 100;
+
+        &::after {
+          right: 64px;
+        }
+      }
+
+      &.source_pending {
+        color: $orange;
+
+        &::before {
+          background-image: url(/images/svg/status-pendent-icon.svg);
+        }
+      }
+
+      &.connected {
+        color: $green;
+
+        &::before {
+          background-image: url(/images/svg/status-connected-icon.svg);
+        }
+      }
+
+      &.error {
+        color: $red;
+
+        &::before {
+          background-image: url(/images/svg/status-error-icon.svg);
+        }
+      }
+    }
+  }
+
+  &__img {
+    height: auto;
+    max-height: 32px;
+    max-width: 60px;
+    width: auto;
+
+    @include respond-to(tablet) {
+      margin: auto;
+      max-height: 23px;
+      max-width: 80px;
+
+      &.googleanalytics {
+        max-height: 29px;
+      }
+    }
+
+    .banks & {
+      max-height: 60px;
+      max-width: 60px;
+
+      @include respond-to(desktop) {
+        max-height: 80px;
+        max-width: 80px;
+      }
+    }
+
+    &.stripe {
+      max-height: 25px;
+
+      @include respond-to(desktop) {
+        max-height: 30px;
+      }
+    }
+
+    &.amazonseller {
+      max-height: 25px;
+
+      @include respond-to(desktop) {
+        max-height: 51px;
+      }
+    }
+
+    &.sage {
+      max-height: 32px;
+
+      @include respond-to(desktop) {
+        max-height: 35px;
+      }
+    }
+
+    &.sageone {
+      max-height: 32px;
+
+      @include respond-to(desktop) {
+        max-height: 35px;
+      }
+    }
+
+    &.quickbooks {
+      max-height: 32px;
+
+      @include respond-to(desktop) {
+        max-height: 40px;
+      }
+    }
+
+    &--container {
+      align-items: center;
+      display: flex;
+      font-size: 14px;
+      justify-content: center;
+      max-width: 102px;
+      padding: 0 10px;
+      pointer-events: none;
+      width: 100%;
+
+      @include respond-to(tablet) {
+        margin-right: 10px;
+        max-width: 160px;
+        width: 36%;
+      }
+
+      @include respond-to(desktop_big) {
+        min-width: 160px;
+        width: 160px;
+      }
+
+      &.openbanking {
+
+        @include respond-to(tablet) {
+          margin-right: 10px;
+          max-width: 160px;
+          width: 36%;
+        }
+
+        @include respond-to(desktop_big) {
+          min-width: 160px;
+          width: 160px;
+        }
+
+        img {
+          max-height: 60px;
+        }
+      }
+    }
+  }
+
+  &__manual {
+    align-items: center;
+    border-radius: 6px;
+    border: 1px dashed #ccc;
+    display: inline-flex;
+    height: 70px;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s;
+    vertical-align: top;
+    width: 100%;
+
+    @include respond-to(desktop) {
+      height: 80px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      max-width: 100%;
+      padding: 0 20px;
+      width: 160px;
+    }
+
+    img {
+      display: inline-block;
+      max-height: 28px;
+      max-width: 120px;
+      transition: all 0.3s;
+    }
+
+    &--text {
+      align-items: baseline;
+      display: inline-flex;
+      flex-direction: column;
+      font-size: 15px;
+      justify-content: center;
+      line-height: 16px;
+    }
+
+    &--image {
+      margin-right: 10px;
+    }
+  }
+
+  &__item {
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0 10px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s;
+    width: 100%;
+
+    @include respond-to(desktop) {
+      height: 80px;
+      max-width: 100%;
+      padding: 0 20px;
+      width: 160px;
+    }
+
+    &--checkbox {
+      display: none;
+
+      &:checked {
+        & + label {
+          background-color: #d6f7b8;
+
+          &::before,
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &::before {
+      border-bottom: 2px solid green;
+      border-left: 2px solid green;
+      content: '';
+      height: 3px;
+      opacity: 0;
+      position: absolute;
+      right: 8px;
+      top: 9px;
+      transform: rotate(-45deg);
+      width: 7px;
+      z-index: 1;
+    }
+
+    &::after {
+      background: white;
+      border-radius: 100%;
+      content: '';
+      height: 15px;
+      opacity: 0;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 15px;
+      z-index: 0;
+    }
+
+    &:hover {
+      background-color: #fff;
+      border: 1px solid #eee;
+      box-shadow: 0 2px 14px rgb(255, 255, 255);
+    }
+
+    &--container {
+      border-radius: 10px;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: middle;
+
+      @include respond-to(desktop) {
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
+    }
+
+    img {
+      display: inline-block;
+      max-height: 28px;
+      max-width: 120px;
+      transition: all 0.3s;
+    }
+
+    // Marketing Accounts
+    &.googleanalytics {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.googleads,
+    &.replaceImage {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.facebookads {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.aas,
+    &.amazonads {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &.bingads {
+      img {
+        max-width: 100%;
+      }
+    }
+
+    // Sales accounts
+    &.stripe {
+      img {
+        max-width: 110px;
+      }
+    }
+
+    &.shopify {
+      img {
+        max-height: 48px;
+      }
+    }
+
+    &.paypal {
+      img {
+        max-width: 110px;
+      }
+    }
+
+    &.amazonseller {
+      img {
+        max-height: 50px;
+      }
+    }
+
+    &.googleplay {
+      img {
+        max-width: 120px;
+      }
+    }
+
+    &.appstore {
+      img {
+        max-width: 120px;
+      }
+    }
+
+    // Finance
+    &.sage {
+      img {
+        max-height: 38px;
+        max-width: 100%;
+      }
+    }
+
+    &.sageone {
+      img {
+        max-height: 42px;
+        max-width: 100%;
+      }
+    }
+
+    &.holded {
+      img {
+        max-height: 24px;
+        max-width: 100%;
+      }
+    }
+
+    &.freshbooks {
+      img {
+        max-height: 50px;
+        max-width: 100%;
+      }
+    }
+
+    &.quickbooks {
+      img {
+        max-height: 50px;
+        max-width: 100%;
+      }
+    }
+
+    &.xero {
+      img {
+        max-height: 42px;
+        max-width: 100%;
+      }
+    }
+
+    &.zohobooks {
+      img {
+        max-height: 32px;
+        max-width: 100%;
+      }
+    }
+
+    &.others {
+      img {
+        max-width: 130px;
+      }
+    }
+  }
+}
+
+.add-view-icon {
+  background-image: url(/images/svg/add-view-icon.svg);
+  background-size: cover;
+  display: inline-block;
+  height: 7px;
+  margin-left: 5px;
+  width: 7px;
+}
+
+.delete-icon {
+  background-image: url(/images/svg/delete-icon.svg);
+  background-size: cover;
+  display: inline-block;
+  height: 7px;
+  margin-left: 5px;
+  width: 7px;
+}

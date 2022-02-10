@@ -1,0 +1,985 @@
+{
+  "UI": {
+    "errors": {
+      "decimalsError": "Utilisez 1 ou 2 décimales",
+      "fileRequired": "Veuillez sélectionner un fichier",
+      "inputRequired": "Veuillez remplir ce champ",
+      "notValidNumber": "Ce numéro n'est pas valide",
+      "optionRequired": "Veuillez choisir une option"
+    }
+  },
+  "accounts": {
+    "accounts_added": "J'ai ajouté tous les comptes de {account_tpe} dans mon entreprise"
+  },
+  "accounts_accounts": {
+    "available_accounts": "Comptes <b>Disponibles</b>",
+    "banking": "Connectez vos <b>comptes bancaires</b>",
+    "banking_connected": "Comptes <b>Bancaires Connectés</b>",
+    "connected_accounts": "Comptes <b> Connectés</b>",
+    "cta_openbanking": "Connectez <b>vos comptes</b>",
+    "finance_access": "L'équipe de <b>RITMO</b> a déjà accès à cette <b>documentation</b>.",
+    "finance_read": "Accès en lecture seule à <b>ritmo_data@getritmo.com</b> ",
+    "finance_shared": "Données <b>financières partagées</b>:",
+    "mkt_access": "L'équipe de <b>RITMO</b> a déjà accès à ces <b>comptes marketing</b> via <b>ritmo_data@getritmo.com</b>.",
+    "sales_access": "L'équipe de <b>RITMO</b> a déjà accès à ces <b>comptes de vente</b> via <b>ritmo_data@getritmo.com</b>.",
+    "upload_bank_statement": "Télécharger les <b>relevés bancaires</b>",
+    "upload_finance_documents": "Télécharger les <b>autre documents</b>"
+  },
+  "accounts_item": {
+    "add_view": "ajouter une vue",
+    "connected": "connecté",
+    "connection_status": "État de la connexion:",
+    "delete": "supprimer",
+    "error": "erreur",
+    "other_accounts": "Autres <b>comptes</b>",
+    "source_pending": "en cours"
+  },
+  "accounts_items": {
+    "no_accounts": "Vous n'avez pas encore connecté <b>de compte</b>"
+  },
+  "accounts_ri": {
+    "connected": "est connecté",
+    "not_connected": "n'est pas connecté"
+  },
+  "activateDeployment": {
+    "selectMonitoringDates": "Sélectionnez les dates de surveillance",
+    "selectOptionError": "Veuillez sélectionner une option",
+    "selectScenario": "Veuillez sélectionner un scénario"
+  },
+  "admin_accounts_items": "Aucun compte n'est connecté",
+  "amazon_ads": {
+    "header": "Autorisations de <b>Amazon Ads</b>"
+  },
+  "amazon_seller": {
+    "close": "Fermer",
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez une autre <b>boutique vendeur Amazon</b>",
+    "header": "Autorisations de <b>Amazon Seller</b>",
+    "p1": "Pour Amazon, nous avons besoin d'un accès en lecture seule à votre compte <em>vendeur/seller</em> à l'e-mail <b>ritmo_data@getritmo.com</b>.",
+    "p10": "<b>3</b>.- Donnez-nous l'accès à la <b>section des rapports</b>.",
+    "p11": "Une fois l'accès confirmé, nous avons besoin d'un <b>accès à la section des rapports</b>.",
+    "p12": "Pour gérer l'accès aux rapports, vous devez aller dans <b>configuration</b> > permissions et sélectionner \"<b>gérer les permissions</b>\" pour notre utilisateur (<b>ritmo_data@getritmo.com</b>):",
+    "p2": "<b>1</b>.- Ajouter <b>ritmo_data@getritmo.com</b> comme utilisateur",
+    "p3": "Pour ajouter l'utilisateur, vous devez aller à:",
+    "p4": "<b>Paramètres</b> >> <b>Les autorisations de l'utilisateur</b> >> <b>Ajouter un nouvel utilisateur</b> >> <b>Ajouter un nouvel utilisateur</b>.:",
+    "p5": "Nom: <b>Ritmo Data</b>",
+    "p6": "Adresse e-mail: <b>ritmo_data@getritmo.com</b>",
+    "p7": "<b>2</b>.- Remplir le <b>formulaire</b>",
+    "p8": "Une fois que vous nous aurez donné accès, Amazon vous demandera de remplir un formulaire comme celui que vous voyez ci-dessous:",
+    "p9": "Voici les détails pour que vous puissiez remplir le formulaire Amazon:",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée."
+  },
+  "amazonseller": {
+    "account_connected": "Votre compte <b>{account}</b> est connecté",
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajouter un autre <b>compte vendeur Amazon</b>",
+    "header": "Autorisations de <b>Amazon Seller</b>",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée"
+  },
+  "aov_info": {
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Les données de commande sont utilisées. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "p1": "L'AOV, ou valeur moyenne des commandes (AOV en anglais - <b>Average Order Value</b>), est la valeur moyenne générée sur chaque commande.",
+    "p2": "Elle est calculée en divisant le total des revenus par le total des transactions.",
+    "prestashop": "Nous utilisons les données de commande. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de vente",
+    "shopify": "<b>Stripe</b>{br}Nous utilisons les données des commandes. Notez que les remboursements sont utilisés dans le calcul.",
+    "stripe": "Nous utilisons des données de paiement. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés et sont également utilisés pour le calcul.",
+    "title": "Comment est obtenue la <b>Valeur moyenne des commandes</b> ?",
+    "title_list_0": "Comptes de <b>ventes</b> disponibles",
+    "woocommerce": "Les données de commande sont utilisées. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "app_store": {
+    "header": "Autorisations de l’<b>AppStore</b>"
+  },
+  "available_accounts": {
+    "other_accounts": "Autres <b>comptes</b>"
+  },
+  "available_manual_accounts": {
+    "balance": "<b>Balance</b>",
+    "banking_movements": "Mouvements <b>bancaires</b>",
+    "profit_and_loss": "<b>Pertes</b> et profits"
+  },
+  "balanceCashFlow_info": {
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Les données de commande sont utilisées. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "marketing_accounts": "Comptes Marketing",
+    "openbanking": "Les dépenses de marketing pour les publicités Google sont indiquées en euros.",
+    "p1": "Le flux de trésorerie est le résultat net de l'addition de toutes les entrées d'argent (revenus) et de la soustraction de toutes les sorties d'argent (dépenses) figurant dans les comptes financiers que vous avez liés à <b>RITMO</b>.",
+    "prestashop": "Nous utilisons les données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment est obtenu le <b>Flux de trésorerie</b> ?",
+    "title_list_0": "<b>Comptes bancaires ouverts</b> disponibles",
+    "woocommerce": "Nous utilisons les données de commande. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "banner": {
+    "newsletter": {
+      "button": "Inscrivez-vous",
+      "confirmation": {
+        "footer": "Cette bannière se fermera automatiquement dans <b>{seconds}</b> secondes.",
+        "header": "<b>Félicitations !</b>",
+        "text": "À compter d'aujourd'hui, vous recevrez notre bulletin d'information dans votre boîte aux lettres.."
+      },
+      "error": {
+        "button": "Essayez à nouveau !",
+        "header": "<b>Eh bien !</b>",
+        "text": "Il semble qu'il y ait eu un problème..."
+      },
+      "footer": "Vous pouvez consulter notre politique de confidentialité",
+      "footerAnchor": "ici",
+      "header": "<b>Restez à l'écoute !</b>",
+      "text": "Inscrivez-vous ici pour recevoir les dernières nouvelles, mises à jour et offres spéciales."
+    },
+    "privacy": {
+      "learnMore": "+ Lire la suite",
+      "text": "Nous comprenons que le partage des informations de votre entreprise peut être intimidant, mais nous pensons que vous ne devriez pas avoir à vous soucier de la sécurité des données. Toutes vos données sont 100 % confidentielles, utilisées exclusivement dans le cadre de votre demande, cryptées et protégées selon les normes de sécurité les plus strictes.",
+      "title": "Politique de confidentialité et de protection des données de RITMO"
+    }
+  },
+  "bing_ads": {
+    "header": "Autorisations de <b>Bing Ads</b>"
+  },
+  "blendedRoas_info": {
+    "amazonseller": "Seules les données relatives aux commandes sont utilisées. Veuillez noter que les remboursements sont également inclus dans le calcul.",
+    "connect": "pour connecter les comptes en attente de connexion et obtenir les performances maximales de <b>RITMO Insights</b>.",
+    "facebookads": "Cela est utilisé pour calculer l'investissement marketing rapporté en euros.",
+    "go_to": "Aller à",
+    "googleads": "Cela est utilisé pour calculer l'investissement marketing rapporté en euros.",
+    "magento": "Nous utilisons les données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "marketing_accounts": "Comptes marketing",
+    "p1": "Le <b>ROAS mixte</b> ou <b>ROAS</b> (<b>Return on advertising spend</b>) est le rapport entre les <b>revenus</b> divisés par les <b>dépenses de marketing</b>.",
+    "p2": "Il s'agit d'un indicateur qui mesure l'efficacité des investissements publicitaires.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "shopify": "Les données relatives aux commandes sont utilisées pour calculer le retour sur investissement. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "Les données relatives aux paiements sont utilisées pour calculer le retour sur investissement. Seules celles qui ont été effectivement collectées sont utilisées. Notez que les remboursements sont comptabilisés comme un retour.",
+    "title": "Comment est calculé le <b>ROAS mixte</b> ?",
+    "title_list_0": "<b>Comptes marketing</b> disponibles",
+    "title_list_1": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons les données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "cac_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et obtenir les performances maximales de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons les données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "<b>Investissement marketing</b>: c'est la somme de l'investissement total dans les comptes publicitaires liés à Ritmo (dans la section des comptes marketing): Nombre de personnes ayant acheté pour la première fois au cours de ce mois. Pour déterminer la première fois qu'un client achète, nous nous basons sur l'e-mail lié à la transaction.\n",
+    "p1": "Parfois appelé par son nom en anglais (Customer Acquisition Cost), il s'agit du coût moyen d'acquisition d'un client. Il est calculé en divisant les dépenses de marketing par le nombre de nouveaux clients entrant sur la plateforme.{br}{br}{CAC} Le CAC suppose que toutes les dépenses de marketing sont dirigées vers les nouveaux clients, indépendamment des campagnes de reciblage.{br}{br}{br}{br}Pour identifier un nouveau client, nous nous basons sur les achats liés à une adresse e-mail qui n'a pas d'achats précédemment liés.\n",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Nous utilisons des données de paiement. Seules celles qui ont été effectivement collectées sont utilisées. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment est calculé le <b>CAC</b> ou <b>Coût d'acquisition du client</b> ?",
+    "title_list_0": "Comptes <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "card": {
+    "contract": {
+      "chooseFile": "Choisir le fichier",
+      "deployNum": "Nombre de déploiements",
+      "download": "Télécharger le contrat",
+      "firstDeployDate": "Date du premier déploiement",
+      "id": "Identifiant du contrat"
+    },
+    "offer": {
+      "deployNum": "Nombre de déploiements",
+      "download": "Télécharger l'offre",
+      "firstDeployDate": "Date du premier déploiement",
+      "id": "Identifiant de l'offre",
+      "total_credit_limit": "Limite de crédit"
+    }
+  },
+  "check_accounts": {
+    "btn_title": "Connecter d’autres comptes",
+    "go_to": "Aller à",
+    "last_sync1": "Nous sommes en train de synchroniser les données, {br}ce processus peut prendre quelques minutes.",
+    "last_sync2": "Si vous le souhaitez, vous pouvez connecter d'autres comptes ici.",
+    "marketing_accounts": "Comptes Marketing",
+    "sales_accounts": "Comptes de Ventes",
+    "title": "Pour afficher ces <b>données</b>{br}des connecteurs supplémentaires sont nécessaires"
+  },
+  "companyForm": {
+    "emails": "Emails",
+    "no_email": "Aucun courriel enregistré pour les notifications",
+    "notification_email": "Adresse pour l'envoi des notifications",
+    "title": "Données clients"
+  },
+  "company_info": {
+    "registrationType": "Enregistré avec e-mail/mot de passe",
+    "userEmail": "Adresse e-mail"
+  },
+  "company_info_form": {
+    "aditional_address": "Adresse supplémentaire (facultatif)",
+    "company_name": "Nom de la société",
+    "fill_field": "Veuillez remplir ce champ",
+    "fiscal_address": "Adresse fiscale",
+    "required_fields": "Champs obligatoires",
+    "select_country": "Veuillez sélectionner le pays",
+    "tax_number": "Numéro RCS"
+  },
+  "confirmDeployActivation": {
+    "selectedOption": "Option choisie"
+  },
+  "confirm_overlay": {
+    "confirm_payment": "Souhaitez-vous confirmer les paiements ?",
+    "delete_account": "Souhaitez-vous supprimer le compte ?"
+  },
+  "confirm_payment": {
+    "dates": "Fourchette de dates",
+    "invoice": "Fichier de la facture",
+    "title": "Les détails de ce paiement sont-ils corrects ?"
+  },
+  "content": "¿Que puis-je faire ensuite ?",
+  "conversionRate_info": {
+    "amazonseller": "Seules les données relatives aux commandes sont utilisées. Veuillez noter que les remboursements sont également inclus dans le calcul.",
+    "connect": " pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "googleanalytics": "Nous utilisons Google Analytics pour calculer le nombre de sessions par jour en additionnant les vues de toutes les visites.",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "marketing_accounts": "Comptes marketing",
+    "or": "ou ",
+    "p1": "Le <b>taux de conversion</b> indique le % de vos sessions de e-commerce qui finissent par se convertir en ventes.",
+    "p2": "C'est un ratio qui résulte de la division du nombre total de transactions de toutes les plateformes de vente que vous avez connectées à <b>RITMO</b> par le nombre total de sessions de toutes les vues <b>Google Analytics</b> que vous avez connectées à <b>RITMO</b>.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Chaque commande est considérée comme une transaction. Notez que les remboursements sont également comptabilisés en tant que transaction.",
+    "stripe": "Chaque paiement est considéré comme une transaction. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont également comptabilisés en tant que transaction.",
+    "title": "Comment est calculé le <b>Taux de conversion</b> ?",
+    "title_list_0": "Comptes <b>Marketing</b> disponibles",
+    "title_list_1": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "create_account_form": {
+    "RIfinance_you": "Inscrivez-vous gratuitement et {br}accélérez votre croissance{br} avec {ri} ",
+    "RIfinance_you_text": "Commencez à optimiser votre activité en quelques minutes",
+    "ahref1": "ici",
+    "ahref2": "mentions légales",
+    "all_fields_required": "Tous les champs sont obligatoires",
+    "almost_have_it": "On y est <b>presque !</b>",
+    "checkbox1": "J'accepte de recevoir des communications commerciales et/ou des lettres d'information de <b>RITMO</b> en fonction de mes goûts et préférences. Vous pouvez consulter",
+    "checkbox2": "notre politique de confidentialité",
+    "checkbox3": "J'accepte le",
+    "fill_email": "Veuillez saisir une adresse électronique valide",
+    "fill_field": "Veuillez remplir ce champ",
+    "fill_phone": "Veuillez remplir le numéro de téléphone correctement",
+    "finance_you": "Prenez {br_mobile}2 minutes pour découvrir si nous pouvons vous <b>financer</b>.",
+    "legal_notice_url": "https://www.getritmo.com/fr/avis-juridique",
+    "privacy_policy_url": "https://www.getritmo.com/fr/politique-de-confidentialite",
+    "review_data": "Révision des données",
+    "www": "Veuillez entrer une url valide avec www."
+  },
+  "customers_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "Tous les comptes de vente liés à <b>RItmo</b> sont pris en compte.",
+    "p1": "Nombre de clients qui ont effectué un achat ou un paiement (par exemple, le paiement d'un abonnement mensuel) au cours de la période sélectionnée.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment est calculé le nombre de <b>Clients</b> ?",
+    "title_list_0": "Comptes de <b>ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "dashboard_buttons": {
+    "yearly": "Annuel"
+  },
+  "default_content": {
+    "p": "L'équipe de <b>RITMO</b> vous contactera prochainement pour gérer l'accès à ce compte.."
+  },
+  "dialog": {
+    "confirm": "Oui",
+    "confirmAction": "confirmer",
+    "contract": "contrat",
+    "createContract": "Etes-vous sûr de créer le contrat à partir de l'offre avec id {offerId} ?",
+    "delete": "Supprimer",
+    "deleteAction": "supprimer",
+    "manyItems": "Etes-vous sûr de vouloir {action} les {type} suivants ?",
+    "manyPayments": "paiements",
+    "offer": "offre",
+    "oneItem": "Etes-vous sûr de vouloir {action} le {type} avec l'id {id} ?",
+    "payment": "paiement"
+  },
+  "external_prevision_tooltip": {
+    "main_forecast": "Prévisions principales:"
+  },
+  "external_tooltip_growth": {
+    "yty_growth": "Croissance sur un an:"
+  },
+  "facebookads": {
+    "content1": "Accédez au Gestionnaire d'entreprise (Facebook --> Business Manager) --> Paramètres de l'entreprise --> Ajouter un \"Partenaire avec qui partager des actifs\".",
+    "content10": "créer des annonces",
+    "content11": "gérer le catalogue",
+    "content12": "Voici la documentation de Facebook",
+    "content13": "avec les indications.",
+    "content14": "*** Veuillez noter que si vous n'avez pas activé",
+    "content15": "la double authentification de Facebook,",
+    "content16": "il est possible que vous ne puissiez pas attribuer certaines autorisations.",
+    "content17": "Sélectionnez un compte",
+    "content18": "Ajouter un compte Facebook Ads",
+    "content2": "Ajoutez l'identifiant Ritmo: <b>2880393575523028</b>",
+    "content3": "Nous avons besoin du niveau d'accès suivant aux différents actifs de votre compte:",
+    "content4": "Compte publicité",
+    "content5": "voir performance",
+    "content6": "Page professionnelle",
+    "content7": "performance de la page",
+    "content8": "consulter les statistiques sur les revenus",
+    "content9": "Catalogue des produits",
+    "header": "Autorisations de <b>Facebook Ads</b>",
+    "no_property": "Pour continuer, vous devez sélectionner un <b>Compte</b>. Si vous souhaitez continuer sans avoir établi la connexion {lien}."
+  },
+  "faq_info": {
+    "ahref1": "politique de confidentialité",
+    "response1": "Le processus pour recevoir une avance de <b>RITMO</b> est très simple et nous avons simplement besoin de données relatives aux performances de votre entreprise.\n Une fois votre inscription sur notre plateforme effectuée, il vous suffit de connecter vos <b>comptes de ventes</b> (<em>Stripe, Shopify, PayPal, Google Pay, Apple Pay, Amazon pay, Woocomerce…</em>) et vos <b>comptes marketing</b> (<em>Google Analytics, Google Ads y Facebook Ads, etc...</em>).\n En outre, grâce aux services <b>openbanking</b> et à vos systèmes comptables, vous pouvez facilement et rapidement connecter vos informations financières pour que nous puissions mieux vous connaître et vous proposer l'offre la plus adaptée à votre entreprise.\n Vous pouvez être assuré que nous disposons des critères de sécurité et de confidentialité les plus avancés et les plus stricts, de sorte que vos données seront <b>100 % sécurisées</b>.\n Avant de vous envoyer les fonds, nous devrons également vérifier l'identité des personnes clés de votre organisation, au moyen d'une photographie et d'une carte d'identité. Consultez notre",
+    "response2": "pour plus de détails.",
+    "response3": "Soyez tranquille. <b>RITMO</b> utilisera vos données de manière sure.\n Nous sommes pleinement conscients de l'importance de la <b>totale confidentialité</b> des informations que vous partagez avec nous.\n Nous les utiliserons uniquement pour analyser les performances de votre entreprise et déterminer le montant et les modalités de remboursement du <b>capital financé</b>.\n Consultez notre",
+    "response4": "pour plus de détails.",
+    "response5": "Avant de vous faire une proposition ferme, en plus des données sur les performances de votre entreprise,\n <b>RITMO</b> doit valider votre identité et celle de votre entreprise, en effectuant les protocoles d'authentification et de sécurité nécessaires.\n {br}Consultez notre",
+    "response6": "pour plus de détails.",
+    "title1": "De quelles données <b>RITMO</b> a-t-elle besoin pour prendre une décision ?",
+    "title2": "Comment mes données seront-elles utilisées ?",
+    "title3": "Quelles sont les informations utilisées par <b>RITMO</b> pour valider mon entreprise ?"
+  },
+  "filter": {
+    "custom_period": "Personnalisé",
+    "last_12_months": "Les 12 derniers mois",
+    "last_2_weeks": "Les 2 dernières semaines",
+    "last_3_months": "Les 3 derniers mois",
+    "last_4_weeks": "Les 4 dernières semaines",
+    "last_7_days": "La semaine dernière",
+    "month_to_date": "Ce mois-ci",
+    "year_to_date": "Cette année"
+  },
+  "financeFilesContainer": {
+    "no_documents": "<b>Aucun document n'a encore</b> été téléchargé",
+    "uploaded_documents": "<b>Documents téléchargés</b>"
+  },
+  "footer": {
+    "ahref1": "Légall",
+    "content1": "© Copyright 2020 Ritmo {br} Tous droits réservés"
+  },
+  "free_agent": {
+    "header": "Autorisations de <b>FreeAgent</b>"
+  },
+  "fresh_books": {
+    "header": "Autorisations de <b>FreshBooks</b>"
+  },
+  "google_analytics": {
+    "add_google_account": "Ajouter un utilisateur Analytics",
+    "header": "Autorisations de <b>Google Analytics</b>",
+    "no_property": "Pour continuer, vous devrez sélectionner un <b>Compte, une propriété et une ou plusieurs vues</b>. Si vous souhaitez continuer sans avoir fait la connexion {lien}.",
+    "not_valid": "Nous n'avons pas trouvé de comptes GA à sélectionner. Veuillez vous assurer que vous essayez de connecter un compte GA UA (Universal Analytics). Dans le cas où vous disposez d'un compte GA4, veuillez contacter le service d'assistance clientèle en envoyant un e-mail à <b>customer_support@getritmo.com</b>.",
+    "selected": "sélectionnées"
+  },
+  "google_analytics_overlay": "Nous vous redirigeons vers <b>Google</b> pour que vous puissiez connecter votre compte.",
+  "google_play": {
+    "header": "Autorisations de <b>Google Play</b>"
+  },
+  "googleads": {
+    "accounts": "Comptes -",
+    "add_google_account": "Ajouter un compte Google",
+    "content1": "Nous avons besoin des identifiants clients de tous vos comptes <b>Google Ads</b> avec activité,\n pour demander l'accès directement à notre MCC.",
+    "content2": "Veuillez les envoyer à <b>ritmo_data@getritmo.com</b>, avec pour objet: “Mon ID Google Ads“.",
+    "content3": "Voici la documentation de Google avec des instructions sur la façon de trouver votre ID client:",
+    "header": "Autorisations de <b>Google Ads</b>",
+    "no_property": "Pour continuer, vous devez sélectionner un <b>Compte</b>. Si vous souhaitez continuer sans avoir fait la connexion {lien}."
+  },
+  "graph_line": {
+    "header": "Collecte des données",
+    "title1": "Nous synchronisons les données.",
+    "title2": "Vous pourrez consulter ce graphique demain."
+  },
+  "holded": {
+    "header": "Autorisations de <b>Holded</b>"
+  },
+  "kash_flow": {
+    "header": "Autorisations de <b>KashFlow</b>"
+  },
+  "kpi": {
+    "aov": {
+      "long_title": "AOV",
+      "title": "AOV"
+    },
+    "aov_cohort": {
+      "long_title": "AOV",
+      "title": "AOV"
+    },
+    "balanceCashFlow": {
+      "long_title": "Flux de trésorerie",
+      "title": "Flux de trésorerie"
+    },
+    "blendedRoas": {
+      "long_title": "ROAS mixte",
+      "title": "ROAS mixte"
+    },
+    "cac": {
+      "long_title": "Le CAC ou coût d'acquisition du client",
+      "title": "CAC"
+    },
+    "conversionRate": {
+      "long_title": "Taux de conversion",
+      "title": "Taux de conversion"
+    },
+    "customers": {
+      "long_title": "Clients",
+      "title": "Clients"
+    },
+    "customers_cohort": {
+      "long_title": "Taille du groupe",
+      "title": "Taille du groupe"
+    },
+    "ltv": {
+      "long_title": "Valeur du cycle de vie du client",
+      "title": "LTV"
+    },
+    "ltv_cac": {
+      "long_title": "Valeur de la durée de vie",
+      "title": "LTV:CAC"
+    },
+    "ltv_cohorts": {
+      "long_title": "Valeur de la durée de vie - Analyse de groupes",
+      "title": "LTV - Analyse de groupes"
+    },
+    "marketingSpend": {
+      "long_title": "Investissement en marketing",
+      "title": "Investissement en marketing"
+    },
+    "orders_cohort": {
+      "long_title": "Transactions",
+      "title": "Transactions"
+    },
+    "percentage_first_retention": {
+      "long_title": "% de fidélisation des clients au cours du premier mois",
+      "title": "% de fidélisation du premier mois"
+    },
+    "percentage_retention": {
+      "long_title": "% fidélisation ",
+      "title": "% fidélisation "
+    },
+    "revenue": {
+      "long_title": "Revenus",
+      "title": "Revenus"
+    },
+    "revenue_cohort": {
+      "long_title": "Revenus",
+      "title": "Revenus"
+    },
+    "score_card": {
+      "long_title": "Tableau de bord",
+      "title": "Tableau de bord"
+    },
+    "sessions": {
+      "long_title": "Sessions",
+      "title": "Sessions"
+    },
+    "transactions": {
+      "long_title": "Transactions",
+      "title": "Transactions"
+    }
+  },
+  "login_bar": {
+    "have_account": "Vous avez déjà un compte ?",
+    "login": "Connexion"
+  },
+  "ltv_cac_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>..",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "<b>Valeur moyenne des commandes</b>: Calculée en divisant la somme des revenus par la somme des commandes de tous les comptes de vente que vous avez connectés à Ritmo.{br}{br}<b>Transactions mensuelles par client</b>: Le nombre moyen de transactions effectuées par un client par mois. Prenez en compte tous les comptes de ventes que vous avez connectés à Ritmo.{br}{br}<b>Durée de vie moyenne du client en mois</b>: Le nombre moyen de mois pendant lesquels un client effectuera une transaction au cours de sa vie.",
+    "p1": "<b>LTV:CAC (Valeur de la durée de vie / Coût d'acquisition)</b>{br}Le ratio LTV:CAC mesure l'efficacité de l'investissement marketing. Plus le rapport est élevé, plus l'efficacité est grande.\n{br}{br}Un ratio supérieur à 1 signifie que l'entreprise génère plus de revenus que de dépenses dans ses campagnes de marketing, sans tenir compte du coût des ventes. (COGS, aigle anglais signifiant - Cost of Goods Sold).\n{br}{br}Comme le Blended ROAS, le LTV:CAC est utilisé pour optimiser les campagnes de marketing, mais il est plus précis car il prend en compte:\n<ul><li>Que l'investissement marketing est principalement destiné à l'acquisition de nouveaux clients.</li><li>La valeur que le client génère au cours de sa vie</li></ul>",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls les éléments qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment calcule-t-on le <b>LTV:CAC</b>?",
+    "title_list_0": "Comptes de <b>Marketing</b> disponibles",
+    "title_list_1": "Comptes de <b>Ventes</b> disponibles",
+    "title_list_title": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "ltv_cohorts_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "Vous pouvez voir plus de détails sur le point d’interrogation {icon} situé sur chaque métrique.",
+    "p1": "\n <p>L'outil <b>LTV - Analyse de groupe</b> vous permet d'obtenir des informations depuis la perspective du groupe.</p>\n\n <p>La <b>taille du groupe</b> est affichée sur le côté gauche, à côté du mois d'acquisition. <b>Différentes données peuvent être sélectionnées pour effectuer une analyse de groupe</b> (% de fidélisation, revenus, AOV, clients, transactions) <b>à partir du menu déroulant</b>.</p>\n\n <p>De plus, <b>les données de performance</b> sont affichées pour vous permettre de disposer de plus d'informations et découvrir des opportunités de croissance. </p>\n ",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Se usan los datos de pagos. Se utilizan sólo aquellos que se hayan llegado a efectuar un cobro. Nótese que los reembolsos son contados como revenue.",
+    "title": "¿Cómo utilizar la herramienta <b>LTV - Análisis de cohortes</b>?",
+    "title_RI_accounts": "Cuentas <b>conectadas</b>",
+    "title_list_0": "Cuentas de <b>Ventas</b> disponibles",
+    "title_list_1": "Cuentas de <b>Marketing</b> disponibles",
+    "title_list_title": "Cuentas de <b>Ventas</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "ltv_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "<b>Valeur moyenne des commandes</b>: Calculée en divisant la somme des recettes par la somme des commandes de tous les Comptes de ventes que vous avez connectés à Ritmo.{br}{br}<b>Transactions mensuelles par client</b>: Nombre moyen de transactions effectuées par un client par mois. Prenez en compte tous les Comptes de ventes que vous avez connectés à Ritmo.{br}{br}<b>Durée de vie moyenne du client en mois</b>: Le nombre moyen de mois pendant lesquels un client effectuera une transaction dans sa vie.",
+    "p1": "Le revenu total attendu pendant la durée de vie de chaque nouveau client.{br}{br}<b>LTV = Valeur moyenne des commandes x Transactions mensuelles par client x Durée de vie moyenne du client en mois</b>{br}{br}La LTV prend en compte non seulement le revenu du client au moment de l'acquisition, mais aussi la somme des revenus provenant des achats futurs.{br}{br}Notre modèle prévoit un ratio de fidélisation pour les nouveaux clients afin de calculer les revenus futurs.{br}{br}Pour identifier un nouveau client, nous nous basons sur les achats liés à une adresse e-mail qui n'avait pas d'achats liés auparavant.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls les éléments qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment calcule-t-on la <b>Valeur de la durée de vie</b> ?",
+    "title_list_0": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "magento": {
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez une autre <b>boutique Magento</b>",
+    "header": "Autorisations de <b>Magento</b>",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée"
+  },
+  "marketingSpend_info": {
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "facebookads": "Les dépenses de marketing pour les publicités sur Facebook rapportées en euros.",
+    "go_to": "Aller à",
+    "googleads": "Les dépenses de marketing pour les annonces Google sont indiquées en euros.",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "marketing_accounts": "Comptes marketing",
+    "p1": "Les dépenses de marketing correspondent à l'investissement total réalisé sur les plateformes de performance que vous avez liées à <b>RITMO</b>.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment obtenir un <b>investissement marketing</b> ?",
+    "title_list_0": "Comptes <b>Marketing</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "menu": {
+    "admin": "Admin",
+    "connectors": "Mes connecteurs",
+    "contract_signal": "Signature du contrat",
+    "dashboard": "Panneau d'affichage",
+    "direct_debit": "Prélèvement automatique",
+    "faqs": "Foire aux questions",
+    "forecast": "Projection",
+    "insights": "RITMO Insights",
+    "ltv": "Valeur de la durée de vie (LTV)",
+    "offer": "Mon offre",
+    "request": "Ma demande",
+    "verification_admins": "Vérification des administrateurss"
+  },
+  "mercado_libre": {
+    "account_connected": "Votre compte <b>{account}</b> est connecté",
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez un autre <b>compte de Mercado Libre</b>",
+    "header": "Autorisations de <b>Mercado Libre</b>"
+  },
+  "mercado_overlay": {
+    "option": "Sélectionnez le pays",
+    "title": "Sélectionnez le pays de votre boutique <b>{store}</b>"
+  },
+  "mercado_pago": {
+    "account_connected": "Votre comptes <b>{account}</b> est connecté,",
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajouter un autre <b>compte de Mercado Pago</b>",
+    "header": "Autorisations de <b>Mercado Pago</b>"
+  },
+  "modal_privacy": {
+    "table1": "Quelle entreprise traite vos données ?",
+    "table10": "La personne concernée a le droit d'exercer son droit d'accès, de rectification, d'effacement, d'opposition, de portabilité des données, de limitation du traitement et ne pas faire l'objet de décisions automatisées et individualisées.",
+    "table11": "Vous avez des doutes ?",
+    "table12": "Si vous avez des suggestions ou si vous voulez vous désabonner, veuillez nous contacter en envoyant un e-mail à l'adresse suivante:",
+    "table2": "RITMO CAPITAL, S.L. (ci-après, “RITMO “)",
+    "table3": "Pourquoi traitons-nous les données que nous vous demandons ?",
+    "table4": "Nous ne traitons vos données que dans le but de vous fournir les services de RITMO.",
+    "table5": "Quelle est la légitimité de ce traitement de vos données ?",
+    "table6": "Ces données sont nécessaires à la fourniture des services offerts par RITMO.",
+    "table7": "Vos données seront-elles cédées ou transférées ?",
+    "table8": "Vos données ne seront pas cédées à des tiers.",
+    "table9": "Quels sont mes droits ?",
+    "title": "Politique de confidentialité"
+  },
+  "my_advances": {
+    "no_deploys": "Eh bien, vous ne disposez à ce jour d'aucune avance !",
+    "no_scenario_selected": "Désolé, aucun projet n'a encore été sélectionné"
+  },
+  "nutcache": {
+    "header": "Autorisations de <b>NutCache</b>"
+  },
+  "offer": {
+    "aproved": "Offre approuvée",
+    "preaproved": "Offre préapprouvée"
+  },
+  "offerForm": {
+    "accepted": "Offre acceptée",
+    "activate": "Activer",
+    "add_deploy": "+ Ajouter un déploiement",
+    "add_option": "+ Ajouter une nouvelle option",
+    "cancelled": "Annulé",
+    "commission": "Montant de la commission",
+    "commission_rate": "Commission %",
+    "covenants": "PRojets (conventions)",
+    "covenants_met": "Conditions satisfaites",
+    "created": "Créé",
+    "deploy_date": "Date de déploiement",
+    "deployed": "Déployé",
+    "end_date": "Date de fin du suivi",
+    "errors": {
+      "beforeDeploy": "Les dates de suivi doivent être antérieures à la date de déploiement.",
+      "endAfterStart": "La date de fin doit être postérieure à la date de début.",
+      "fileRequired": "Il faut au moins un fichier",
+      "required": "Cette option est requise",
+      "startBeforeDeploy": "La date de début est antérieure à la date de déploiement.",
+      "startBeforeLastDeploy": "Cette date doit être postérieure à la date du déploiement précédent."
+    },
+    "false": "Non",
+    "files": "Fichiers téléchargés",
+    "first_repayment": "Date du premier paiement",
+    "grace_period": "Délai de carence",
+    "inventory": "Inventaire",
+    "loan_amount": "Montant du prêt",
+    "marketing": "Capital de croissance e-commerce",
+    "marketplace": "Capital de croissance vendeur Marketplace",
+    "monitoring": "Suivi de l'activité",
+    "pending_deployment": "En attente",
+    "required": "Requis",
+    "rev_target": "Objectif de revenu (facultatif)",
+    "revenue_share": "Part de revenus %",
+    "saas": "Saas",
+    "start_date": "Date de début du suivi",
+    "total_refund": "Montant total à rembourser",
+    "true": "Oui",
+    "upload_files": "Télécharger des fichiers"
+  },
+  "offer_tooltip": {
+    "text1": "L'<strong>avance</strong> est le montant total que Ritmo vous avancera pour que vous puissiez investir dans vos campagnes de marketing.",
+    "text10": "La <strong>période de remboursement</strong> est le temps estimé qu'il vous faudra pour effectuer le remboursement intégral à Ritmo.",
+    "text11": "Notre algorithme prédit votre futur volume de ventes sur la base des données analysées et du capital avancé et détermine que c'est la période pendant laquelle l'avance plus la commission seront remboursées.",
+    "text12": "Nous nous adaptons entièrement à vos ventes, donc si vos ventes diminuent, la période de remboursement est prolongée.",
+    "text2": "Le moteur prédictif de Ritmo estime le bon montant pour que vous puissiez continuer à augmenter efficacement vos dépenses de marketing.",
+    "text3": "La <strong>commission</strong> est le % qui sera appliqué à l'avance, une commission fixe que Ritmo prélève pour l'avance du capital.",
+    "text4": "Il n'y a pas d'intérêts, pas de petits caractères, pas de frais cachés.",
+    "text5": "Quoi qu'il arrive à partir du moment où le contrat est signé, cette commission ne sera en aucun cas augmentée pendant la période de remboursement de l'avance.",
+    "text6": "Le <strong>total du remboursement</strong> est le résultat de l'addition de l'avance et de la commission appliquée, c'est-à-dire le total que vous finirez par rembourser à Ritmo.",
+    "text7": "Le <strong>% sur les ventes</strong> est la partie des revenus qui sera utilisée pour rembourser le total du remboursement à Ritmo.",
+    "text8": "Le pourcentage des ventes appliqué aux remboursements sera fixé par nos algorithmes, sur la base de l'analyse des données relatives aux performances de votre entreprise.",
+    "text9": "Nous signerons un accord de prélèvement automatique et, une fois par jour, votre compte bancaire sera débité de la valeur résultant de l'application de ce % à vos ventes quotidiennes."
+  },
+  "overlay": {
+    "openbanking_uk": {
+      "bank": "Banque",
+      "placeholder": "Rechercher le nom d'une banque"
+    }
+  },
+  "overlay_403": {
+    "activate": "Activer maintenant",
+    "connection_problem": "Problème de connexion à votre compte de <b>{connector}</b>.",
+    "facebookads_advice": "Vous devez activer “<b>consulter vos annonces Facebook et les statistiques associées</b>“ pour pouvoir connecter votre compte <b>Facebook Ads</b>.",
+    "financeothers": "Autres comptes financiers",
+    "googleads_advice": "Veuillez activer l'option “<b>Gérer vos campagnes AdWords</b>“ pour pouvoir connecter votre compte <b>Google Ads</b>.",
+    "googleads_alt": "Description de la procédure de délivrance des autorisations de Google Ads",
+    "googleads_image": "/images/errors/gads-es-ES.png",
+    "googleanalytics_advice": "Veuillez activer l'option “<b>Voir et télécharger vos données Google Analytics</b>“ afin de connecter votre compte <b>Google Analytics</b>.",
+    "googleanalytics_alt": "Description de la manière d'accorder les autorisations de Google Analytics",
+    "googleanalytics_image": "/images/errors/gas-es-ES.png",
+    "marketingothers": "Autres comptes marketing",
+    "openbanking": "Services bancaires",
+    "salesothers": "Autres comptes de ventes"
+  },
+  "panel": {
+    "createInvoiceOffer": {
+      "0": "Créer une offre de Invoice Capital",
+      "1": "Examiner et confirmer l'offre"
+    },
+    "createOffer": {
+      "0": "Créer une offre de Growth Capital",
+      "1": "Examiner et confirmer l'offre"
+    },
+    "createPayment": {
+      "0": "Créer un nouveau paiement",
+      "1": "Examiner et confirmer le paiement"
+    },
+    "dialog": {
+      "accept": "Accepter",
+      "cancel": "Supprimer",
+      "lostData": "Tous les fichiers qui n'ont pas été envoyés seront perdus et vous devrez peut-être les sélectionner à nouveau.",
+      "sureToClose": "Vous voulez vraiment quitter les lieux ?"
+    },
+    "finance_accounts": "Comptes de <b>finances</b>.",
+    "form": {
+      "company": {
+        "update": "Modifier les informations sur la société",
+        "validate": "Examiner et confirmer les changements"
+      },
+      "if_offer": {
+        "add_option": "+ Ajouter une option",
+        "allowed_repayments": "Options de remboursement autorisées",
+        "offer_details": "Détails de l'offre",
+        "period": "Termes (# de semaines)",
+        "repayment_options": "Options de remboursement autorisées",
+        "total_credit_limit": "Limite de crédit"
+      },
+      "payment": {
+        "create": "Créer un nouveau paiement",
+        "update": "Modification du paiement",
+        "validate": "Examiner et confirmer le paiement"
+      }
+    },
+    "info": {
+      "privacy": {
+        "content": "<p>Vous pouvez être rassuré sur la manière dont nous utilisons vos données.</p>\n <p>Nous savons combien ces données sont importantes pour vous. Les informations que vous partagez resteront totalement confidentielles. Nous ne les vendrons ni ne les partagerons jamais avec quiconque. Nous respectons strictement la règlementation suivantes: {link}.</p>\n <p>Nous utilisons les mêmes normes de sécurité que le gouvernement américain pour la protection de ses infrastructures et suivons les recommandations du ministère américain du commerce.</p>\n <p>Nous n'accédons à ces données que pour vous proposer la meilleure offre de financement possible. Et nous n'y accédons qu'en mode lecture, ce qui signifie que nous ne pouvons ni modifier ni supprimer les informations.</p>\n <p>Vous pouvez supprimer les accès à tout moment.</p>",
+        "read": "Politique de confidentialité et de sécurité des données"
+      }
+    },
+    "marketing_accounts": "Comptes <b>Marketing</b>",
+    "sales_accounts": "Comptes de <b>Ventes</b>",
+    "selectOfferType": {
+      "0": "Créer une offre"
+    },
+    "updatePayment": {
+      "0": "Modifier le paiement",
+      "1": "Examiner et confirmer le paiement"
+    },
+    "upload": {
+      "bankStatement": {
+        "content": "<p>Pour déterminer votre éligibilité, nous avons besoin que vous téléchargiez vos relevés bancaires des 12 derniers mois.</p>\n            <p>Nous acceptons tout format de fichier: pdf, excel, tableur ou image. Vous pouvez télécharger plusieurs fichiers si nécessaire.</p>",
+        "create": "Téléchargez vos relevés bancaires"
+      },
+      "chooseFiles": "Choisir les fichiers",
+      "csv": {
+        "Invoice has Cap and/or Floor": "la facture a un Cap et/ou Floor.",
+        "Invoice number already exists": "le numéro de facture existe déjà",
+        "badRequest": "Ah ! il semble y avoir eu une erreur. Veuillez réessayer.",
+        "create": "Charger le fichier CSV",
+        "error": "Erreur de facture: {invoice}, {detail}",
+        "fileError": "Le fichier n'est pas correct. Vérifiez-le et téléchargez-le à nouveau.",
+        "ignored": "La facture {invoice} a été ignorée car {detail}",
+        "sql: no rows in result set": "vérifier que les données sont correctes.",
+        "success": "la facture {invoice} a été générée avec succès."
+      },
+      "error": "Il semble qu'il y ait eu une erreur. Veuillez réessayer.",
+      "financeDocuments": {
+        "content": "<p>Pour déterminer votre éligibilité, nous avons besoin que vous téléchargiez votre compte de résultat et votre bilan pour les 2 derniers exercices fiscaux clos.</p>\n            <p>Nous préférons recevoir un fichier pdf, car d'autres types de fichiers peuvent être demandés pour la revalidation.</p>",
+        "create": "Téléchargez vos documents financiers"
+      },
+      "noSelectedFiles": "Vous n'avez pas sélectionné de fichier",
+      "secureTransfer": "Toutes les données transférées à Ritmo sont totalement confidentielles et sécurisées.",
+      "selectedFile": "Fichier sélectionné:",
+      "selectedFiles": "Vous avez sélectionné {number} fichiers:",
+      "uploadFile": "Télécharger le fichier",
+      "uploadFiles": "Télécharger les fichiers",
+      "wrong_extension": "Seuls les fichiers avec l'extension {expectedExtension} peuvent être téléchargés"
+    },
+    "viewContract": {
+      "0": "Détails du contrat"
+    },
+    "viewInvoiceOffer": {
+      "0": "Détails de l'offre"
+    },
+    "viewOffer": {
+      "0": "Détails de l'offre",
+      "1": "Activer le déploiement",
+      "2": "Confirmer l'activation du déploiement"
+    },
+    "viewPayment": {
+      "0": "Détails du paiement"
+    }
+  },
+  "paymentForm": {
+    "endDate": "Date de finl",
+    "idDeployment": "My advance ID",
+    "incomeModified": "Les revenus saisis de {originalIncome} ont été modifiés en {modifiedIncome} de manière à ce que la commission résultante {quantity} soit identique au montant à rembourser.",
+    "layout_title": "Créer un <b>paiement</b>",
+    "loading": "Chargement en cours...",
+    "outstandingBalance": "Solde restant à payer",
+    "paymentData": "Détails du paiement",
+    "revenueShare": "Part des revenus (%)",
+    "startDate": "Date de début",
+    "title": "Créer un paiement"
+  },
+  "payments": {
+    "upload_csv": "Télécharger <b>CSV</b>"
+  },
+  "paypal": {
+    "account_connected": "Votre compte <b>{account}</b> est connecté",
+    "ahref1": "Voici la documentation de PayPal",
+    "content1": "Nous avons besoin d'un accès à <b>ritmo_data@getritmo.com</b> avec les autorisations de:{br}",
+    "content10": "Cliquez sur Ajouter un utilisateur:",
+    "content11": "Donnez l'accès à <b>ritmo_data@getritmo.com</b>, en créant un nom d'utilisateur que PayPal confirme ne pas être utilisé (le nom doit être unique pour toute la plateforme):",
+    "content12": "Sur l'écran suivant, sélectionnez les autorisations suivantes:",
+    "content13": "Accès aux rapports",
+    "content14": "Consulter le solde, accéder aux mouvements de fonds",
+    "content15": "Voir l'analyse",
+    "content16": "Une fois l'utilisateur créé, accédez aux détails du nouvel utilisateur, et ajoutez le numéro de téléphone suivant <b>635511860</b>",
+    "content2": "Accès aux rapports",
+    "content3": "Consulter le solde, accéder aux mouvements de fonds",
+    "content4": "Voir l'analyse",
+    "content5": "avec les indications.",
+    "content6": "Les étapes à suivre sont les suivantes:",
+    "content7": "Connectez-vous à votre compte PayPal Business.",
+    "content8": "Sur l'écran principal, allez sur le nom du profil (coin supérieur droit) et sélectionnez <b>Paramètres du compte</b>.",
+    "content9": "Dans la section <b>Compte et sécurité</b> > <b>Accès au compte</b> (écran par défaut), trouvez la section <b>Gérer les utilisateurs</b> et cliquez sur <b>Actualiser</b>:",
+    "content_1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content_2": "Ajoutez un autre <b>compte Paypal</b>.",
+    "header": "Autorisations de <b>PayPal</b>",
+    "image1": "images/accounts/paypal/paypal_1.jpg",
+    "image2": "images/accounts/paypal/paypal_2.jpg",
+    "image3": "images/accounts/paypal/paypal_3.jpg",
+    "image4": "images/accounts/paypal/paypal_4.jpg"
+  },
+  "percentage_first_retention_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "Le pourcentage de fidélisation comprend la fidélisation des nouveaux et des anciens clients, et ce pour tous les mois (pas seulement le premier mois).",
+    "p1": "Taux de fidélisation des nouveaux clients au cours du premier mois(Nouveaux clients - rétention du premier mois){br}{br}Pourcentage de nouveaux clients qui effectuent une transaction un mois après leur premier achat.{br}{br}La fidélisation des nouveaux clients est une partie spécifique du pourcentage de fidélisation*. Le taux de fidélisation des clients au cours du premier mois est analysé séparément car il permet d'observer plus clairement les impacts affectant les nouveaux clients (actions et/ou autres effets).",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment est calculé le <b>Taux de fidélisation des nouveaux clients</b> ?",
+    "title_list_0": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "percentage_retention_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "more_info": "Tous les comptes de vente liés à <b>Ritmo</b> sont pris en compte.",
+    "p1": "Nombre de clients qui ont effectué un achat ou un paiement (par exemple, le paiement d'un abonnement mensuel) au cours de la période sélectionnée.{br}{br}",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Quel est le <b>taux de fidélisation des clients</b> ?",
+    "title_list_0": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "prestashop": {
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez une autre <b>boutique Prestashop</b>.",
+    "header": "AUtorisations de <b>Prestashop</b>",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée"
+  },
+  "quickbooks": {
+    "header": "Autorisations de <b>Quickbooks</b>"
+  },
+  "revenue_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "p1": "Les revenus sont la somme de tous les paiements reçus sur les <b>comptes de vente</b> que vous avez liés dans <b>Ritmo</b>..",
+    "p2": "Il s'agit du revenu brut, sans soustraire les remboursements, donc les données antérieures ne changeront pas.",
+    "p3": "La date des revenus correspond à l'heure à laquelle le client a effectué la transaction.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "stripe": "<span>Stripe</span>Les données de paiement sont utilisées. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "title": "Comment sont calculés les <b>revenus</b> ?",
+    "title_list_0": "Comptes de <b>Ventes</b>. disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "ritmo_insights": {
+    "connected_accounts": "Comptes connectés à <b>RITMO Insights</b>",
+    "dashboard": "Tableau d'affichage",
+    "ltv": "Valeur de la durée de vie (<b>LTV</b>)",
+    "score_card": "Tableau de bord",
+    "to": "jusqu’à"
+  },
+  "sage": {
+    "header": "Autorisations de <b>Sage</b>"
+  },
+  "sageone": {
+    "header": "Autorisations de <b>Sage Business</b>"
+  },
+  "selectOfferForm": {
+    "growth_capital": "Growth Capital",
+    "invoice_finance": "Invoice Finance",
+    "select_product": "Sélectionnez un produit: "
+  },
+  "sessions_info": {
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "googleanalytics": "Nous utilisons Google Analytics pour calculer le nombre de sessions par jour en additionnant les vues de toutes vos consultations.",
+    "marketing_accounts": "Comptes Marketing",
+    "p1": "Sessions est une donnée extraite de <b>Google Analytics</b>. Si vous avez connecté plus d'une vue, il s'agit de la somme de toutes les vues.",
+    "p2": "Par défaut dans <b>Google Analytics</b>, une session est définie comme la période de temps pendant laquelle les utilisateurs interagissent avec le site web avec une inactivité de moins de 30 minutes.",
+    "p3": "Après 30 minutes d'inactivité, toute page consultée par cet utilisateur sera traitée comme une nouvelle session.",
+    "title": "Comment sont obtenues les <b>Sessions</b> ?",
+    "title_list_0": "Comptes <b>Marketing</b> disponibles"
+  },
+  "shopify": {
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez une autre <b>boutique Shopify</b>.",
+    "header": "Autorisations de <b>Shopify</b>",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée"
+  },
+  "status": "État",
+  "stripe": {
+    "account_connected": "Votre compte <b>{account}</b> est connecté",
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez un autre <b>compte Stripe</b>",
+    "header": "Autorisations de <b>Stripe</b>"
+  },
+  "table_loader": {
+    "go_to_page": "Aller à la page",
+    "header": {
+      "amount": "Quantité",
+      "company_name": "Nom",
+      "date": "Date",
+      "id": "ID",
+      "invoice": "Facture",
+      "period": "Période",
+      "status": "État"
+    },
+    "records": "Enregistrements",
+    "records_found": "Enregistrements trouvés",
+    "select_filter": {
+      "all": "Tous",
+      "canceled": "Annulé",
+      "dispute_lost": "Litige perdue",
+      "disputed": "En litige",
+      "failed": "Échoué",
+      "notified": "Notifié",
+      "processing": "Traitement",
+      "succeeded": "Succès",
+      "to_review": "A l'étude"
+    },
+    "show": "Montrer"
+  },
+  "transactions_info": {
+    "amazonseller": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "connect": "pour connecter les comptes en attente de connexion et tirer le meilleur parti de <b>RITMO Insights</b>.",
+    "go_to": "Aller à",
+    "magento": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "p1": "Les Transactions sont la somme de toutes les commandes reçues dans les Comptes de ventes que vous avez liés à <b>RITMO</b>.",
+    "p2": "Elles sont comptabilisées même si la commande est retournée par la suite, de sorte que les données passées ne changent pas.",
+    "p3": "La date de la transaction correspond  au moment où le client a effectué l'opération.",
+    "prestashop": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus.",
+    "sales_accounts": "Comptes de ventes",
+    "shopify": "Chaque commande est considérée comme une transaction. Notez que les remboursements sont également comptabilisés comme une transaction.",
+    "stripe": "Chaque paiement est considéré comme une transaction. Seuls ceux qui ont été effectivement collectés sont utilisés. Notez que les remboursements sont également comptabilisés comme une transaction.",
+    "title": "Comment les <b>Transactions</b> sont-elles obtenues ?",
+    "title_list_0": "Comptes de <b>Ventes</b> disponibles",
+    "woocommerce": "Nous utilisons des données des commandes. Notez que les remboursements sont comptabilisés en tant que revenus."
+  },
+  "validator": {
+    "company_details": "Détails de la société",
+    "contract_signal": "Signature du contrat",
+    "offer": "Mon offre",
+    "verification_admins": "Vérification des administrateurs"
+  },
+  "woocommerce": {
+    "content1": "Ajoutez tous vos comptes afin que nous puissions vous offrir le plus de capital possible.",
+    "content2": "Ajoutez une autre <b>boutique Woocommerce</b>.",
+    "header": "Autorisations de <b>Woocommerce</b>",
+    "shop_connected": "Votre boutique <b>{shop}</b> est connectée."
+  },
+  "xero": {
+    "header": "Autorisations de <b>Xero</b>"
+  },
+  "zoho_books": {
+    "header": "Autorisations de <b>ZohoBooks</b>"
+  }
+}

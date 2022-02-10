@@ -1,0 +1,32 @@
+$path: "../../fonts/";
+
+@mixin insertFont($font_name, $font) {
+  @font-face {
+    font-family: "#{$font_name}";
+    src: local("#{$font_name}"),
+      url("#{$path}#{$font}-webfont.woff2") format("woff2"),
+      url("#{$path}#{$font}-webfont.woff") format("woff"),
+      url("#{$path}#{$font}-webfont.woff2") format("woff2"),
+      url("#{$path}#{$font}-webfont.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@include insertFont("Gilroy Light", "gilroy-light");
+@include insertFont("Gilroy Extra Bold", "gilroy-extrabold");
+@include insertFont("Gilroy Semi Bold", "GilroySemiBold");
+@include insertFont("Brown SemiBold", "BrownStdBold");
+
+@mixin ff_text() {
+  font-family: "Gilroy Light";
+}
+@mixin ff_text_bold() {
+  font-family: "Gilroy Semi Bold";
+  font-weight: 100;
+}
+@mixin ff_headline() {
+  font-family: "Brown SemiBold";
+  font-weight: 100;
+}

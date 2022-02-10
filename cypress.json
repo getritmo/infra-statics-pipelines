@@ -1,0 +1,20 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "chromeWebSecurity": false,
+  "component": {
+    "testFiles": "**/*.test.{js,ts,jsx,tsx}",
+    "componentFolder": "src"
+  },
+  "env": {
+    "auth0_domain": "dev-tzs6jslq.eu.auth0.com",
+    "auth0_client_id": "8aZWUwlk9SKlS1vdftIL6M86ZvzQHLCW",
+    "auth0_audience": "https://dev-tzs6jslq.eu.auth0.com/api/v2/",
+    "auth0_client_secret": "jDClmhlSPH7ERW-rWmiyfJX6cehJY6pXuv2koP99KWPNNQ9WKq8cWhKtYUkKaHWv",
+    "DEFAULT_USER": "javier+test@getritmo.com",
+    "AUTH0_DOMAIN": "yourauth0account.auth0.com",
+    "APPLICATION_COOKIE_NAME": "appSession",
+    "APPLICATION_LOGIN_URL": "http://localhost:3000/",
+    "APPLICATION_CALLBACK_URL": "http://localhost:3000/callback"
+  },
+  "defaultCommandTimeout": 30000
+}

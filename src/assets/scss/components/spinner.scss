@@ -1,0 +1,75 @@
+.sized-spinner {
+  align-items: center;
+  background-color: transparent !important;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: relative;
+  right: 0;
+  top: 0;
+  
+  .logo-circle,
+  .logo-ball {
+    transform: translateX(50%);
+  }
+
+  .logo-ball {
+    animation: rotate 1.3s infinite;
+    transform: translateX(50%) rotate(0deg);
+    transition: all 0.63s;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(50%) rotate(360deg);
+  }
+}
+
+.spinner {
+    animation: fadein 0.3s;
+  &__container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+
+    &--top {
+      max-width: 850px;
+      @include respond-to(desktop) {
+        margin-top: 72px;
+      }
+    }
+
+    &--top-center {
+      @include respond-to(desktop) {
+        margin-top: 72px;
+      }
+    }
+  }
+
+  &.text {
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: auto;
+    background: rgba(255,255,255,.9);
+
+    @include respond-to(tablet) {
+        left: 330px;
+        top: 70px;
+    }
+  }
+
+  &__text {
+    @include ff_headline();
+    transform: translateY(-50px);
+  }
+}

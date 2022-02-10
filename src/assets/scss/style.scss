@@ -1,0 +1,329 @@
+@import 'helpers/fonts.scss';
+@import 'variables/variables.scss';
+@import 'mixins/mixins.scss';
+@import 'layouts/layout-initial.scss';
+@import 'layouts/layout-columns.scss';
+@import 'layouts/layout-app.scss';
+@import 'components/button.scss';
+@import 'components/titles.scss';
+@import 'components/form.scss';
+@import 'components/link.scss';
+@import 'components/menu-column.scss';
+@import 'components/header-bar.scss';
+@import 'components/modal.scss';
+@import 'components/accounts.scss';
+@import 'components/company-details.scss';
+@import 'components/cookiebot.scss';
+@import 'components/offer.scss';
+@import 'components/panel.scss';
+@import 'components/overlay.scss';
+@import 'components/confirm.scss';
+@import 'components/iframe-overlay.scss';
+@import 'components/dashboard.scss';
+@import 'components/tooltip.scss';
+@import 'components/table.scss';
+@import 'components/table-graph.scss';
+@import 'components/ltv.scss';
+@import 'components/score-card.scss';
+@import 'components/ui.scss';
+@import 'components/card.scss';
+@import 'components/my-advances.scss';
+@import 'components/datepicker.scss';
+@import 'components/payments.scss';
+@import 'components/spinner.scss';
+@import 'components/icons.scss';
+@import 'components/banners.scss';
+@import 'components/metabase.scss';
+@import 'components/admin.scss';
+@import 'components/openbanking.scss';
+@import 'components/authentication.scss';
+@import 'components/custom.scss';
+@import 'components/filters.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  border-width: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+body {
+  @include ff_text();
+  font-size: 16px;
+}
+
+.ri-icon {
+  background-image: url(/images/svg/ritmo-insight-icon-big.svg);
+  background-size: cover;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+}
+
+.message {
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: left;
+
+  @include respond-to(tablet) {
+    margin: 0;
+    max-width: 800px;
+  }
+
+  .title-h1 {
+    margin-top: 0;
+  }
+
+  .btn {
+    display: table;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+      margin: 0;
+      width: auto;
+    }
+  }
+
+  .link {
+    font-size: 15px;
+
+  }
+
+  .tooltip {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    position: relative;
+
+    &__content {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      bottom: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      font-size: 13px;
+      font-weight: normal;
+      left: 50%;
+      opacity: 0;
+      padding: 10px;
+      position: absolute;
+      transition: all 0.3s;
+      width: 300px;
+
+      &::after {
+        background: white;
+        border-left: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        bottom: -6px;
+        content: '';
+        height: 10px;
+        left: 20px;
+        position: absolute;
+        transform: rotate(-135deg);
+        width: 10px;
+
+      }
+    }
+
+    &:hover {
+      .tooltip__content {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.desktop-visible {
+  display: none;
+
+  @include respond-to(desktop) {
+    display: inline-block;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animLeft {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+.validator {
+  margin-top: 40px;
+  max-width: 440px;
+  padding: 0;
+
+  > div {
+    margin-bottom: 10px;
+  }
+}
+
+.ritmo-insights-icon {
+  margin: 0 5px;
+  max-height: 20px;
+  max-width: 20px;
+  
+  svg {
+    .layout-app__title & {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.beta {
+  @include ff_headline();
+  background-color: #000;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: -0.4px;
+  line-height: 22px;
+  margin-left: 10px;
+  max-height: 20px;
+  padding: 1px 10px;
+  vertical-align: middle;
+
+  @include respond-to(tablet) {
+    line-height: 18px;
+    max-height: 20px;
+    padding: 1px 10px;
+  }
+}
+
+.help {
+  background: #fbfcea;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  bottom: calc(100% + 4px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  font-size: 10px;
+  max-width: 300px;
+  opacity: 0;
+  padding: 10px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  transition: all 0.3s;
+  z-index: 10;
+
+  &::after {
+    background: #fbfcea;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    content: '';
+    height: 10px;
+    position: absolute;
+    right: 73px;
+    top: calc(100% - 5px);
+    transform: rotate(-135deg);
+    width: 10px;
+  }
+
+  &__title {
+    @include ff_headline();
+  }
+}
+
+.tooltip {
+  &__accountitem {
+    border-radius: 5px !important;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .01) !important;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+  
+  &__content {
+    &--title {
+      @include ff_headline();
+      font-size: 10px;
+    }
+
+    &--text {
+      font-size: 10px;
+    }
+  }
+}
+
+.spinner {
+  align-items: center;
+}
+
+.min-logo {
+  height: 50px;
+  margin-top: -10px;
+
+  .logo-circle,
+  .logo-ball {
+    height: 50px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 50px;
+
+    .dashboard__cells-container & {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  .logo-ball {
+    animation: rotate 1.3s infinite;
+    transform: translateX(-50%) rotate(0deg);
+    transition: all 0.63s;
+  }
+}
+
+.language-selector__menu {
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-top: 20px;
+}
+
+.language-selector__header {
+  
+}

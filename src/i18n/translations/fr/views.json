@@ -1,0 +1,216 @@
+{
+  "applied": {
+    "accounts": "Connectez <b>vos comptes</b>",
+    "creation_success": "Vous avez effectué avec succès le processus de création de votre <b>compte</b>.",
+    "insight": {
+      "text1": "Bienvenue sur Ritmo Insights, la <b>plateforme de growth analytics</b> qui vous aidera à prendre de meilleures décisions commerciales.",
+      "text2": "Pour commencer à utiliser Ritmo Insights, il suffit de <b>connecter vos comptes de marketing et de ventes</b>."
+    },
+    "prepare_offer": "Parallèlement, veuillez connecter vos comptes afin que nous puissions préparer dans les meilleurs délais une proposition adaptée à vos besoins.",
+    "ritmo_insights": "Découvrez {ri} maintenant",
+    "ritmo_insights_explanation": "<b>RITMO</b> est une plateforme qui fournit les outils permettant d'<b>accélérer la croissance des entreprises digitales</b>:",
+    "ritmo_insights_insights": "L'outil de growth analytics qui vous aidera à prendre de meilleures décisions commerciales. Connectez vos comptes et commencez à améliorer la performance de votre entreprise.",
+    "ritmo_insights_text_1": "Pour le moment, nous ne finançons que les entreprises dont le chiffre d'affaires mensuel est supérieur à 10 000 € et qui sont enregistrées en <b>France</b>, <b>Espagne</b>, au <b>Royaume-Uni</b> et/ou au <b>Mexique</b>.{br}{br}Nous vous informerons lorsque nous aurons un produit financier qui répondra à vos besoins.{br}{br}Vous pouvez néanmoins utiliser {ri}, notre plateforme d'analyse de croissance pour le commerce électronique et les marketplaces et ce, <b>de façon gratuite.</b>",
+    "subtitle": "L'équipe de Ritmo prendra contact avec vous très prochainement.",
+    "title": "Bienvenue à bord"
+  },
+  "company_info": {
+    "breadcrumb": {
+      "current": "Coordonnées de l'entreprise",
+      "previous": "Ma demande"
+    },
+    "complete_details": "Remplissez les coordonnées de <b>votre entreprise</b>",
+    "confirm_details": "Confirmez les coordonnées de votre entreprise afin que nous puissions vous envoyer une offre formelle.",
+    "edit_info": "Modifier les informations sur la société",
+    "title": "Informations concernant la société - RITMO App"
+  },
+  "company_item": {
+    "banking_accounts": "Comptes <b>Bancaires</b>",
+    "contract": {
+      "accepted": "Contrat accepté",
+      "chooseFile": "Choisissez un fichier",
+      "pending": "Signature en attente"
+    },
+    "contract_signal": "Signature du <b>contrat</b>",
+    "direct_debit": "Prélèvement <b>automatique</b>",
+    "download_contract": "Télécharger le contrat",
+    "download_offer": "Télécharger la proposition",
+    "finance_accounts": "<b>Comptes financiers</b>",
+    "marketing_accounts": "<b>Comptes marketing</b>",
+    "no_banking": "Aucun compte <b>bancaire</b> connecté",
+    "no_direct_debit": "Pas de prélèvement automatique",
+    "no_files": "Aucun fichier téléchargé",
+    "offer": {
+      "accepted": "Offre acceptée"
+    },
+    "offers": "<b>Offres</b>",
+    "sales_accounts": "<b>Comptes de ventes</b>",
+    "text1": "L'accord de prélèvement automatique a bien été <b>autorisé.</b>.",
+    "text2": "Les <b>remboursements hebdomadaires</b> seront effectués sur le compte se terminant par <b>{last_four_digits}</b>.",
+    "text3": "La référence du mandat est <b>{mandate_reference}</b>.",
+    "verification_admins": "Vérification des <b> Administrateurs</b>"
+  },
+  "contract_signal": {
+    "breadcrumb": {
+      "current": "Signature du contrat",
+      "previous": "Ma demande"
+    },
+    "text1": "Il reste encore des étapes <b>à effectuer.</b>",
+    "text10": "Continuer",
+    "text2": "Veuillez remplir les étapes indiquées ci-dessous afin que nous puissions vous envoyer le contrat.",
+    "text3": "Vous recevrez <b>le contrat en moins de 24 heures.</b>",
+    "text4": "L'équipe Ritmo vous enverra le contrat à signer via Docusign..",
+    "text5": "<b>Le contrat est déjà prêt :)</b>",
+    "text6": "Voici une copie du contrat à signer avec Ritmo.",
+    "text7": "<b>Le contrat est prêt :)</b>",
+    "text8": "Voici une copie du contrat d'avance signé avec Ritmo.",
+    "text9": "Télécharger le contrat",
+    "title": "Signature du <b>contrat</b>"
+  },
+  "direct_debit": {
+    "breadcrumb": {
+      "current": "Prélèvement automatique",
+      "previous": "Ma demande"
+    },
+    "text1": "Prélèvement <b>automatique</b>",
+    "text10": "Prélèvement automatique <b>autorisé</b>",
+    "text11": "L'accord de prélèvement automatique a bien été <b>autorisé</b>.",
+    "text12": "Les <b>remboursements hebdomadaires</b> de l'avance marketing seront effectués automatiquement sur le compte se terminant par <b>{last4digits}</b>.",
+    "text13": "La référence du mandat est <b>{mandate_reference}</b>.",
+    "text14": "Si vous avez des questions, n'hésitez pas à nous contacter à l'adresse électronique suivante",
+    "text2": "Il reste encore des étapes <b>à effectuer.</b>",
+    "text3": "Veuillez remplir les étapes ci-dessous afin que nous puissions vous envoyer le paiements par prélèvement automatique.",
+    "text4": "Autorise le paiement par <b>prélèvement automatique</b>",
+    "text5": "L'accord de <b>prélèvement automatique</b> n'a pas été autorisé.",
+    "text6": "Veuillez essayer encore une fois.",
+    "text7": "Afin de terminer le processus de demande, nous avons besoin que vous autorisiez Ritmo à permettre le paiement par prélèvement automatique.",
+    "text8": "Autoriser",
+    "text9": "Si vous avez des questions, n'hésitez pas à nous contacter à l'adresse électronique suivante"
+  },
+  "finance_accounts": {
+    "breadcrumb": {
+      "current": "Comptes financiers",
+      "previous": "Ma demande"
+    },
+    "text1": "Connectez tous vos <b>comptes financiers</b>",
+    "text2": "Pour déterminer si <b>nous pouvons vous offrir un financement</b> ou non, nous devons nous connecter à vos <b>comptes financiers</b> et vous devez partager avec nous certains documents."
+  },
+  "initial": {
+    "text1": "Connexion incorrecte",
+    "text2": "Vous pouvez vous être connecté avec votre compte Auth0 de différentes manières.",
+    "text3": "Déconnexion de <b>votre compte</b>"
+  },
+  "marketing_accounts": {
+    "breadcrumb": {
+      "current": "Comptes marketing",
+      "previous": "Ma demande"
+    },
+    "subtitle": "Nous nous connectons à vos <b>comptes marketing</b> afin de prévoir votre retour sur investissement et de vous fournir la meilleure <b>proposition</b> possible.",
+    "title": "Connectez tous vos <b>comptes marketing</b>."
+  },
+  "my_advances": {
+    "advance_amount": "Montant de l'avance",
+    "amount_due": "Montant dû",
+    "breadcrumb": {
+      "previous": "Mes avances"
+    },
+    "commission_rate": "Commission",
+    "deployment_date": "Date du versement",
+    "due_date": "Date",
+    "no_repayments": "Aucun remboursement n'est encore associé à ce déploiement.",
+    "outstanding": {
+      "text": "Le <b>solde restant</b> à payer est de <b>{amount}</b>",
+      "title": "Solde dû"
+    },
+    "page_title": "Avance sur investissement en",
+    "processing": {
+      "text_2": "Les remboursements prennent normalement jusqu'à <b>{amounts} jours ouvrables</b> pour être traités.",
+      "text_plural": "Vous avez des <b>remboursements de {paymentsAmount}</b> en cours de <b>traitement</b> pour un montant <b>total de {amount}.</b>{br}",
+      "text_single": "Vous avez un <b>remboursement de {paymentsAmount}</b> en cours de <b>traitement</b> pour un montant <b>total de {amount}.</b>{br}",
+      "title": "Traitement"
+    },
+    "refunded": {
+      "title": "Montant total remboursé à ce jour",
+      "value": "À ce jour, vous avez effectué avec succès des <b> remboursements de {paymentsAmount}</b> pour un montant <b>total de {amount}</b>"
+    },
+    "repayments": "Vos <b>remboursements</b>",
+    "revenue": "Revenus",
+    "revenue_share": "Facteur de remboursement",
+    "start_date": {
+      "title": "Début du suivi",
+      "tooltip": "La date de début du suivi des revenus correspond à la date à laquelle nous commençons à suivre vos revenus pour calculer les remboursements."
+    },
+    "text1": "Mon avance",
+    "text1_inventory": "Avance sur inventaire",
+    "text1_marketing": "Avance marketing",
+    "title": "Mes avances",
+    "total_due": "Total à rembourser"
+  },
+  "not_applied": {
+    "text1": "MERCI DE VOTRE INTÉRÊT",
+    "text2": "<b>Malheureusement, vous ne satisfaites pas toutes les exigences en matière de financement.</b>",
+    "text3": "Nous finançons actuellement uniquement les entreprises ayant un revenu mensuel de 10 000 ou plus.",
+    "text4": "Quoi qu'il en soit, restez à l'écoute car nous allons bientôt commencer à travailler avec des entreprises dont le chiffre d'affaires est inférieur à 10 000 euros par mois.",
+    "text5": "Actuellement et pour des raisons fiscales, nous ne finançons que les entreprises basées en Espagne.",
+    "text6": "Cependant, nous ne tarderons pas à travailler avec des entreprises du monde entier.",
+    "text7": "Nous sommes impatients de collaborer avec vous dès que cela sera possible.",
+    "text8": "Retour à la page d'accueil"
+  },
+  "offer": {
+    "breadcrumb": {
+      "current": "Ma proposition",
+      "previous": "Ma demande"
+    },
+    "text1": "Ma <b>proposition</b>",
+    "text10": "Télécharger la proposition",
+    "text11": "Continuer",
+    "text12": "Accepter l'offre",
+    "text2": "Il reste encore des étapes <b>à franchir</b>.",
+    "text3": "Veuillez remplir les étapes ci-dessous afin que nous puissions préparer une offre répondant au mieux à vos besoins.",
+    "text4": "Nous examinons <b>vos informations</b>",
+    "text5": "Votre offre apparaîtra ici et vous recevrez un e-mail lorsqu'elle sera prête.",
+    "text6": "Offre <b>acceptée</b>",
+    "text7": "Nous avons reçu l'acceptation de l'offre.",
+    "text8": "Offres en attente de votre <b>accord</b>",
+    "text9": "Vous disposez ici de la meilleure offre basée sur l'analyse des performances de votre entreprise."
+  },
+  "registration": {
+    "completing_registration": "Compléter l'enregistrement...",
+    "link1": "https://www.getritmo.com/politique-de-confidentalité",
+    "link2": "https://www.getritmo.com/mentons-légales",
+    "link3": "https://www.getritmo.com/politique-de-cookies",
+    "text1": "Politique de confidentialité",
+    "text2": "Mentions légales",
+    "text3": "Politique en matière de cookies"
+  },
+  "sales_accounts": {
+    "breadcrumb": {
+      "current": "Comptes de vente",
+      "previous": "Ma demande"
+    },
+    "text1": "Connectez tous vos <b>comptes de vente</b>.",
+    "text2": "Nous nous connectons à vos <b>comptes de vente</b> afin de prévoir votre potentiel de revenus et de vous proposer la meilleure <b>offre</b> possible."
+  },
+  "validating": {
+    "text1": "MERCI DE VOTRE INTÉRÊT",
+    "text2": "<b>Malheureusement, vous ne satisfaisez pas à toutes les exigences en matière de financement.</b>",
+    "text3": "Nous finançons actuellement uniquement les entreprises ayant un revenu mensuel de 10 000 ou plus.",
+    "text4": "Quoi qu'il en soit, restez à l'écoute car nous allons bientôt commencer à travailler avec des entreprises dont le chiffre d'affaires est inférieur à 10 000 euros par mois.",
+    "text5": "Si entre-temps vos revenus augmentent, nous serons ravis de vous accueillir.",
+    "text6": "Retour au site web"
+  },
+  "verification_admins": {
+    "breadcrumb": {
+      "current": "Vérification des administrateurs",
+      "previous": "Ma demande"
+    },
+    "text1": "Vérification des <b>Administrateurs</b>",
+    "text2": "Il reste encore des étapes <b>à franchir.</b>",
+    "text3": "Veuillez effectuer les étapes indiquées ci-dessous afin de vérifier les administrateurs de votre entreprise.",
+    "text4": "Nous vérifions <b>la propriété de votre entreprise</b>",
+    "text5": "L'équipe Ritmo vous enverra des instructions sur la manière de procéder à la vérification de la propriété de votre entreprise.",
+    "text6": "Propriété de l'entreprise <b>correctement vérifiée</b>",
+    "text7": "Voici la documentation relative à la vérification de la propriété de votre entreprise.",
+    "text8": "Continuer"
+  }
+}

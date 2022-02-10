@@ -1,0 +1,13 @@
+.company {
+  &__item {
+    &--container {
+      display: flex;
+      max-width: 850px;
+
+      &.advances-empty {
+        justify-content: center;
+        margin-top: 60px;
+      }
+    }
+  }
+}

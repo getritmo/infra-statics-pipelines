@@ -1,0 +1,97 @@
+.table-graph {
+	border: 1px solid #eee;
+	border-collapse: separate;
+	border-spacing: 5px;
+	display: flex;
+	gap: 7px;
+	padding: 7px;
+	position: relative;
+	width: 100%;
+	max-width: 660px;
+	z-index: 100;
+
+	&.label {
+		@include ff_headline();
+		border: 0 solid #eee;
+		display: flex;
+		justify-content: space-between;
+		padding: 20px 0;
+		z-index: 90;
+	}
+
+	&__explanation {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__cell {
+		cursor: pointer;
+		display: table-cell;
+		height: 70px;
+		position: relative;
+		min-width: 16px;
+
+		&.labels {
+			@include ff_text();
+			display: flex;
+			flex-direction: column-reverse;
+			font-size: 14px;
+			gap: 5px;
+			justify-content: flex-end;
+			line-height: 16px;
+			max-width: 160px;
+
+			b {
+				@include ff_headline();
+			}
+
+			&:last-child {
+				text-align: right;
+			}
+		}
+
+		&::after, &:before {
+			border-radius: 3px;
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+
+			.label & {
+				display: none;
+			}
+		}
+
+		&:hover {
+			&:before {
+				opacity: 1;
+			}
+		}
+		&:before {
+			background: rgba(0,0,0,.05);
+			z-index: 1;
+			opacity: 0;
+			transition: all 0.2s ease-in-out;
+		}
+
+		&.already-paid {
+			&::after {
+				background: $gradientAlreadyPayer;
+			}
+		}
+
+		&.processing {
+			&::after {
+				background: $gradientPending;
+			}
+		}
+
+		&.payment-left {
+			&::after {
+				background: $backgroundToBePayed;//linear-gradient(-5deg, $blueGradient, $blueColor);
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "users": "api/v1/users",
+  "companies": "api/v1/companies",
+  "applications": "api/v1/applications",
+  "admin": "api/v1/admin",
+  "api": "api/v1",
+  "logout_url": "https://dev-tzs6jslq.eu.auth0.com/v2/logout"
+}

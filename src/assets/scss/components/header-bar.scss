@@ -1,0 +1,64 @@
+.header-bar {
+  background: $blueGradient;
+  left: 0;
+  padding: 10px 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      a {
+        vertical-align: middle;
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: 0;
+    height: 38px;
+    width: 100px;
+  }
+}
+
+.header-app {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  box-sizing: border-box;
+  left: 0;
+  padding: 10px 20px;
+  right: 0;
+  top: 0;
+  z-index: 16;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to(desktop) {
+    padding: 10px 30px;
+    justify-content: flex-start;
+  }
+  @include respond-to(desktop_big) {
+  padding: 20px 30px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 0;
+    padding: 0;
+    li {
+      line-height: 0;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 0;
+    width: 100px;
+  }
+}

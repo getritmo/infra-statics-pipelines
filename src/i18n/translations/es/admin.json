@@ -1,0 +1,46 @@
+{
+  "finance": {
+    "add": "Añadir ficheros",
+    "bs_documents": "<b>Extractos bancarios</b>:",
+    "dialog": {
+      "no": "No",
+      "title": "¿Seguro que desea eliminar el documento {filename}?",
+      "yes": "Si"
+    },
+    "fs_documents": "<b>Documentos financieros</b>:",
+    "no_bs_document": "No existen <b>extractos bancarios</b> aún",
+    "no_documents": "<b>No existen documentos</b> cargados aún",
+    "no_fs_document": "No existen <b>documentos financieros</b> aún"
+  },
+  "payments": {
+    "end_date": "Fecha Final",
+    "errors": {
+      "end_date": "Por favor rellena la fecha final (dd/mm/yyyy)",
+      "invoice": "Por favor sellecciona la factura",
+      "invoice_number": "Por favor rellena la número de facurtura",
+      "quantity": "La Cantidad debe ser superior a 1000€",
+      "required": "Por favor rellena este campo",
+      "start_date": "Por favor rellena la fecha inicial (dd/mm/yyyy)"
+    },
+    "help": {
+      "quantity": "Los valores son en céntimos (1000 = 10€)"
+    },
+    "invoice_number": "Número Factura",
+    "layout_title": "Crear <b>Pago</b>",
+    "quantity": "Cantidad",
+    "start_date": "Fecha inicio",
+    "status": {
+      "dispute_lost": "disputa perdida",
+      "disputed": "en disputa",
+      "initiated": "iniciado",
+      "notified": "notificado",
+      "processing": "procesando",
+      "succeeded": "realizado",
+      "to_review": "en revisión"
+    },
+    "title": "Crear Pago"
+  },
+  "uploads": {
+    "title": "Subir <b>archivo</b>"
+  }
+}

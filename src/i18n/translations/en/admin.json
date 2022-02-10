@@ -1,0 +1,46 @@
+{
+  "finance": {
+    "add": "Add files",
+    "bs_documents": "<b>Bank Statements</b> documents:",
+    "dialog": {
+      "no": "No",
+      "title": "Are you sure you want to delete the document {filename}?",
+      "yes": "Yes"
+    },
+    "fs_documents": "<b>Finance</b> documents:",
+    "no_bs_document": "<b>No Bank Statements documents</b> uploaded yet",
+    "no_documents": "<b>No documents</b> uploaded yet",
+    "no_fs_document": "<b>No Finance documents</b> uploaded yet"
+  },
+  "payments": {
+    "end_date": "End Date",
+    "errors": {
+      "end_date": "Please fill in the end date (dd/mm/yyyy)",
+      "invoice": "Please select the invoice",
+      "invoice_number": "Please fill in the invoice number",
+      "quantity": "The Amount must be more than 1000€.",
+      "required": "Please fill in this field",
+      "start_date": "Please fill in the starting date (dd/mm/yyyy)"
+    },
+    "help": {
+      "quantity": "Values are in cents (1000 = 10€)"
+    },
+    "invoice_number": "Invoice Number",
+    "layout_title": "Create <b>Payment</b>",
+    "quantity": "Quantity",
+    "start_date": "Start Date",
+    "status": {
+      "dispute_lost": "dispute lost",
+      "disputed": "disputed",
+      "initiated": "initiated",
+      "notified": "notified",
+      "processing": "processing",
+      "succeeded": "succeeded",
+      "to_review": "to review"
+    },
+    "title": "Create Payment"
+  },
+  "uploads": {
+    "title": "Upload <b>File</b>"
+  }
+}

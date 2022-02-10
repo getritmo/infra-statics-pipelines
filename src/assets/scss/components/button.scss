@@ -1,0 +1,494 @@
+.btn {
+  border-radius: 30px;
+  cursor: pointer;
+  height: 54px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+  text-decoration: none;
+
+  g {
+    fill: white;
+  }
+
+  &.btn-small {
+    @include ff_text_bold();
+    font-size: 12px;
+    height: 30px;
+    line-height: 12px;
+    max-height: 30px;
+    padding: 0 20px;
+  }
+
+  &-icon {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 30px;
+    border-width: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    
+    &:hover {
+      transform: scale(1.1);
+      transition: all 300ms ease-in-out;
+
+      .body {
+        fill: $orange1;
+      }
+    }
+    
+    &:active {
+      background-color: #bbb;
+    }
+
+    &.btn-small {
+      height: 24px;
+      min-height: 24px;
+      min-width: 24px;
+      padding: 0;
+      width: 24px;
+
+      .body,
+      .asa {
+        fill: transparent;
+        stroke: $orange1;
+        stroke-width: 4px;
+      }
+
+      .asa {
+        fill: $orange1;
+        stroke-width: 1px;
+      }
+    }
+  
+    &.btn-medium {
+      height: 28px;
+      min-height: 28px;
+      min-width: 28px;
+      padding: 0;
+      width: 28px;
+    }
+  }
+
+  &-cancel {
+    @include ff_headline();
+    background-image: linear-gradient(180deg, #888 0%, #888 100%);
+    border: 0 solid $green;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 30px;
+    position: relative;
+    transition: all 0.13s;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+
+      &::before {
+        opacity: 1;
+        transition: all 0.2s;
+      }
+    }
+
+    &::before {
+      background: rgb(33, 182, 33);
+      background-image: linear-gradient(180deg, #777 0%, #777 100%);
+      border: 0 solid transparent;
+      border-radius: inherit;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.2s;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+  }
+
+  &-alert {
+    @include ff_headline();
+    background-image: linear-gradient(-41deg, #e95a0c 0%, #ff7800 100%);
+    background-image: linear-gradient(-41deg, $blueColor 0%, $blueColor 100%);
+    border: 0 solid $green;
+    color: #fff;
+    font-size: 15px;
+    line-height: 15px;
+    padding: 0 30px;
+    position: relative;
+    transition: all 0.13s;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+
+      &::before {
+        opacity: 1;
+        transition: all 0.2s;
+      }
+    }
+
+    &::before {
+      background: $orange;
+      background: rgba(0, 0, 0, .1);
+      border: 0 solid transparent;
+      border-radius: inherit;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.2s;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+  }
+
+  &-success {
+    @include ff_headline();
+    background-image: $greenGradient;
+    border: 0 solid $green;
+    color: #fff;
+    font-size: 15px;
+    padding: 0 30px;
+    position: relative;
+    transition: all 0.13s;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+
+      &::before {
+        opacity: 1;
+        transition: all 0.2s;
+      }
+    }
+
+    &::before {
+      background-image: $greenGradient;
+      //background: $orange;
+      border: 0 solid transparent;
+      border-radius: inherit;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.2s;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+  }
+
+  &-image {
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  &-secondary {
+    @include ff_text_bold();
+    background: $blueColor;
+    border: 0 solid $green;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 30px;
+    position: relative;
+    transition: all 0.13s;
+
+    b {
+      @include ff_text_bold();
+      font-weight: 100;
+    }
+
+    // svg icon used in connct accounts buttons
+    .connect {
+      margin-right: -5px;
+    }
+
+    &.disabled {
+      background: #666;
+      opacity: 0.5;
+    }
+
+    .image-button {
+      display: inline-flex;
+      margin-left: 15px;
+      position: relative;
+      vertical-align: middle;
+      z-index: 1;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      transition: all 0.3s;
+
+      span {
+        color: white;
+      }
+
+      &::before {
+        color: white;
+        opacity: 1;
+        transition: all 0.2s;
+        width: 100%;
+      }
+    }
+
+    &::before {
+      background: rgba(0, 0, 0, .1);
+      border: 0 solid transparent;
+      border-radius: 30px;
+      bottom: 0;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.62s;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+
+    &.outlined {
+      background: none;
+      border: 2px solid;
+      color: $blueColor;
+        
+      &::before {
+        background: rgba(0, 0, 0, .05);
+      }
+
+      &:hover {
+        span {
+          color: $blueColor;
+        }
+      }
+    }
+  }
+
+  &-primary {
+    background-color: $blueColor;
+    border: 1px solid $blueColor;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+
+    &::after {
+      background-color: $blueColorHover;
+      border-radius: 3px;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+      z-index: 0;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: black;
+      border: 1px solid $blueColor;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+  }
+
+  &-transparent {
+    background-color: transparent;
+    border: 1px solid transparent;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+
+    &::after {
+      background-color: $blueColorHover;
+      border-radius: 3px;
+      content: '';
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+      z-index: 0;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: #ddd;
+      border: 1px solid #ddd;
+    }
+
+    &.centered {
+      display: table;
+      margin: auto;
+    }
+  }
+
+  &-text {
+    @include ff_headline();
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 12px;
+  }
+
+
+  &-link {
+    background: transparent;
+    border: 0;
+
+    span {
+      @include ff_text();
+      background: transparent;
+      border: 0;
+      color: $blueColor;
+      cursor: pointer;
+      font-size: 16px;
+      position: relative;
+      text-decoration: none;
+    
+      &:hover {
+        color: $blueColorHover;
+        text-decoration: none;
+    
+        &::after {
+          background: $blueColorHover;
+          width: 0;
+        }
+      }
+    
+      &::after {
+        background: $blueColor;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        right: 0;
+        transition: all 0.3s;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.orange {
+  color: #f96f03;
+}
+
+.position-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.position-left {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.position-none {
+  margin: 0;
+}
+
+.btn-edit-info {
+  margin-bottom: 22px;
+  margin-left: 14px;;
+}
+
+.btn-add {
+  min-width: 20px !important;
+  padding: 0 6px !important;
+
+  span {
+    align-items: center;
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    width: 16px;
+  }
+}
+
+.btn-finance-user {
+  min-width: 247px;
+
+  &.btn-openbanking {
+    margin-bottom: 24px;
+  }
+}
+
+.btn-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.btn-loading {
+  opacity: 0.5;
+  position: relative;
+
+  &--spinner {
+    margin: 0 auto;
+    position: absolute;
+    z-index: 10;
+
+    &.btn-center {
+      right: calc(50% - 16px);
+      top: calc(50% - 8px);
+    }
+  }
+}

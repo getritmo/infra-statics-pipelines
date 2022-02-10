@@ -1,0 +1,48 @@
+.my-advances {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+  max-width: 660px;
+  padding: 10px;
+
+  @include respond-to(tablet) {
+    padding: 20px;
+  }
+
+  label {
+    @include ff_headline();
+    display: inline-block;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__list {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    list-style: none;
+    padding: 30px 0 20px;
+  }
+
+  &__row {
+    list-style: none;
+    padding: 0 0 10px;
+
+    a {
+      color: black;
+      display: inline-flex;
+      gap: 10px;
+      text-decoration: none;
+
+      &.active {
+        @include ff_headline();
+      }
+    }
+  }
+}

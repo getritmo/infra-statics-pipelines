@@ -1,0 +1,45 @@
+.title-h1 {
+  @include ff_headline();
+  font-size: 24px;
+  line-height: 32px;
+
+  @include respond-to(tablet) {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  @include respond-to(tablet) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  b {
+    color: $blueColor;
+    font-weight: 100;
+  }
+}
+
+.title-h2 {
+  @include ff_headline();
+  font-size: 21px;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: left;
+}
+.title-h3 {
+}
+.title-h4 {
+}
+
+.text-1 {
+  font-size: 14px;
+
+  @include respond-to(tablet) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.hr {
+  border-top: 1px solid #eee;
+}

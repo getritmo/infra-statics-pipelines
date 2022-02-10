@@ -1,0 +1,78 @@
+{
+  "containerDefinitions": [
+    {
+      "command": null,
+      "cpu": 128,
+      "dependsOn": null,
+      "disableNetworking": null,
+      "dnsSearchDomains": null,
+      "dnsServers": null,
+      "dockerLabels": null,
+      "dockerSecurityOptions": null,
+      "entryPoint": null,
+      "environment": [],
+      "environmentFiles": null,
+      "essential": true,
+      "extraHosts": null,
+      "firelensConfiguration": null,
+      "healthCheck": null,
+      "hostname": null,
+      "image": null,
+      "interactive": null,
+      "links": null,
+      "linuxParameters": null,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "[repo-name]",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "pro"
+        }
+      },
+      "memory": 128,
+      "memoryReservation": null,
+      "mountPoints": [],
+      "name": "[repo-name]",
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "privileged": null,
+      "pseudoTerminal": null,
+      "readonlyRootFilesystem": null,
+      "resourceRequirements": null,
+      "secrets": [],
+      "startTimeout": null,
+      "stopTimeout": null,
+      "systemControls": null,
+      "ulimits": null,
+      "user": null,
+      "volumesFrom": [],
+      "workingDirectory": null
+    }
+  ],
+  "cpu": "512",
+  "executionRoleArn": "arn:aws:iam::707706424333:role/EcsFargateExecutionRole",
+  "family": "[repo-name]-app-td",
+  "inferenceAccelerators": [
+    {}
+  ],
+  "ipcMode": null,
+  "memory": "1024",
+  "networkMode": "awsvpc",
+  "pidMode": null,
+  "placementConstraints": [
+    {}
+  ],
+  "proxyConfiguration": null,
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "taskRoleArn": "arn:aws:iam::707706424333:role/EcsFargateExecutionRole",
+  "volumes": [
+    {}
+  ]
+}

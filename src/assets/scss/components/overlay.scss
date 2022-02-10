@@ -1,0 +1,40 @@
+.overlay {
+  align-items: center;
+  animation: fadein 0.6s;
+  background: white;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 30;
+
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    @include ff_headline();
+    font-size: 16px;
+    font-weight: 100;
+    margin-top: 20px;
+    max-width: 300px;
+    text-align: center;
+
+    b {
+      @include ff_headline();
+    }
+  }
+
+  &__img {
+    max-width: 160px;
+  }
+  &__loading {
+    max-width: 40px;
+  }
+}

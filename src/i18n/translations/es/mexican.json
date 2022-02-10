@@ -1,0 +1,34 @@
+{
+  "common": {},
+  "components": {
+    "create_account_form": {
+      "RIfinance_you": "Regístrate gratis y {br}acelera tu crecimiento{br}con {ri} ",
+      "RIfinance_you_text": "Empieza a optimizar tu negocio en minutos",
+      "ahref1": "aquí",
+      "ahref2": "aviso legal",
+      "all_fields_required": "Todos los campos son requeridos",
+      "almost_have_it": "Ya casi <b>lo tenemos!</b>",
+      "checkbox1": "Acepto recibir comunicaciones comerciales y/o Newsletter de <b>RITMO</b> conforme a mis gustos y preferencias. Puede consultar",
+      "checkbox2": "nuestra Política de Privacidad",
+      "checkbox3": "Acepto el",
+      "fill_field": "Por favor rellena este campo",
+      "fill_phone": "Por favor rellena el teléfono correctamente",
+      "finance_you": "Descubre si podemos {br}<b>financiarte</b> en {br_mobile}2 minutos",
+      "review_data": "Revisar Datos",
+      "www": "Por favor introduce una url válida con www.",
+      "privacy_policy_url": "https://www.getritmo.com/es-MX/politica-de-privacidad",
+      "legal_notice_url": "https://www.getritmo.com/es-MX/aviso-legal"
+    }
+  },
+  "data": {},
+  "views": {
+    "registration": {
+      "text1": "Política de Privacidad",
+      "link1": "https://www.getritmo.com/es-MX/politica-de-privacidad",
+      "text2": "Aviso Legal",
+      "link2": "https://www.getritmo.com/es-MX/aviso-legal",
+      "text3": "Política de Cookies",
+      "link3": "https://www.getritmo.com/es-MX/politica-de-cookies"
+    }
+  }
+}

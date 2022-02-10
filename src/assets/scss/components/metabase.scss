@@ -1,0 +1,12 @@
+.metabase {
+  &__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__spinner {
+    margin-top: 240px;
+    position: absolute;
+  }
+}

@@ -1,0 +1,221 @@
+.card {
+  appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 0 16px 16px;
+  position: relative;
+  transition: all 0.3s;
+
+  &:hover {
+    box-shadow: 2px 2px 0.875rem 2px rgba(41, 48, 66, .1);
+  }
+
+  &.inactive {
+    cursor: not-allowed;
+  }
+
+  &__title {
+    @include ff_headline();
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 6px;
+
+    b {
+      @include ff_headline();
+    }
+
+    &--container {
+      display: flex;
+      justify-content: space-between;
+
+      &-right {
+        margin-top: 12px;
+
+        h4 {
+          color: $blueColor;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    @include ff_headline();
+    display: flex;
+    font-size: 14px;
+    margin: 0;
+
+    &.green {
+      color: $green_dark;
+    }
+
+    &.orange {
+      color: $orange;
+    }
+
+    b {
+      @include ff_text();
+    }
+
+    &--file {
+      background: transparent;
+      border: 0 solid #666;
+      border-radius: 5px;
+      margin-left: 6px;
+      padding: 0;
+      transition: all 0.3s;
+
+      @include respond-to(tablet) {
+        display: none;
+      }
+
+      &.offer-file {
+        &::before {
+          background-image: url(/images/svg/offer-file-icon.svg);
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          height: 15.6px;
+          width: 13.8px;
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    font-size: $text-size-small;
+    justify-content: space-between;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+    }
+
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      margin-top: 8px;
+      max-width: 100%;
+      min-width: 84%;
+      white-space: nowrap;
+    }
+
+    &--item {
+      display: block;
+      max-width: inherit;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    &--icons {
+      display: none;
+      min-width: 16%;
+      
+      @include respond-to(tablet) {
+        display: flex;
+        position: relative;
+
+        &:hover {
+          .card__content--icons-button {
+            background: #fefefe;
+            transform: scale(1.08);
+          }
+        }
+
+
+        &-button {
+          background: transparent;
+          border: 0;
+          border-radius: 5px;
+          bottom: -10px;
+          padding: 10px 10px 6px;
+          position: absolute;
+          right: 0;
+          transition: all 0.3s;
+
+
+          &.offer-file {
+            &::before {
+              background-image: url(/images/svg/offer-file-icon.svg);
+              background-size: cover;
+              content: '';
+              display: inline-block;
+              height: 52px;
+              width: 46px;
+
+              .table & {
+                height: 32px;
+                width: 27px;
+              }
+            }
+          }
+
+          &.contract-file {
+            &::before {
+              background-image: url(/images/svg/contract-file-icon.svg);
+              background-size: cover;
+              content: '';
+              display: inline-block;
+              height: 52px;
+              width: 50px;
+
+              .table & {
+                height: 32px;
+                width: 27px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &--mobile-button {
+
+      @include respond-to(tablet) {
+        display: none;
+      }
+
+      &.offer-file {
+        &::before {
+          background-image: url(/images/svg/offer-file-icon.svg);
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          height: 52px;
+          width: 46px;
+
+          .table & {
+            height: 32px;
+            width: 27px;
+          }
+        }
+      }
+
+      &.contract-file {
+        &::before {
+          background-image: url(/images/svg/contract-file-icon.svg);
+          background-size: cover;
+          content: '';
+          display: inline-block;
+          height: 52px;
+          width: 50px;
+
+          .table & {
+            height: 32px;
+            width: 27px;
+          }
+        }
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 1rem;
+  }
+}
