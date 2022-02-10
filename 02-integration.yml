@@ -1,0 +1,96 @@
+on:
+  push:
+    branches:
+    - production
+
+name: 01-Integration
+
+env:
+  BUILD_PATH: "./build"
+  ENVIRONMENT: "integration"
+  CLOUDFRONT_DISTRIBUTION_STATICS: ${{ secrets.CLOUDFRONT_DISTRIBUTION_STATICS_STA }}
+  NODE_VERSION: "14.18.0"
+  GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
+  AWS_S3_BUCKET: "${{ secrets.CLOUDFRONT_S3_DISTRIBUTION_BUCKET }}"
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: "eu-west-1"
+  ACT_TESTING: "false"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    environment: Integration
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        id: checkout_repo
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
+
+      - name: Install Yarn
+        run: npm install -g yarn
+        if: ${{ env.ACT_TESTING == 'true'}}
+
+      - name: Install chromium
+        run: apt update; apt -y install chromium-bsu chromium-browser
+        if: ${{ env.ACT_TESTING == 'true'}}
+
+      - name: setup node environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: node build and install
+        run: yarn install && yarn build:production
+
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: Check outputs
+        run: |
+          echo ${{ steps.vars.outputs.sha_short }}
+          echo ${{ steps.login-ecr.outputs.registry }}install
+
+      - name: Publish statics
+        id: publish-statics
+        uses: actions/upload-artifact@v2
+        with:
+          name: "app-statics"
+          path: ${{ env.BUILD_PATH }}
+
+  distribution:
+    name: Distribution
+    runs-on: ubuntu-latest
+    environment: Cloudfront STA
+    needs: [build]
+    steps:
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: "app-statics"
+
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          SOURCE_DIR: "./"
+          DEST_DIR: "${{ env.ENVIRONMENT }}"
+        with:
+          args: --acl public-read --follow-symlinks --delete
+
+      - name: DEBUG
+        run: printenv
+        if: ${{ env.ACT_TESTING == 'true'}}
+
+      - name: Invalidate old cache
+        run: |
+          apt update; apt -y install awscli; \
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_STATICS --paths "/$ENVIRONMENT/*"

@@ -1,0 +1,73 @@
+on:
+  repository_dispatch:
+    types: [deploy-command]
+
+name: 03-Production
+
+env:
+  BUILD_PATH: "./build"
+  ENVIRONMENT: "production"
+  CLOUDFRONT_DISTRIBUTION_STATICS: ${{ secrets.CLOUDFRONT_DISTRIBUTION_STATICS_PRO }}
+  NODE_VERSION: "14.18.0"
+  GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
+  AWS_S3_BUCKET: "${{ secrets.CLOUDFRONT_S3_DISTRIBUTION_BUCKET }}"
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_REGION: "eu-west-1"
+  ACT_TESTING: "false"
+
+jobs:
+  distribution:
+    name: Distribution
+    runs-on: ubuntu-latest
+    environment: Cloudfront PRO
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: "app-statics"
+
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          SOURCE_DIR: "./"
+          DEST_DIR: "${{ env.ENVIRONMENT }}"
+        with:
+          args: --acl public-read --follow-symlinks --delete
+
+      - name: Install dependencies
+        if: ${{ env.ACT_TESTING == 'true'}}
+        run: |
+          apt update; apt -y install awscli
+
+      - name: Invalidate old cache
+
+          aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_STATICS --paths "/$ENVIRONMENT/*"
+
+  tag:
+    name: Tag release
+    runs-on: ubuntu-latest
+    environment: Github
+    needs: [distribution]
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+
+      - name: Checkout branch "production"
+        uses: actions/checkout@v2
+        with:
+          ref: "production"
+
+      - name: Get last succesfull deploy on STA
+        uses: nrwl/last-successful-commit-action@v1
+        id: last_successful_commit
+        with:
+          branch: "production"
+          workflow_id: "02-integration.yml"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag snapshot
+        uses: tvdias/github-tagger@v0.0.1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "${{ steps.date.outputs.date }}-${{ steps.last_successful_commit.outputs.commit_hash }}"

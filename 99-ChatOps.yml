@@ -1,0 +1,16 @@
+on:
+  issue_comment:
+    types: [created]
+
+name: 99-ChatOps
+
+jobs:
+  slashCommandDispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slash Command Dispatch
+        uses: peter-evans/slash-command-dispatch@v2
+        with:
+          token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          commands: |
+            deploy
