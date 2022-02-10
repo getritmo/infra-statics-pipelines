@@ -1,0 +1,10 @@
+#ACT CONFIG FILE
+-P ubuntu-18.04=nektos/act-environments-ubuntu:18.04
+-P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-latest
+--secret-file ./.github/workflows/.act.secrets
+--env-file ./.github/workflows/.act.env
+-s AWS_REGION=eu-west-1
+--artifact-server-path /tmp
+--detect-event
+--reuse
+
