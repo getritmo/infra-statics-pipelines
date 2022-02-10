@@ -86,11 +86,11 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --delete
 
-      - name: DEBUG
-        run: printenv
+      - name: Install dependencies
         if: ${{ env.ACT_TESTING == 'true'}}
+        run: |
+          apt update; apt -y install awscli
 
       - name: Invalidate old cache
         run: |
-          apt update; apt -y install awscli; \
           aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_STATICS --paths "/$ENVIRONMENT/*"
