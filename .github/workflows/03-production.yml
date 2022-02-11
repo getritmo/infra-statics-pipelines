@@ -23,10 +23,15 @@ jobs:
     environment: Production
     steps:
 
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
+      - name: Download artifact
+        uses: dawidd6/action-download-artifact@v2
         with:
-          name: "app-statics"
+          github_token: ${{env.GITHUB_TOKEN}}
+          workflow: 02-integration.yml
+          workflow_conclusion: success
+          branch: production
+          name: app-statics
+          repo: ${{github.repository}}
 
       - uses: jakejarvis/s3-sync-action@master
         env:
