@@ -21,7 +21,7 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    environment: Github SBX
+    environment: SBX
 
     steps:
       - name: Checkout repo
@@ -70,7 +70,7 @@ jobs:
   distribution:
     name: Distribution
     runs-on: ubuntu-latest
-    environment: Cloudfront SBX
+    environment: SBX
     needs: [build]
     steps:
 
@@ -84,7 +84,7 @@ jobs:
           SOURCE_DIR: "./"
           DEST_DIR: "${{ env.ENVIRONMENT }}"
         with:
-          args: --acl public-read --follow-symlinks --delete
+          args:  --follow-symlinks --delete
 
       - name: Install dependencies
         if: ${{ env.ACT_TESTING == 'true'}}
