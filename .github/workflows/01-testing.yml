@@ -15,7 +15,7 @@ env:
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: "eu-west-1"
-  ACT_TESTING: "false"
+  ACT_TESTING: ${{ secrets.ACT_TESTING }}
 
 jobs:
   build:
@@ -92,6 +92,7 @@ jobs:
           apt update; apt -y install awscli
 
       - name: Invalidate old cache
+        if: ${{ env.ACT_TESTING == 'false'}}
         run: |
           aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_STATICS --paths "/$ENVIRONMENT/*"
 
