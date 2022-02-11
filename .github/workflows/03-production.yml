@@ -20,7 +20,7 @@ jobs:
   distribution:
     name: Distribution
     runs-on: ubuntu-latest
-    environment: PRO
+    environment: Production
     steps:
 
       - name: Download artifacts
@@ -48,7 +48,7 @@ jobs:
   tag:
     name: Tag release
     runs-on: ubuntu-latest
-    environment: PRO
+    environment: Production
     needs: [distribution]
     steps:
 
