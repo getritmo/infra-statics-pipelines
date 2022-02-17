@@ -61,7 +61,7 @@ jobs:
           repository: ${{ inputs.TESTING_REPO }}
           path: ./
           token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          ref: c7c0d7abcfcd5b7a0c528c5d51b515d31226a5f5
+          ref: main
 
       - name: DEBUG
         #if: ${{ inputs.ACT_TESTING == 'true'}}
