@@ -68,4 +68,3 @@ jobs:
         with:
           repo-token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           tag: ${{ steps.date.outputs.date }}-${{ steps.last_successful_commit.outputs.commit_hash }}
-
