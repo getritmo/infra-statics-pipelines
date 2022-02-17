@@ -63,12 +63,12 @@ jobs:
           token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           ref: main
 
-      - name: Move testing repo to main repo path
-        if: |
-          github.event.repository.name == 'infra-service-pipelines'
-          || github.event.repository.name == 'infra-testing-repo'
-        run: |
-          cp -Prf ./testing_repo ../
+      # - name: Move testing repo to main repo path
+      #   if: |
+      #     github.event.repository.name == 'infra-service-pipelines'
+      #     || github.event.repository.name == 'infra-testing-repo'
+      #   run: |
+      #     cp -Prf ./testing_repo ../
 
       - name: DEBUG
         #if: ${{ inputs.ACT_TESTING == 'true'}}
