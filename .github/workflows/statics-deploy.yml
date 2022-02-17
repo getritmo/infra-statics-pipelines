@@ -114,29 +114,29 @@ jobs:
           name: app-statics
           path: ${{ inputs.BUILD_PATH }}
 
-    distribute:
-      name: distribute
-      runs-on: ubuntu-latest
-      environment: ${{ inputs.ENVIRONMENT }}
-      needs: [build]
-      steps:
-        - name: Download artifacts
-          uses: actions/download-artifact@v2
-          with:
-            name: app-statics
+  distribute:
+    name: distribute
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    needs: [build]
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: app-statics
 
-        - uses: jakejarvis/s3-sync-action@master
-          env:
-            SOURCE_DIR: ./
-            DEST_DIR: ${{ inputs.ENVIRONMENT }}
-          with:
-            args: --follow-symlinks --delete
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          SOURCE_DIR: ./
+          DEST_DIR: ${{ inputs.ENVIRONMENT }}
+        with:
+          args: --follow-symlinks --delete
 
-        - name: Install dependencies
-          if: ${{ inputs.ACT_TESTING == 'true'}}
-          run: |
-            apt update; apt -y install awscli
+      - name: Install dependencies
+        if: ${{ inputs.ACT_TESTING == 'true'}}
+        run: |
+          apt update; apt -y install awscli
 
-        - name: Invalidate old cache
-          run: |
-            aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "/$ {{ inputs.ENVIRONMENT }}/*"
+      - name: Invalidate old cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "/$ {{ inputs.ENVIRONMENT }}/*"
