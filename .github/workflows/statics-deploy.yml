@@ -40,7 +40,7 @@ on:
       PRIVATE_REPO_ACCESS:
         required: true
 
-name: 01-Testing
+name: Statics deploy
 
 jobs:
   build:

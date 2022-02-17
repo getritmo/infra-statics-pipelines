@@ -40,6 +40,8 @@ on:
       PRIVATE_REPO_ACCESS:
         required: true
 
+name: Statics Tag
+
 jobs:
   tag:
     name: tag
