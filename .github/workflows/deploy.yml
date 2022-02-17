@@ -64,7 +64,7 @@ jobs:
           ref: main
 
       - name: DEBUG
-        #if: ${{ inputs.ACT_TESTING == 'true'}}
+        if: ${{ inputs.ACT_TESTING == 'true'}}
         run: |
           ls -alrt
 
@@ -89,7 +89,7 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: DEBUG
-        #        if: ${{ inputs.ACT_TESTING == 'true'}}
+        if: ${{ inputs.ACT_TESTING == 'true'}}
         run: |
           ls -alrt; printenv
 
