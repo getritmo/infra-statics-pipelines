@@ -61,14 +61,7 @@ jobs:
           repository: ${{ inputs.TESTING_REPO }}
           path: ./
           token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          ref: main
-
-      # - name: Move testing repo to main repo path
-      #   if: |
-      #     github.event.repository.name == 'infra-service-pipelines'
-      #     || github.event.repository.name == 'infra-testing-repo'
-      #   run: |
-      #     cp -Prf ./testing_repo ../
+          ref: c7c0d7abcfcd5b7a0c528c5d51b515d31226a5f5
 
       - name: DEBUG
         #if: ${{ inputs.ACT_TESTING == 'true'}}
@@ -96,13 +89,12 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: DEBUG
-#        if: ${{ inputs.ACT_TESTING == 'true'}}
+        #        if: ${{ inputs.ACT_TESTING == 'true'}}
         run: |
           ls -alrt; printenv
 
       - name: node build and install
         run: yarn install && yarn build:sbx
-
 
       - name: Set outputs
         id: vars
