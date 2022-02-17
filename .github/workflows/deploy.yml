@@ -95,13 +95,14 @@ jobs:
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 
-      - name: node build and install
-        run: yarn install && yarn build:sbx
-
       - name: DEBUG
 #        if: ${{ inputs.ACT_TESTING == 'true'}}
         run: |
           ls -alrt; printenv
+
+      - name: node build and install
+        run: yarn install && yarn build:sbx
+
 
       - name: Set outputs
         id: vars
