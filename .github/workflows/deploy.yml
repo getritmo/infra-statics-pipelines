@@ -59,7 +59,7 @@ jobs:
           || github.event.repository.name == 'infra-testing-repo'
         with:
           repository: ${{ inputs.TESTING_REPO }}
-          path: ./testing_repo
+          path: ./
           token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           ref: main
 
@@ -68,12 +68,12 @@ jobs:
           github.event.repository.name == 'infra-service-pipelines'
           || github.event.repository.name == 'infra-testing-repo'
         run: |
-          cp -Prf ./testing_repo ../; ls -alrt ./
+          cp -Prf ./testing_repo ../
 
       - name: DEBUG
-        if: ${{ inputs.ACT_TESTING == 'true'}}
+        #if: ${{ inputs.ACT_TESTING == 'true'}}
         run: |
-          ls -alrt; printenv
+          ls -alrt
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
