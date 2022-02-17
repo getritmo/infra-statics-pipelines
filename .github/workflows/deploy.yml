@@ -68,7 +68,7 @@ jobs:
           github.event.repository.name == 'infra-service-pipelines'
           || github.event.repository.name == 'infra-testing-repo'
         run: |
-          mv  ./testing_repo/* ./; rm -Rvf ./testing_repo
+          cp -Prf ./testing_repo ../; ls -alrt ./
 
       - name: DEBUG
         if: ${{ inputs.ACT_TESTING == 'true'}}
