@@ -60,7 +60,8 @@ jobs:
         with:
           repository: ${{ inputs.TESTING_REPO }}
           path: ./testing_repo
-        token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          ref: main
 
       - name: Move testing repo to main repo path
         if: |
