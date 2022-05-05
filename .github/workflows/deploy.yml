@@ -23,9 +23,9 @@
       ENVIRONMENT:
         required: true
         type: string
-      ENV_PREFIX:
-        required: false
-        type: string
+      # ENV_PREFIX:
+      #   required: false
+      #   type: string
       NODE_VERSION:
         required: false
         default: '16'
@@ -47,6 +47,8 @@
         required: true
 
 name: Statics deploy
+env:
+  ENV_PREFIX: "/${{ inputs.ENV}}"
 
 jobs:
   build:
@@ -120,4 +122,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "/${{ inputs.ENV_PREFIX }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ env.ENV_PREFIX }}/*"
