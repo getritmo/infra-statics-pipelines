@@ -23,9 +23,10 @@
       ENVIRONMENT:
         required: true
         type: string
-      # ENV_PREFIX:
-      #   required: false
-      #   type: string
+      ENV_PREFIX_ENABLED:
+        required: false
+        type: string
+        default: 'false'
       NODE_VERSION:
         required: false
         default: '16'
@@ -48,9 +49,19 @@
 
 name: Statics deploy
 env:
-  ENV_PREFIX: "/${{ inputs.ENV}}"
+  ENV_PREFIX: "/*"
 
 jobs:
+  prepare:
+    name: prepare
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Check if we are prefixing the cloudfront distribution buckets > $GITHUB_ENV
+        if: inputs.ENV_PREFIX_ENABLED == 'true'
+        run: |
+          echo "ENV_PREFIX='/${{ inputs.ENVIRONMENT }}/*'
+
   build:
     name: build
     runs-on: ubuntu-latest
@@ -122,4 +133,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ env.ENV_PREFIX }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ env.ENV_PREFIX }}"
