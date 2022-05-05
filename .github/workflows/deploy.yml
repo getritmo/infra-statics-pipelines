@@ -1,5 +1,5 @@
 ---
-'on':
+"on":
   workflow_call:
     inputs:
       ACT_TESTING:
@@ -26,10 +26,10 @@
       ENV_PREFIX_ENABLED:
         required: false
         type: string
-        default: 'false'
+        default: "false"
       NODE_VERSION:
         required: false
-        default: '16'
+        default: "16"
         type: string
       STATICS_S3_BUCKET:
         required: true
@@ -48,8 +48,6 @@
         required: true
 
 name: Statics deploy
-env:
-  ENV_PREFIX: "/*"
 
 jobs:
   prepare:
@@ -57,10 +55,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
-      - name: Check if we are prefixing the cloudfront distribution buckets
+      - name: Enabling cloudfront s3 prefixing
         if: inputs.ENV_PREFIX_ENABLED == 'true'
         run: |
-          echo "ENV_PREFIX=/${{ inputs.ENVIRONMENT }}/*" >> $GITHUB_ENV;
+          if [[ "${{ inputs.ENV_PREFIX_ENABLED" == 'true' ]]; then
+            echo "ENV_PREFIX=/${{ inputs.ENVIRONMENT }}/*" >> $GITHUB_ENV;
+          else
+            echo "ENV_PREFIX=/*" >> $GITHUB_ENV;
+          fi
           printenv
 
   build:
