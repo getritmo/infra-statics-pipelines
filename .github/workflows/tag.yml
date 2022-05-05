@@ -61,8 +61,8 @@ jobs:
         uses: nrwl/last-successful-commit-action@v1
         id: last_successful_commit
         with:
-          branch: production
-          workflow_id: 02-integration.yml
+          branch: main
+          workflow_id: sandbox-staging.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
 
       - name: Tag snapshot
