@@ -110,7 +110,7 @@ jobs:
     name: distribute
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
-    needs: [build]
+    needs: [prepare]
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v2
