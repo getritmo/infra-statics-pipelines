@@ -57,10 +57,11 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
-      - name: Check if we are prefixing the cloudfront distribution buckets > $GITHUB_ENV
+      - name: Check if we are prefixing the cloudfront distribution buckets
         if: inputs.ENV_PREFIX_ENABLED == 'true'
         run: |
-          echo "ENV_PREFIX='/${{ inputs.ENVIRONMENT }}/*'
+          echo "ENV_PREFIX=/${{ inputs.ENVIRONMENT }}/*" >> $GITHUB_ENV;
+          printenv
 
   build:
     name: build
