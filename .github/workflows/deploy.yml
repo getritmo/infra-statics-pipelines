@@ -19,10 +19,11 @@ on:
         type: string
       ENVIRONMENT:
         required: true
-        type: string
+        type: environment
       NODE_VERSION:
-        required: true
+        Required: false
         type: string
+        default: "16"
       AWS_REGION:
         required: true
         type: string
@@ -96,15 +97,14 @@ jobs:
 
       - uses: jakejarvis/s3-sync-action@master
         env:
+          AWS_S3_BUCKET: ${{ inputs.API_DOC_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: eu-west-1
           SOURCE_DIR: ./
           DEST_DIR: ${{ inputs.ENVIRONMENT }}
         with:
           args: --follow-symlinks --delete
-
-      - name: Install dependencies
-        if: ${{ inputs.ACT_TESTING == 'true'}}
-        run: |
-          apt update; apt -y install awscli
 
       - name: Invalidate old cache
         run: |
