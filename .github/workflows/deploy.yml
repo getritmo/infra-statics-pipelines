@@ -23,6 +23,9 @@
       ENVIRONMENT:
         required: true
         type: environment
+      ENV_PREFIX:
+        required: false
+        type: string
       NODE_VERSION:
         Required: false
         default: '16'
@@ -110,4 +113,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "/${{ inputs.ENVIRONMENT }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "/${{ inputs.ENV_PREFIX }}/*"
