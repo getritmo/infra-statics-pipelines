@@ -58,7 +58,7 @@ jobs:
       - name: Enabling cloudfront s3 prefixing
         if: inputs.ENV_PREFIX_ENABLED == 'true'
         run: |
-          if [[ "${{ inputs.ENV_PREFIX_ENABLED" == 'true' ]]; then
+          if [[ "${{ inputs.ENV_PREFIX_ENABLED }}" == 'true' ]]; then
             echo "ENV_PREFIX=/${{ inputs.ENVIRONMENT }}/*" >> $GITHUB_ENV;
           else
             echo "ENV_PREFIX=/*" >> $GITHUB_ENV;
