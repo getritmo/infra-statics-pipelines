@@ -66,51 +66,51 @@ jobs:
             echo "::set-output name=env_prefix::/*"
           fi
 
-  # build:
-  #   name: build
-  #   runs-on: ubuntu-latest
-  #   environment: ${{ inputs.ENVIRONMENT }}
-  #   steps:
-  #     - name: Checkout project repo
-  #       uses: actions/checkout@v2
-  #       id: checkout_repo
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Checkout project repo
+        uses: actions/checkout@v2
+        id: checkout_repo
 
-  #     - name: Configure AWS credentials
-  #       uses: aws-actions/configure-aws-credentials@v1
-  #       with:
-  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  #         aws-region: eu-west-1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-1
 
-  #     - name: setup node environment
-  #       uses: actions/setup-node@v2
-  #       with:
-  #         node-version: ${{ inputs.NODE_VERSION }}
+      - name: setup node environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
 
-  #     - name: node build and install
-  #       run: yarn install && yarn build:sbx
+      - name: node build and install
+        run: yarn install && yarn build:sbx
 
-  #     - name: Set outputs
-  #       id: vars
-  #       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
 
-  #     - name: Check outputs
-  #       run: |
-  #         echo ${{ steps.vars.outputs.sha_short }}
-  #         echo ${{ steps.login-ecr.outputs.registry }}install
+      - name: Check outputs
+        run: |
+          echo ${{ steps.vars.outputs.sha_short }}
+          echo ${{ steps.login-ecr.outputs.registry }}install
 
-  #     - name: Publish statics
-  #       id: publish-statics
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         name: app-statics
-  #         path: ${{ inputs.BUILD_PATH }}
+      - name: Publish statics
+        id: publish-statics
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-statics
+          path: ${{ inputs.BUILD_PATH }}
 
   distribute:
     name: distribute
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
-    needs: [prepare]
+    needs: [prepare,build]
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v2
