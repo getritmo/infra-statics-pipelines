@@ -27,7 +27,7 @@
         required: false
         type: string
       NODE_VERSION:
-        Required: false
+        required: false
         default: '16'
         type: string
       STATICS_S3_BUCKET:
