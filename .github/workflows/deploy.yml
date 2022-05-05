@@ -1,5 +1,5 @@
 ---
-on:
+'on':
   workflow_call:
     inputs:
       ACT_TESTING:
@@ -8,29 +8,31 @@ on:
       API_DOC_S3_BUCKET:
         required: true
         type: string
+      AWS_REGION:
+        required: true
+        type: string
+      BUILD_PATH:
+        required: true
+        type: string
       CLOUDFRONT_DISTRIBUTION_API:
         required: false
         type: string
       CLOUDFRONT_DISTRIBUTION_STATICS:
         required: false
         type: string
-      BUILD_PATH:
-        required: true
-        type: string
       ENVIRONMENT:
         required: true
         type: environment
       NODE_VERSION:
         Required: false
+        default: '16'
         type: string
-        default: "16"
-      AWS_REGION:
+      STATICS_S3_BUCKET:
         required: true
         type: string
       TESTING_REPO:
         required: true
         type: string
-
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
