@@ -131,7 +131,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: eu-west-1
           SOURCE_DIR: ./
-          DEST_DIR: ${{ inputs.ENVIRONMENT }}
+          DEST_DIR: ${{ needs.prepare.outputs.env_prefix }}
         with:
           args: --follow-symlinks --delete
 
