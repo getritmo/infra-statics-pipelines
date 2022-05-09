@@ -2,7 +2,9 @@
 on:
   workflow_call:
     inputs:
-      ENVIRONMENT: true
+      ENVIRONMENT:
+      required: true
+      type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
