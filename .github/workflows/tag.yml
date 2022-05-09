@@ -1,28 +1,6 @@
 ---
 on:
   workflow_call:
-    inputs:
-      API_DOC_S3_BUCKET:
-        required: true
-        type: string
-      CLOUDFRONT_DISTRIBUTION_API:
-        required: false
-        type: string
-      CLOUDFRONT_DISTRIBUTION_STATICS:
-        required: false
-        type: string
-      BUILD_PATH:
-        required: true
-        type: string
-      ENVIRONMENT:
-        required: true
-        type: string
-      NODE_VERSION:
-        required: true
-        type: string
-      AWS_REGION:
-        required: true
-        type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
