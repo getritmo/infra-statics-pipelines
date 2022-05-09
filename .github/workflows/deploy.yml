@@ -2,9 +2,6 @@
 "on":
   workflow_call:
     inputs:
-      ACT_TESTING:
-        required: true
-        type: string
       API_DOC_S3_BUCKET:
         required: true
         type: string
@@ -32,9 +29,6 @@
         default: "16"
         type: string
       STATICS_S3_BUCKET:
-        required: true
-        type: string
-      TESTING_REPO:
         required: true
         type: string
     secrets:
