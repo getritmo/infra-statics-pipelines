@@ -23,6 +23,10 @@ on:
       AWS_REGION:
         required: true
         type: string
+      TESTING_ENABLED:
+        required: false
+        default: "true"
+        type: string
 
     secrets:
       AWS_ACCESS_KEY_ID:

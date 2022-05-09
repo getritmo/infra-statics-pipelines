@@ -31,6 +31,10 @@
       STATICS_S3_BUCKET:
         required: true
         type: string
+      TESTING_ENABLED:
+        required: false
+        default: "true"
+        type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
