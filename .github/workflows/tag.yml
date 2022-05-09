@@ -1,6 +1,8 @@
 ---
 on:
   workflow_call:
+    inputs:
+      ENVIRONMENT: true
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
@@ -23,10 +25,10 @@ jobs:
         id: date
         run: echo "::set-output name=date::$(date +'%Y%m%d')"
 
-      - name: Checkout branch "production"
+      - name: Checkout branch "main"
         uses: actions/checkout@v2
         with:
-          ref: production
+          ref: main
 
       - name: Get last succesfull deploy on STA
         uses: nrwl/last-successful-commit-action@v1
