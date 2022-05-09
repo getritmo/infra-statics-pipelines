@@ -23,10 +23,9 @@ jobs:
       - name: Checkout
         if: ${{ inputs. TESTING_ENABLED == 'true' }}
         uses: actions/checkout@v2
-      #disabling for speeding up reasons
-      # - name: Cypress run
-      #   if:
-      #   uses: cypress-io/github-action@v2
-      #   with:
-      #     build: npm run build
-      #     start: npm start
+      - name: Cypress run
+        if:
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm start
