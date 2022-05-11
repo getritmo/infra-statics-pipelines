@@ -28,7 +28,7 @@ on:
         required: true
         type: string
       FRONT_DOC_S3_BUCKET:
-        default: frontdoc.getritmo.com
+        default: ${{ secrets.FRONT_DOC_S3_BUCKET }}
         required: false
         type: string
       NODE_VERSION:
