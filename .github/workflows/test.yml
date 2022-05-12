@@ -21,7 +21,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        if: ${{ inputs. TESTING_ENABLED == 'true' }}
         uses: actions/checkout@v2
       - name: Cypress run
         if:
