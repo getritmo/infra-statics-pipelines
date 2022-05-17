@@ -5,6 +5,9 @@ on:
         required: false
         default: "true"
         type: string
+      ENVIRONMENT:
+        required: true
+        type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
@@ -28,3 +31,14 @@ jobs:
         with:
           build: npm run build
           start: npm start
+          config-file: devops/tests/${{ inputs.ENVIRONMENT }}-cypress-config.json
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
+          browser: chrome
+          record: false
+          parallel: false
+          group: "Frontend - Chrome"
+          tag: ${{ inputs.ENVIRONMENT }}
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
