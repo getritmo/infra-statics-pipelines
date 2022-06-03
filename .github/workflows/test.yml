@@ -31,7 +31,7 @@ jobs:
         with:
           build: npm run build
           start: npm start
-          config-file: devops/tests/${{ inputs.ENVIRONMENT }}-cypress.config.js
+          config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
           browser: chrome
