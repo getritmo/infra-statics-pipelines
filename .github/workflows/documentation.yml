@@ -1,21 +1,12 @@
 on:
   workflow_call:
     inputs:
-      API_DOC_S3_BUCKET:
-        required: true
-        type: string
       ARTIFACT_NAME:
         default: app-frontdoc
         required: false
         type: string
-      AWS_REGION:
-        required: true
-        type: string
       BUILD_PATH:
         required: true
-        type: string
-      CLOUDFRONT_DISTRIBUTION_API:
-        required: false
         type: string
       CLOUDFRONT_DISTRIBUTION_STATICS:
         required: false
@@ -31,10 +22,10 @@ on:
         default: ${{ secrets.FRONT_DOC_S3_BUCKET }}
         required: false
         type: string
-      NODE_VERSION:
+    secrets:
+      AWS_REGION:
         required: true
         type: string
-    secrets:
       AWS_ACCESS_KEY_ID:
         required: true
       AWS_ACCOUNT_ID:
