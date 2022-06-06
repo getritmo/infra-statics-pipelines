@@ -1,4 +1,4 @@
-on:
+'on':
   workflow_call:
     inputs:
       ARTIFACT_NAME:
@@ -23,13 +23,13 @@ on:
         required: false
         type: string
     secrets:
-      AWS_REGION:
-        required: true
-        type: string
       AWS_ACCESS_KEY_ID:
         required: true
       AWS_ACCOUNT_ID:
         required: true
+      AWS_REGION:
+        required: true
+        type: string
       AWS_SECRET_ACCESS_KEY:
         required: true
       PRIVATE_REPO_ACCESS:
