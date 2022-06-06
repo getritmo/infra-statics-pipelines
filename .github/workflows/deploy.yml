@@ -5,9 +5,6 @@
       API_DOC_S3_BUCKET:
         required: true
         type: string
-      AWS_REGION:
-        required: true
-        type: string
       BUILD_PATH:
         required: true
         type: string
