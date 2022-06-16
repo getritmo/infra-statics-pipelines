@@ -29,8 +29,7 @@ jobs:
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build:sta
-          start: npm start
+          command: npm run dev:sta
           config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
