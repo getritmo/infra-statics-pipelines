@@ -1,17 +1,19 @@
-on:
+'on':
   workflow_call:
     inputs:
-      TESTING_ENABLED:
-        required: false
-        default: "true"
-        type: string
       ENVIRONMENT:
         required: true
+        type: string
+      TESTING_ENABLED:
+        default: 'true'
+        required: false
         type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
       AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true

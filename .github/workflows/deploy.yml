@@ -1,11 +1,8 @@
 ---
-"on":
+'on':
   workflow_call:
     inputs:
       API_DOC_S3_BUCKET:
-        required: true
-        type: string
-      AWS_REGION:
         required: true
         type: string
       BUILD_PATH:
@@ -21,12 +18,12 @@
         required: true
         type: string
       ENV_PREFIX_ENABLED:
+        default: 'false'
         required: false
         type: string
-        default: "false"
       NODE_VERSION:
+        default: '16'
         required: false
-        default: "16"
         type: string
       STATICS_S3_BUCKET:
         required: true
@@ -35,6 +32,8 @@
       AWS_ACCESS_KEY_ID:
         required: true
       AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
@@ -82,7 +81,7 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: node build and install
-        run: yarn install && yarn build:sbx
+        run: yarn install && yarn build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
