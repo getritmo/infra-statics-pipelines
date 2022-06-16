@@ -81,7 +81,7 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
 
       - name: node build and install
-        run: yarn install && yarn build:sbx
+        run: yarn install && yarn build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
