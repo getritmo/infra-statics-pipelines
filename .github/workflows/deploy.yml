@@ -56,7 +56,7 @@ jobs:
           if [[ "${{ inputs.ENV_PREFIX_ENABLED }}" == *"rue" ]]; then
             echo "::set-output name=env_prefix::/${{ inputs.ENVIRONMENT }}/"
           else
-            echo "::set-output name=env_prefix::/"
+            echo "::set-output name=env_prefix::"
           fi
 
   build:
