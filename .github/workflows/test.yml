@@ -32,7 +32,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: npm dev:sta
+          start: npm run dev:sta
           config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000"
           wait-on-timeout: 120
