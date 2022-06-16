@@ -133,4 +133,4 @@ jobs:
           printenv;
           aws cloudfront create-invalidation \
           --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} \
-          --paths "${{ needs.prepare.outputs.env_prefix }}"
+          --paths "/"
