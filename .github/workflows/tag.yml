@@ -39,7 +39,7 @@ jobs:
         id: last_successful_commit
         with:
           branch: main
-          workflow_id: sandbox-staging.yml
+          workflow_id: statics-staging.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
 
       - name: Tag snapshot
