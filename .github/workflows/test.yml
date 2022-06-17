@@ -24,9 +24,6 @@ on:
         required: true
       CYPRESS_RECORD_KEY:
         required: true
-      GITHUB_TOKEN:
-        required: true
-
 name: Testing Cypress
 jobs:
   cypress-run:
