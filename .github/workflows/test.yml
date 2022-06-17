@@ -8,6 +8,11 @@ on:
       ENVIRONMENT:
         required: true
         type: string
+      CYPRESS_ENV:
+        required: false
+        type: string
+        default: "sta"
+
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
@@ -33,7 +38,7 @@ jobs:
       - name: Generatin env_vars
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          mode: cypress
+          mode: ${{ inputs.CYPRESS_ENV }}
       - name: Debug variables
         run: printenv
       - name: Cypress run
