@@ -28,7 +28,7 @@ jobs:
       - name: Generatin env_vars
         uses: xom9ikk/dotenv@v1.0.2
         with:
-          mode: ${{ inputs.ENVIRONMENT }}
+          mode: test
       - name: Debug variables
         run: printenv
       - name: Cypress run
