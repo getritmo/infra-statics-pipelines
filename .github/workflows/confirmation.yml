@@ -1,0 +1,31 @@
+---
+'on':
+  workflow_call:
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PRIVATE_REPO_ACCESS:
+        required: true
+
+name: Confirmation
+
+jobs:
+  confirmation:
+    name: Set reaction if workflows was ok
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Deployment status
+        if: jobs.statics.
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: ${{ github.event.client_payload.github.payload.repository.full_name }}
+          comment-id: ${{ github.event.client_payload.github.payload.comment.id }}
+          reaction-type: hooray

@@ -1,0 +1,136 @@
+---
+'on':
+  workflow_call:
+    inputs:
+      API_DOC_S3_BUCKET:
+        required: true
+        type: string
+      BUILD_PATH:
+        required: true
+        type: string
+      CLOUDFRONT_DISTRIBUTION_API:
+        required: false
+        type: string
+      CLOUDFRONT_DISTRIBUTION_STATICS:
+        required: false
+        type: string
+      ENVIRONMENT:
+        required: true
+        type: string
+      ENV_PREFIX_ENABLED:
+        default: 'false'
+        required: false
+        type: string
+      NODE_VERSION:
+        default: '16'
+        required: false
+        type: string
+      STATICS_S3_BUCKET:
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PRIVATE_REPO_ACCESS:
+        required: true
+
+name: Statics deploy
+
+jobs:
+  prepare:
+    name: prepare
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    outputs:
+      env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
+    steps:
+      - name: Enabling cloudfront s3 prefixing
+        id: env_prefix_enabled
+        run: |
+          if [[ "${{ inputs.ENV_PREFIX_ENABLED }}" == *"rue" ]]; then
+            echo "::set-output name=env_prefix::/${{ inputs.ENVIRONMENT }}/"
+          else
+            echo "::set-output name=env_prefix::"
+          fi
+
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Checkout project repo
+        uses: actions/checkout@v2
+        id: checkout_repo
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: setup node environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
+
+      - name: node build and install
+        run: yarn install && yarn build:${{ inputs.ENVIRONMENT }}
+
+      - name: Set outputs
+        id: vars
+        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
+      - name: Check outputs
+        run: |
+          echo ${{ steps.vars.outputs.sha_short }}
+          echo ${{ steps.login-ecr.outputs.registry }}install
+
+      - name: Publish statics
+        id: publish-statics
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-statics
+          path: ${{ inputs.BUILD_PATH }}
+
+  distribute:
+    name: distribute
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    needs: [prepare,build]
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: app-statics
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          AWS_S3_BUCKET: ${{ inputs.STATICS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SOURCE_DIR: ./
+          DEST_DIR: ${{ needs.prepare.outputs.env_prefix }}
+        with:
+          args: --follow-symlinks --delete
+
+      - name: Invalidate old cache
+        run: |
+          printenv;
+          aws cloudfront create-invalidation \
+          --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} \
+          --paths "/*"

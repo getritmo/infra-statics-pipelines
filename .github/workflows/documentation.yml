@@ -1,0 +1,96 @@
+'on':
+  workflow_call:
+    inputs:
+      ARTIFACT_NAME:
+        default: app-frontdoc
+        required: false
+        type: string
+      BUILD_PATH:
+        required: true
+        type: string
+      CLOUDFRONT_DISTRIBUTION_STATICS:
+        required: false
+        type: string
+      DOC_PATH:
+        default: /styleguide
+        required: false
+        type: string
+      ENVIRONMENT:
+        required: true
+        type: string
+      FRONT_DOC_S3_BUCKET:
+        default: ${{ secrets.FRONT_DOC_S3_BUCKET }}
+        required: false
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+        type: string
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PRIVATE_REPO_ACCESS:
+        required: true
+
+name: Generate documentation
+
+jobs:
+  build:
+    name: Documentation
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Checkout project repo
+        uses: actions/checkout@v2
+        id: checkout_repo
+
+      - name: setup node environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: "lts/gallium"
+
+      - name: Build documentation
+        run: yarn install && yarn docu:build
+
+      - name: Publish statics
+        id: publish-statics
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ inputs.ARTIFACT_NAME}}
+          path: ${{ inputs.BUILD_PATH }}
+
+  distribute:
+    name: Distribution
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    needs: [build]
+    steps:
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ inputs.ARTIFACT_NAME}}
+          path: ${{ inputs.DOC_PATH }}
+
+      - uses: jakejarvis/s3-sync-action@master
+        env:
+          AWS_S3_BUCKET: ${{ inputs.FRONT_DOC_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          SOURCE_DIR: ${{ inputs.DOC_PATH }}
+        with:
+          args: --follow-symlinks
+
+      - name: Invalidate old cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ inputs.ENVIRONMENT }}/*"

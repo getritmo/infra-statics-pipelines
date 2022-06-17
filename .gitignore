@@ -1,0 +1,6 @@
+**/.terraform
+plan.out
+**/*modules
+**/*.tfstate
+**/*.act.secrets
+**/*.act.env

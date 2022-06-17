@@ -1,0 +1,53 @@
+on:
+  workflow_call:
+    inputs:
+      TESTING_ENABLED:
+        required: false
+        default: "true"
+        type: string
+      ENVIRONMENT:
+        required: true
+        type: string
+
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PRIVATE_REPO_ACCESS:
+        required: true
+      CYPRESS_RECORD_KEY:
+        required: true
+
+name: Testing Cypress
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # https://github.com/marketplace/actions/simple-dotenv
+      - name: Generatin env_vars
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          mode: "cypress.${{ inputs.ENVIRONMENT }}"
+      - name: Debug variables
+        run: printenv
+      - name: Cypress run
+        if: ${{ inputs.TESTING_ENABLED != 'false' }}
+        uses: cypress-io/github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
+        with:
+          build: yarn build
+          start: yarn start
+          config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
+          wait-on: "http://localhost:3000"
+          wait-on-timeout: 120
+          browser: chrome
+          record: true
+          parallel: false
+          group: "Frontend - Chrome"
+          tag: ${{ inputs.ENVIRONMENT }}

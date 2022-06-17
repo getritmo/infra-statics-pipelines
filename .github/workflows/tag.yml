@@ -1,0 +1,49 @@
+---
+'on':
+  workflow_call:
+    inputs:
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      PRIVATE_REPO_ACCESS:
+        required: true
+
+name: Statics Tag
+
+jobs:
+  tag:
+    name: tag
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+
+      - name: Checkout branch "main"
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Get last succesfull deploy on STA
+        uses: nrwl/last-successful-commit-action@v1
+        id: last_successful_commit
+        with:
+          branch: main
+          workflow_id: statics-staging.yml
+          github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+
+      - name: Tag snapshot
+        uses: tvdias/github-tagger@v0.0.1
+        with:
+          repo-token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          tag: ${{ steps.date.outputs.date }}-${{ steps.last_successful_commit.outputs.commit_hash }}
