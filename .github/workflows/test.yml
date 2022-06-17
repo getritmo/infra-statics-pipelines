@@ -25,6 +25,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      # https://github.com/marketplace/actions/simple-dotenv
+      - name: Generatin env_vars
+        uses: xom9ikk/dotenv@v1.0.2
+        with:
+          mode: cypress
+      - name: Debug variables
+        run: printenv
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
         uses: cypress-io/github-action@v2
@@ -39,20 +46,3 @@ jobs:
           parallel: false
           group: "Frontend - Chrome"
           tag: ${{ inputs.ENVIRONMENT }}
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          REACT_APP_API_URL: http://localhost:3000/
-          REACT_APP_ENV: test
-          REACT_APP_AUTH0_DOMAIN: dev-tzs6jslq.eu.auth0.com
-          REACT_APP_AUTH0_CLIENT_ID: KGdjmjmos3GasNtwg1rhNUU34MPNF354
-          REACT_APP_AUTH0_AUDIENCE: https://dev-tzs6jslq.eu.auth0.com/api/v2/
-          REACT_APP_AUTH0_SCOPE: openid email profile offline_access
-          REACT_APP_AUTH0_LOGOUT_URL: https://dev-tzs6jslq.eu.auth0.com/v2/logout
-          REACT_APP_SERVER_URL: https://api.sta.getritmo.com/
-          REACT_APP_REDIRECT: http://localhost:3000//registration
-          PUBLIC_URL: http://localhost:3000/
-          REACT_APP_STRIPE_SECRET_ID: "pk_test_51HelNsElkz8pCYwpEYw2BMZ6r0YuTcaGlicbXCzexdJgpjQ4bGNMtNsPJZltpfXv9KEKZiBScHfCfMyQfFzXhKDh00M3WPFNyV"
-          REACT_APP_STRIPE_SECRET_ID_UK: "pk_test_51JQ8d5EDKS8ZzRyqMmdGBj0F4Ln9zu8UMblPbBAEu7sZdWDYctNZYOEdnqahftgUZ9exTtQ8MNR9TauYf7m2x2XG005LPtZZ0O"
-          REACT_APP_RUTTER_PUBLIC_KEY: "98741afc-f9ff-4c70-995c-e02a6f238fc8"
-          ELECTRON_ENABLE_LOGGING: 1
