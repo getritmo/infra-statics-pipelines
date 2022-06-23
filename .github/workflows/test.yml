@@ -1,6 +1,10 @@
 on:
   workflow_call:
     inputs:
+      BRANCH:
+        required: false
+        default: "main"
+        type: string
       TESTING_ENABLED:
         required: false
         default: "true"
@@ -28,6 +32,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        ref: ${{ inputs.BRANCH }}
       # https://github.com/marketplace/actions/simple-dotenv
       - name: Generatin env_vars
         uses: xom9ikk/dotenv@v1.0.2

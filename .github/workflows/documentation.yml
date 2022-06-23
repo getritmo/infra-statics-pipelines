@@ -46,6 +46,7 @@ jobs:
       - name: Checkout project repo
         uses: actions/checkout@v2
         id: checkout_repo
+        ref: main
 
       - name: setup node environment
         uses: actions/setup-node@v2
