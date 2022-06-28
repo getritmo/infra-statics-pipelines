@@ -27,7 +27,7 @@
         required: true
       AWS_SECRET_ACCESS_KEY:
         required: true
-      CLOUDFRONT_DISTRIBUTION_STATICS:
+      CLOUDFRONT_DISTRIBUTION_FRONTDOC:
         required: true
       PRIVATE_REPO_ACCESS:
         required: true
@@ -92,4 +92,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ inputs.ENVIRONMENT }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_FRONTDOC }} --paths "${{ inputs.ENVIRONMENT }}/*"
