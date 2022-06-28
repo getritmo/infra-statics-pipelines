@@ -92,4 +92,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_FRONTDOC }} --paths "${{ inputs.ENVIRONMENT }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_FRONTDOC }} --paths "/*"
