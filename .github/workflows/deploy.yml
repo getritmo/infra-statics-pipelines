@@ -1,5 +1,5 @@
 ---
-'on':
+"on":
   workflow_call:
     inputs:
       API_DOC_S3_BUCKET:
@@ -18,11 +18,11 @@
         required: true
         type: string
       ENV_PREFIX_ENABLED:
-        default: 'false'
+        default: "false"
         required: false
         type: string
       NODE_VERSION:
-        default: '16'
+        default: "16"
         required: false
         type: string
       STATICS_S3_BUCKET:
@@ -49,6 +49,8 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
       env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
+      slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
+      slack_data: ${{ steps.slack_notify.outputs.slack-result }}
     steps:
       - name: Enabling cloudfront s3 prefixing
         id: env_prefix_enabled
@@ -58,6 +60,26 @@ jobs:
           else
             echo "::set-output name=env_prefix::"
           fi
+
+      - name: Check to which channel has to be sent
+        id: slack_channel_check
+        run: |
+          if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
+            echo "::set-output name=slack_channel::${{ secrets.SLACK_FRONTEND_PRO }}"
+          elsif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
+            echo "::set-output name=slack_channel::${{ secrets.SLACK_FRONTEND_STA }}"
+          else
+            echo "::set-output name=slack_channel::${{ secrets.SLACK_BACKEND_SBX }}"
+          fi
+
+      - name: Notify to Slack
+        # using this github-action https://github.com/archive/github-actions-slack
+        id: slack_notify
+        uses: archive/github-actions-slack@master
+        with:
+          slack-channel: ${{ steps.slack_channel_check.outputs.slack_channel}}
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Branch:* ${{ inputs.BRANCH || 'sandbox' }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
   build:
     name: build
@@ -103,7 +125,7 @@ jobs:
     name: distribute
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
-    needs: [prepare,build]
+    needs: [prepare, build]
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v2
@@ -134,3 +156,39 @@ jobs:
           aws cloudfront create-invalidation \
           --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} \
           --paths "/*"
+
+  notify:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    if: ${{ always () }}
+    needs: [prepare, build, deploy]
+    steps:
+      #AQUI TENEMOS QUE AJUSTAS ESTOS CONDICIONALES
+      - name: Check outputs
+        run: |
+          echo "Deployment status > ${{ needs.deploy.outputs.deployment_status }}"
+          echo "Slack Channel > ${{ needs.prepare.outputs.slack_channel }}"
+          echo "Slack Data output > ${{ needs.prepare.outputs.slack_data }} "
+
+      - name: Notify OK
+        if: inputs.branch == 'main' && needs.deploy.outputs.deployment_status == 'success'
+        id: slack_notify_ok_sta
+        uses: archive/github-actions-slack@master
+        with:
+          slack-function: send-reaction
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-emoji-name: thumbsup
+          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
+
+      - name: Notify OK
+        if: inputs.branch != 'main' && needs.deploy.outputs.deployment_status == 'success'
+        id: slack_notify_ok_sbx
+        uses: archive/github-actions-slack@master
+        with:
+          slack-function: send-reaction
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-emoji-name: thumbsup
+          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
