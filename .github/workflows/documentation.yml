@@ -16,8 +16,7 @@
         required: true
         type: string
       FRONT_DOC_S3_BUCKET:
-        default: ${{ secrets.FRONT_DOC_S3_BUCKET }}
-        required: false
+        required: true
         type: string
     secrets:
       AWS_ACCESS_KEY_ID:
