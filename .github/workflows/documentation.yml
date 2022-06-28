@@ -25,7 +25,6 @@
         required: true
       AWS_REGION:
         required: true
-        type: string
       AWS_SECRET_ACCESS_KEY:
         required: true
       CLOUDFRONT_DISTRIBUTION_STATICS:
