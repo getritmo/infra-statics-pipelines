@@ -5,6 +5,10 @@
       API_DOC_S3_BUCKET:
         required: true
         type: string
+      BRANCH:
+        required: false
+        type: string
+        default: "sandbox"
       BUILD_PATH:
         required: true
         type: string
@@ -89,6 +93,8 @@ jobs:
       - name: Checkout project repo
         uses: actions/checkout@v2
         id: checkout_repo
+        with:
+          ref: ${{ inputs.BRANCH }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
