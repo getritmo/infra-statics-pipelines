@@ -168,7 +168,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     if: ${{ always () }}
-    needs: [prepare, build, deploy]
+    needs: [prepare, build, distribute]
     steps:
       #AQUI TENEMOS QUE AJUSTAS ESTOS CONDICIONALES
       - name: Check outputs
