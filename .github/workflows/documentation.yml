@@ -8,9 +8,6 @@
       BUILD_PATH:
         required: true
         type: string
-      CLOUDFRONT_DISTRIBUTION_STATICS:
-        required: false
-        type: string
       DOC_PATH:
         default: /styleguide
         required: false
@@ -95,4 +92,4 @@ jobs:
 
       - name: Invalidate old cache
         run: |
-          aws cloudfront create-invalidation --distribution-id ${{ inputs.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ inputs.ENVIRONMENT }}/*"
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_STATICS }} --paths "${{ inputs.ENVIRONMENT }}/*"
