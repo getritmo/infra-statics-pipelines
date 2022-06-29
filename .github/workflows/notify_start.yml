@@ -37,7 +37,7 @@ jobs:
       repo_type: ${{ steps.select_repo_type.outputs.repo_type}}
 
     steps:
-     - name: Select backend or frontend
+      - name: Select backend or frontend
         id: select_repo_type
         run: |
           if [[ ${{ github.repository }} ~= 'frontend' ]]; then
@@ -47,16 +47,16 @@ jobs:
           else
             echo "::set-output name=repo_type::misc"
           fi
-      # - name: Select environment
-      #   id: select_environment
-      #   run: |
-      #     if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
-      #       echo "::set-output name=environment::production"
-      #     elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
-      #       echo "::set-output name=environment::staging"
-      #     else
-      #       echo "::set-output name=environment::sandbox"
-      #     fi
+        # - name: Select environment
+        #   id: select_environment
+        #   run: |
+        #     if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
+        #       echo "::set-output name=environment::production"
+        #     elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
+        #       echo "::set-output name=environment::staging"
+        #     else
+        #       echo "::set-output name=environment::sandbox"
+        #     fi
 
   notify:
     name: notify
