@@ -33,18 +33,18 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
-      repo_type: ${{ steps.select_repo_type.outputs.repo_type}}
+      slack_channel: ${{ steps.select_repo_type.outputs.slack_channel_env_select}}
 
     steps:
       - name: Select Back/Front and Environment
         id: slack_channel_env_select
         run: |
           if [[ ${{ github.repository }} ~= 'frontend' ]]; then
-            echo "slack_channel_env_select="SLACK_FRONTEND_${{ inputs.ENVIRONMENT^^ }}" >> $GITHUB_ENV
+            echo "::set-output name=slack_channel_env_select::SLACK_FRONTEND_${{ inputs.ENVIRONMENT }}"
           elif [[ ${{ github.repository }} ~= 'backend']]; then
-            echo "slack_channel_env_select="SLACK_BACKEND_${{ inputs.ENVIRONMENT^^ }}" >> $GITHUB_ENV
+            echo "::set-output name=slack_channel_env_select::SLACK_BACKEND_${{ inputs.ENVIRONMENT }}"
           else
-            echo "slack_channel_env_select="SLACK_MISC_${{ inputs.ENVIRONMENT^^ }}" >> $GITHUB_ENV
+            echo "::set-output name=slack_channel_env_select::SLACK_MISC_${{ inputs.ENVIRONMENT }}"
           fi
   notify:
     name: notify
@@ -65,7 +65,7 @@ jobs:
         if: (github.event.client_payload.slash_command.args.named.branch != '') || (inputs.BRANCH != '')
         uses: archive/github-actions-slack@master
         with:
-          slack-channel: ${{ secrets[env.slack_channel_env_select] }}
+          slack-channel: ${{ secrets[needs.prepare.outputs.slack_channel] }}
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Branch:* ${{ inputs.BRANCH }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
@@ -75,7 +75,7 @@ jobs:
         if: (github.event.client_payload.slash_command.args.named.image_version != '')
         uses: archive/github-actions-slack@master
         with:
-          slack-channel: ${{ secrets[env.slack_channel_env_select] }}
+          slack-channel: ${{ secrets[needs.prepare.outputs.slack_channel] }}
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Image:* ${{ github.event.client_payload.slash_command.args.named.image_version }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
