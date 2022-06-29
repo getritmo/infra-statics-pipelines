@@ -50,6 +50,8 @@ jobs:
     name: notify
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
+    needs:
+      - prepare
     outputs:
       env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
       slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
