@@ -31,7 +31,7 @@ jobs:
     outputs:
       slack_channel: ${{ steps.select_repo_type.outputs.slack_channel_env_select}}
     steps:
-      -  name: Set environment in uppercase
+      - name: Set environment in uppercase
         id: uppercase_environment
         uses: ASzc/change-string-case-action@v2
         with:
