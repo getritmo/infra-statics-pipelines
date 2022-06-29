@@ -23,6 +23,7 @@ on:
 
 name: notify end
 
+jobs:
   notify:
     name: notify
     runs-on: ubuntu-latest
