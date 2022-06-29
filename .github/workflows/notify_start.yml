@@ -40,11 +40,11 @@ jobs:
         id: slack_channel_env_select
         run: |
           if [[ ${{ github.repository }} ~= 'frontend' ]]; then
-            echo "::set-output name=slack_channel_env_select::SLACK_FRONTEND_${{ inputs.ENVIRONMENT }}"
+            echo "::set-output name=slack_channel_env_select::SLACK_FRONTEND_${{ uppercase(inputs.ENVIRONMENT) }}"
           elif [[ ${{ github.repository }} ~= 'backend']]; then
-            echo "::set-output name=slack_channel_env_select::SLACK_BACKEND_${{ inputs.ENVIRONMENT }}"
+            echo "::set-output name=slack_channel_env_select::SLACK_BACKEND_${{ uppercase(inputs.ENVIRONMENT) }}"
           else
-            echo "::set-output name=slack_channel_env_select::SLACK_MISC_${{ inputs.ENVIRONMENT }}"
+            echo "::set-output name=slack_channel_env_select::SLACK_MISC_${{ uppercase(inputs.ENVIRONMENT) }}"
           fi
   notify:
     name: notify
