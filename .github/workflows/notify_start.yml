@@ -37,7 +37,7 @@ jobs:
       slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
     steps:
       - name: Select slack channel for backend
-        if: (inputs.REPOSITORY_TYPE == "backend")
+        if: (inputs.REPOSITORY_TYPE  == 'backend')
         id: slack_notify_check
         run: |
           if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
@@ -48,7 +48,7 @@ jobs:
             echo "::set-output name=slack_channel::${{ secrets.SLACK_BACKEND_SBX }}"
           fi
       - name: Select slack channel for frontend
-        if: (inputs.REPOSITORY_TYPE == "frontend")
+        if: (inputs.REPOSITORY_TYPE == 'frontend')
         id: slack_notify_check
         run: |
           if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
