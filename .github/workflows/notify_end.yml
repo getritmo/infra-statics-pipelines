@@ -1,0 +1,81 @@
+---
+on:
+  workflow_call:
+    inputs:
+      BRANCH:
+        required: false
+        type: string
+        default: "sandbox"
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      SLACK_APP_BENDER_TOKEN:
+        required: true
+
+name: notify end
+
+  notify:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+      - name: Get the artifacts from the right worfklow
+        id: select_environment
+        run: |
+          if [[ ${{ inputs.ENVIROMENT }} = 'pro' ]]; then
+            echo "::set-output name=environment::production"
+          elif [[ ${{ inputs.ENVIROMENT }} = 'sta' ]]; then
+            echo "::set-output name=environment::staging"
+          else
+            echo "::set-output name=environment::sandbox"
+          fi
+
+      - name: Download slack_data artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: service-${{ steps.select_environment.outputs.environment }}.yml
+          github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          branch: ${{ inputs.BRANCH }}
+          name: pass_slack_data
+
+      - name: Convert artifacts to outputs
+        id: set_artifacts_outputs
+        run: |
+          echo "::set-output name=slack_data::$(<pass_slack_data/slack_data.txt)"
+
+      - name: Check outputs
+        run: |
+          echo "Slack Data output > ${{ steps.set_artifacts_outputs.outputs.slack_data }} "
+
+      - name: Notify OK
+        if: needs.deploy.outputs.deployment_status == 'success'
+        id: slack_notify_ok_sta
+        uses: archive/github-actions-slack@master
+        with:
+          slack-function: send-reaction
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-emoji-name: thumbsup
+          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
+
+      - name: Notify OK
+        if: needs.deploy.outputs.deployment_status == 'success'
+        id: slack_notify_ok_sbx
+        uses: archive/github-actions-slack@master
+        with:
+          slack-function: send-reaction
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-emoji-name: thumbsup
+          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
+
+

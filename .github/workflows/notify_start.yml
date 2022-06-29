@@ -1,0 +1,65 @@
+---
+on:
+  workflow_call:
+    inputs:
+      BRANCH:
+        required: false
+        type: string
+        default: "sandbox"
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      SLACK_APP_BENDER_TOKEN:
+        required: true
+
+name: notify start
+
+jobs:
+  notify:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    outputs:
+      env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
+      slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
+    steps:
+      - name: Notify to Slack branch
+        # using this github-action https://github.com/archive/github-actions-slack
+        id: slack_notify_branch
+        if: (github.event.client_payload.slash_command.args.named.branch != '')
+        uses: archive/github-actions-slack@master
+        with:
+          slack-channel: ${{ steps.slack_channel_check.outputs.slack_channel}}
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Branch:* ${{ inputs.BRANCH }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
+
+      - name: Notify to Slack image
+        # using this github-action https://github.com/archive/github-actions-slack
+        id: slack_notify_image
+        if: (github.event.client_payload.slash_command.args.named.image_version != '')
+        uses: archive/github-actions-slack@master
+        with:
+          slack-channel: ${{ steps.slack_channel_check.outputs.slack_channel}}
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Image:* ${{ github.event.client_payload.slash_command.args.named.image_version }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
+
+      - name: Record job and notification data
+        if: always()
+        run: |
+          echo ${{ steps.slack_notify.outputs.slack-result }} > slack_data.txt
+
+      - name: Upload slack_data as an artifact
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: slack_data
+          path: slack_data.txt
