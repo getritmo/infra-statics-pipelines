@@ -71,7 +71,7 @@ jobs:
         if: (github.event.client_payload.slash_command.args.named.branch != '') || (inputs.BRANCH != '')
         uses: archive/github-actions-slack@master
         with:
-          slack-channel: ${{ secrets.(SLACK_${{ needs.prepare.outputs.repo_type }}_${{ inputs.ENVIRONMENT }} ) }}
+          slack-channel: ${{ secrets[SLACK_${{ needs.prepare.outputs.repo_type }}_${{ inputs.ENVIRONMENT }}] }}
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Branch:* ${{ inputs.BRANCH }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
