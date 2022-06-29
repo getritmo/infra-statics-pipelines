@@ -39,10 +39,20 @@ name: notify end
             echo "::set-output name=environment::sandbox"
           fi
 
-      - name: Download slack_data artifact
+      - name: Download statics slack_data artifact
+        if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: service-${{ steps.select_environment.outputs.environment }}.yml
+          workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
+          github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          branch: ${{ inputs.BRANCH }}
+          name: pass_slack_data
+
+      - name: Download service slack_data artifact
+        if: startsWith( ${{ github.repository }}, "backend-" )
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           branch: ${{ inputs.BRANCH }}
           name: pass_slack_data

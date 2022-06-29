@@ -59,7 +59,7 @@ jobs:
 
       - name: Upload slack_data as an artifact
         if: always()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
-          name: slack_data
+          name: pass_slack_data
           path: slack_data.txt
