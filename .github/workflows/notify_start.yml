@@ -35,7 +35,7 @@ jobs:
       - name: Notify to Slack branch
         # using this github-action https://github.com/archive/github-actions-slack
         id: slack_notify_branch
-        if: (github.event.client_payload.slash_command.args.named.branch != '')
+        if: (github.event.client_payload.slash_command.args.named.branch != '') || inputs.BRANCH != ''
         uses: archive/github-actions-slack@master
         with:
           slack-channel: ${{ steps.slack_channel_check.outputs.slack_channel}}
