@@ -34,7 +34,6 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
       slack_channel: ${{ steps.select_repo_type.outputs.slack_channel_env_select}}
-
     steps:
       - name: Select Back/Front and Environment
         id: slack_channel_env_select
@@ -46,6 +45,8 @@ jobs:
           else
             echo "::set-output name=slack_channel_env_select::SLACK_MISC_${{ uppercase(inputs.ENVIRONMENT) }}"
           fi
+
+
   notify:
     name: notify
     runs-on: ubuntu-latest
