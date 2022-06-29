@@ -28,6 +28,36 @@ on:
 name: notify start
 
 jobs:
+  prepare:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    outputs:
+      env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
+      repo_type: ${{ steps.select_repo_type.outputs.repo_type}}
+
+    steps:
+     - name: Select backend or frontend
+        id: select_repo_type
+        run: |
+          if [[ ${{ github.repository }} ~= 'frontend' ]]; then
+            echo "::set-output name=repo_type::frontend"
+          elif [[ ${{ inputs.ENVIRONMENT }} ~= 'backend']]; then
+            echo "::set-output name=repo_type::backend"
+          else
+            echo "::set-output name=repo_type::misc"
+          fi
+      # - name: Select environment
+      #   id: select_environment
+      #   run: |
+      #     if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
+      #       echo "::set-output name=environment::production"
+      #     elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
+      #       echo "::set-output name=environment::staging"
+      #     else
+      #       echo "::set-output name=environment::sandbox"
+      #     fi
+
   notify:
     name: notify
     runs-on: ubuntu-latest
@@ -36,35 +66,13 @@ jobs:
       env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
       slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
     steps:
-      - name: Select slack channel for backend
-        if: (inputs.REPOSITORY_TYPE  == 'backend')
-        id: slack_notify_check
-        run: |
-          if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_BACKEND_PRO }}"
-          elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_BACKEND_STA }}"
-          else
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_BACKEND_SBX }}"
-          fi
-      - name: Select slack channel for frontend
-        if: (inputs.REPOSITORY_TYPE == 'frontend')
-        id: slack_notify_check
-        run: |
-          if [[ ${{ inputs.ENVIRONMENT }} = 'pro' ]]; then
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_FRONTEND_PRO }}"
-          elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_FRONTEND_STA }}"
-          else
-            echo "::set-output name=slack_channel::${{ secrets.SLACK_FRONTEND_SBX }}"
-          fi
       - name: Notify to Slack branch
         # using this github-action https://github.com/archive/github-actions-slack
         id: slack_notify_branch
         if: (github.event.client_payload.slash_command.args.named.branch != '') || (inputs.BRANCH != '')
         uses: archive/github-actions-slack@master
         with:
-          slack-channel: ${{ secrets.SLACK_FRONTEND_STA }}
+          slack-channel: ${{ secrets.(SLACK_${{ needs.prepare.outputs.repo_type }}_${{ inputs.ENVIRONMENT }} ) }}
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Branch:* ${{ inputs.BRANCH }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
@@ -74,7 +82,7 @@ jobs:
         if: (github.event.client_payload.slash_command.args.named.image_version != '')
         uses: archive/github-actions-slack@master
         with:
-          slack-channel: ${{ steps.slack_channel_check.outputs.slack_channel}}
+          slack-channel: ${{ secrets.(SLACK_${{ needs.prepare.outputs.repo_type }}_${{ inputs.ENVIRONMENT }} ) }}
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n* - Image:* ${{ github.event.client_payload.slash_command.args.named.image_version }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
 
