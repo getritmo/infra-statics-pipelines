@@ -33,7 +33,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
-      env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
       repo_type: ${{ steps.select_repo_type.outputs.repo_type}}
 
     steps:
