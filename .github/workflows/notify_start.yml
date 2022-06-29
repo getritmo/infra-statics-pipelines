@@ -9,10 +9,6 @@ on:
       ENVIRONMENT:
         required: true
         type: string
-      REPOSITORY_TYPE:
-        required: false
-        type: string
-        default: "backend"
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
