@@ -8,7 +8,6 @@
       BRANCH:
         required: false
         type: string
-        default: "sandbox"
       BUILD_PATH:
         required: true
         type: string
