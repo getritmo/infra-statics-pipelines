@@ -37,7 +37,7 @@ jobs:
         run: |
           if grep -w -q "pro" <<< ${{ inputs.ENVIRONMENT }}"; then
             echo "::set-output name=environment::production"
-          elif grep -w -q "sta" <<< "${{ inputs.ENVIRONMENT }}; then
+          elif grep -w -q "sta" <<< "${{ inputs.ENVIRONMENT }}"; then
             echo "::set-output name=environment::staging"
           else
             echo "::set-output name=environment::sandbox"
