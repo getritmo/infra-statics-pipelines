@@ -43,27 +43,27 @@ jobs:
             echo "::set-output name=environment::sandbox"
           fi
 
-      - name: Download pass_slack_data artifact
+      - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          name: pass_slack_data
+          name: pass-slack-data
 
-      - name: Download pass_slack_data artifact
+      - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "backend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
           workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          name: pass_slack_data
+          name: pass-slack-data
 
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
-          echo "::set-output name=slack_message_ms::$(<pass_slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(<pass_slack_data/slack_channel.txt)"
+          echo "::set-output name=slack_message_ms::$(<pass-slack-data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<pass-slack-data/slack_channel.txt)"
 
       - name: Check outputs
         run: |
