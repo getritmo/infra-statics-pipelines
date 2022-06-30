@@ -36,7 +36,7 @@ jobs:
         uses: ASzc/change-string-case-action@v2
         with:
           string: ${{ inputs.ENVIRONMENT }}
-      - name: Select Back/Front and Environment
+      - name: Select Back/Front/Infra/Devops environment
         id: env_select
         run: |
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
