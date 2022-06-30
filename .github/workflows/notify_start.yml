@@ -5,7 +5,7 @@ on:
       BRANCH:
         required: false
         type: string
-        default: "sandbox"
+        default: "main"
       ENVIRONMENT:
         required: true
         type: string
