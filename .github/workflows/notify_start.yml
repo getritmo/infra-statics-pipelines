@@ -65,6 +65,7 @@ jobs:
             echo "Branch mode enabled"
             echo "::set-output name=slack_artifact::* - Branch:* ${{ inputs.BRANCH }}"
           fi
+
       - name: DEBUG > print envvars
         run: |
           echo "SLACK CHANNEL > ${{ steps.env_select.outputs.slack_channel }}"
