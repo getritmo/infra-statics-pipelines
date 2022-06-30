@@ -74,6 +74,8 @@ jobs:
   notify:
     name: notify
     runs-on: ubuntu-latest
+    needs:
+      - prepare
     environment: ${{ inputs.ENVIRONMENT }}
     env:
       SLACK_MESSAGE_TS: ${{ needs.prepare.outputs.slack_message_ts }}
