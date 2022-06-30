@@ -32,6 +32,7 @@ jobs:
       SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || 'false' }}"
     outputs:
       slack_channel: ${{ steps.env_select.outputs.slack_channel }}
+      slack_channel_type: ${{ steps.env_select.outputs.slack_channel_type }}
       slack_artifact: ${{ steps.branch_image_select.outputs.slack_artifact }}
     steps:
       - name: Set environment in uppercase
@@ -44,12 +45,16 @@ jobs:
         run: |
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "::set-output name=slack_channel_type::frontend"
           elif grep -w -q "backend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "::set-output name=slack_channel_type::backend"
           elif grep -w -q "devops" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "::set-output name=slack_channel_type::backend"
           elif grep -w -q "infra" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "::set-output name=slack_channel_type::backend"
           else
             exit 1
           fi
@@ -60,6 +65,7 @@ jobs:
           if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
             echo "Image version mode enabled"
             echo "::set-output name=slack_artifact::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
+            echo "::set-output name=slack_artifact_notify::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
 
           else
             echo "Branch mode enabled"
@@ -76,6 +82,7 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     env:
       SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
+      SLACK_CHANNEL_TYPE: ${{ needs.prepare.outputs.slack_channel_type }}
       SLACK_ARTIFACT: ${{ needs.prepare.outputs.slack_artifact }}
     needs:
       - prepare
@@ -98,17 +105,25 @@ jobs:
         run: |
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }} > slack_channel.txt
+          echo ${{ env.SLACK_CHANNEL_TYPE }} > slack_channel_type.txt
 
       - name: Upload slack_message_ts as an artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: pass_slack_data
+          name: pass-slack-data
           path: slack_message_ts.txt
 
       - name: Upload slack_channel as an artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: pass_slack_data
+          name: pass-slack-data
           path: slack_channel.txt
+
+      - name: Upload slack_channel_type as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass-slack-data
+          path: slack_channel_type.txt
