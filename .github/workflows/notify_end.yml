@@ -76,8 +76,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      SLACK_MESSAGE_TS: ${{ steps.prepare.outputs.slack_message_ts }}
-      SLACK_CHANNEL: ${{ steps.prepare.outputs.slack_channel }}
+      SLACK_MESSAGE_TS: ${{ needs.prepare.outputs.slack_message_ts }}
+      SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
     steps:
       - name: Notify OK
         if: needs.deploy.outputs.deployment_status == 'success'
