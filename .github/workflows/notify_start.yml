@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      SLACK_CHANNEL: $ {{ needs.prepare.outputs.slack_channel }}
+      SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
     needs:
       - prepare
     steps:
