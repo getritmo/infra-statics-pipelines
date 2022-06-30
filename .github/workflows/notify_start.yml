@@ -41,13 +41,14 @@ jobs:
         run: |
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            exit 0
           elif grep -w -q "backend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            exit 0
+          elif grep -w -q "devops" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+          elif grep -w -q "infra" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
           else
-            echo "::set-output name=slack_channel::SLACK_MISC_${{ steps.uppercase_environment.outputs.uppercase }}"
-            exit 0
+            exit 1
           fi
 
       - name: DEBUG > print envvars
