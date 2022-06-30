@@ -32,9 +32,9 @@ jobs:
       - name: Get the artifacts from the right worfklow
         id: select_environment
         run: |
-          if [[ "${{ inputs.ENVIROMENT }}" = "pro" ]]; then
+          if [[ "${{ inputs.ENVIRONMENT }}" = "pro" ]]; then
             echo "::set-output name=environment::production"
-          elif [[ ${{ inputs.ENVIROMENT }} = 'sta' ]]; then
+          elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
             echo "::set-output name=environment::staging"
           else
             echo "::set-output name=environment::sandbox"
