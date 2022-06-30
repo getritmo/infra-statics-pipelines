@@ -29,13 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
-    - name: 
-
-  notify:
-    name: notify
-    runs-on: ubuntu-latest
-    environment: ${{ inputs.ENVIRONMENT }}
-    steps:
       - name: Get the artifacts from the right worfklow
         id: select_environment
         run: |
@@ -46,7 +39,6 @@ jobs:
           else
             echo "::set-output name=environment::sandbox"
           fi
-
       - name: Download statics slack_data artifact
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
@@ -74,6 +66,11 @@ jobs:
         run: |
           echo "Slack Data output > ${{ steps.set_artifacts_outputs.outputs.slack_data }} "
 
+  notify:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
       - name: Notify OK
         if: needs.deploy.outputs.deployment_status == 'success'
         id: slack_notify_ok_sta
