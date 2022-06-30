@@ -50,6 +50,10 @@ jobs:
             exit 0
           fi
 
+      - name: DEBUG > print envvars
+        run: |
+          echo "SLACK CHANNEL > ${{ steps.env_select.outputs.slack_channel }}"
+
 
   notify:
     name: notify
