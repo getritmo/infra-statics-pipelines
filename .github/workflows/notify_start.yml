@@ -42,7 +42,7 @@ jobs:
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
             exit 0
-          elif -w -q grep "backend" <<< "${{ github.repository }}"; then
+          elif grep -w -q "backend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
             exit 0
           else
