@@ -57,9 +57,11 @@ jobs:
           if [ -z "${{ github.event.client_payload.slash_command.args.named.image_version }}" ]; then
             echo "Image version mode enabled"
             echo "::set-output name=slack_artifact::* - Image version:* ${{ github.event.client_payload.slash_command.args.named.image_version }}"
+
           else
             echo "Branch mode enabled"
             echo "::set-output name=slack_artifact::* - Branch:* ${{ inputs.BRANCH }}"
+          fi
 
 
 
