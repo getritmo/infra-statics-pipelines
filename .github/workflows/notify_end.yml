@@ -24,6 +24,13 @@ on:
 name: notify end
 
 jobs:
+  prepare:
+    name: prepare
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    steps:
+    - name: 
+
   notify:
     name: notify
     runs-on: ubuntu-latest

@@ -99,8 +99,8 @@ jobs:
       - name: Record job and notification data
         if: always()
         run: |
-          echo ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
-          echo ${{ fromJson(steps.send-message.outputs.slack-result).response.channel }} > slack_channel.txt
+          echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
+          echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }} > slack_channel.txt
 
       - name: Upload slack_message_ts as an artifact
         if: always()
