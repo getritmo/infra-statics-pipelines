@@ -28,6 +28,9 @@ jobs:
     name: prepare
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
+    outputs:
+      slack_message_ts: ${{ steps.set_artifacts_outputs.outputs.slack_message_ms }}
+      slack_channel: ${{ steps.set_artifacts_outputs.outputs.slack_message }}
     steps:
       - name: Get the artifacts from the right worfklow
         id: select_environment
@@ -39,7 +42,7 @@ jobs:
           else
             echo "::set-output name=environment::sandbox"
           fi
-      - name: Download statics slack_data artifact
+      - name: Download pass_slack_data artifact
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
@@ -48,11 +51,11 @@ jobs:
           branch: ${{ inputs.BRANCH }}
           name: pass_slack_data
 
-      - name: Download service slack_data artifact
+      - name: Download pass_slack_data artifact
         if: startsWith( ${{ github.repository }}, "backend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
+          workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           branch: ${{ inputs.BRANCH }}
           name: pass_slack_data
@@ -60,16 +63,21 @@ jobs:
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
-          echo "::set-output name=slack_data::$(<pass_slack_data/slack_data.txt)"
+          echo "::set-output name=slack_message_ms::$(<pass_slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<pass_slack_data/slack_channel.txt)"
 
       - name: Check outputs
         run: |
-          echo "Slack Data output > ${{ steps.set_artifacts_outputs.outputs.slack_data }} "
+          echo "Slack Message Ts output > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }} "
+          echo "Slack Channel output > ${{ steps.set_artifacts_outputs.outputs.slack_channel }} "
 
   notify:
     name: notify
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
+    env:
+      SLACK_MESSAGE_TS: ${{ steps.preapre.outputs.slack_message_ts }}
+      SLACK_CHANNEL: ${{ steps.preapre.outputs.slack_channel }}
     steps:
       - name: Notify OK
         if: needs.deploy.outputs.deployment_status == 'success'
@@ -78,9 +86,9 @@ jobs:
         with:
           slack-function: send-reaction
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
-          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-channel: ${{ env.SLACK_CHANNEL }}
           slack-emoji-name: thumbsup
-          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
+          slack-message-timestamp: ${{ env.SLACK_MESSAGE_TS }}
 
       - name: Notify OK
         if: needs.deploy.outputs.deployment_status == 'success'
@@ -89,8 +97,8 @@ jobs:
         with:
           slack-function: send-reaction
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
-          slack-channel: ${{ fromJson(needs.prepare.outputs.slack_data).response.channel }}
+          slack-channel: ${{ env.SLACK_CHANNEL }}
           slack-emoji-name: thumbsup
-          slack-message-timestamp: ${{ fromJson(needs.prepare.outputs.slack_data).response.message.ts }}
+          slack-message-timestamp: ${{ env.SLACK_MESSAGE_TS }}
 
 
