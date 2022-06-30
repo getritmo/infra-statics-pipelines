@@ -5,7 +5,7 @@ on:
       BRANCH:
         required: false
         type: string
-        default: "sandbox"
+        default: "main"
       ENVIRONMENT:
         required: true
         type: string
@@ -34,7 +34,7 @@ jobs:
         run: |
           if [[ "${{ inputs.ENVIRONMENT }}" = "pro" ]]; then
             echo "::set-output name=environment::production"
-          elif [[ ${{ inputs.ENVIRONMENT }} = 'sta' ]]; then
+          elif [[ "${{ inputs.ENVIRONMENT }} = "sta" ]]; then
             echo "::set-output name=environment::staging"
           else
             echo "::set-output name=environment::sandbox"
