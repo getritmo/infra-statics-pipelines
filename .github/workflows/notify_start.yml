@@ -56,7 +56,7 @@ jobs:
       - name: Select between branch or image mode x
         id: branch_image_select
         run: |
-          if [ -z "${SLACK_IMAGE_VERSION+x}" ]; then
+          if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
             echo "Image version mode enabled"
             echo "::set-output name=slack_artifact::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
 
