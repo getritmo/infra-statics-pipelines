@@ -57,12 +57,10 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     needs:
       - prepare
-    outputs:
-      env_prefix: ${{ steps.env_prefix_enabled.outputs.env_prefix}}
-      slack_channel: ${{ steps.slack_channel_check.outputs.slack_channel }}
     steps:
       - name: DEBUG > print envvars
-        run: printenv
+        run: |
+          echo "SLACK CHANNEL > ${{ needs.prepare.outputs.slack_channel }}"
 
       - name: Notify to Slack branch
         # using this github-action https://github.com/archive/github-actions-slack
