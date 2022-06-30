@@ -54,6 +54,7 @@ jobs:
             exit 1
           fi
       - name: Select between branch or image mode x
+        #some shell magic >  https://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
         id: branch_image_select
         run: |
           if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
@@ -98,11 +99,19 @@ jobs:
       - name: Record job and notification data
         if: always()
         run: |
-          echo ${{ steps.slack_notify.outputs.slack-result }} > slack_data.txt
+          echo ${{ fromJson(steps.send-message.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
+          echo ${{ fromJson(steps.send-message.outputs.slack-result).response.channel }} > slack_channel.txt
 
-      - name: Upload slack_data as an artifact
+      - name: Upload slack_message_ts as an artifact
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: pass_slack_data
-          path: slack_data.txt
+          path: slack_message_ts.txt
+
+      - name: Upload slack_channel as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass_slack_data
+          path: slack_channel.txt
