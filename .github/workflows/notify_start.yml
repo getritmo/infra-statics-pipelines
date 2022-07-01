@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || 'false' }}"
+      SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || input.BRANCH }}"
     outputs:
       slack_channel: ${{ steps.env_select.outputs.slack_channel }}
       slack_channel_type: ${{ steps.env_select.outputs.slack_channel_type }}

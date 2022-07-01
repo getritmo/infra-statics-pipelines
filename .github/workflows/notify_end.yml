@@ -43,6 +43,32 @@ jobs:
             echo "::set-output name=environment::sandbox"
           fi
 
+      - name: Get Run ID
+        id: get_run_id_statics
+        continue-on-error: true
+        run: |
+          echo "::set-output name=run_id::$(\
+            gh run list \
+              --workflow "${{ github.event.pull_request.base.ref == '${{ input.BRANCH }}' && 'statics-${{ steps.select_environment.outputs.environment }}' }}" \
+              --json conclusion,headSha,status,databaseId \
+              --jq ".[] | select( .conclusion == \"success\" and .headSha == \"${{github.event.pull_request.base.sha}}\") | .databaseId" \
+          )"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Get Run ID
+        id: get_run_id_service
+        continue-on-error: true
+        run: |
+          echo "::set-output name=run_id::$(\
+            gh run list \
+              --workflow "${{ github.event.pull_request.base.ref == '${{ input.BRANCH }}' && 'service-${{ steps.select_environment.outputs.environment }}' }}" \
+              --json conclusion,headSha,status,databaseId \
+              --jq ".[] | select( .conclusion == \"success\" and .headSha == \"${{github.event.pull_request.base.sha}}\") | .databaseId" \
+          )"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
       - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
@@ -51,7 +77,6 @@ jobs:
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           name: pass-slack-data
           repo: ${{ github.repository }}
-          branch: RITMO-2914/add-slack-notifications-for-frontend
 
       - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "backend-" )
@@ -61,7 +86,6 @@ jobs:
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           name: pass-slack-data
           repo: ${{ github.repository }}
-          branch: RITMO-2914/add-slack-notifications-for-frontend
 
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
