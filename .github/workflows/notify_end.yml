@@ -79,12 +79,14 @@ jobs:
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
+          ls -alrt
           echo "::set-output name=slack_message_ms::$(<./slack_data/slack_message_ts.txt)"
           echo "::set-output name=slack_channel::$(<./slack_data/slack_channel.txt)"
           echo "::set-output name=slack_channel_type:::$(<./slack_data/slack_channel_type.txt)"
 
       - name: Check outputs
         run: |
+          ls -alrt
           echo "Slack Message Ts output > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }} "
           echo "Slack Channel output > ${{ steps.set_artifacts_outputs.outputs.slack_channel }} "
           echo "Slack Channel Type output > ${{ steps.set_artifacts_outputs.outputs.slack_channel_type }} "
