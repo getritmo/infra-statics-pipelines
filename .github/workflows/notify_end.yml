@@ -50,6 +50,7 @@ jobs:
           workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           name: pass-slack-data
+          repo: ${{ github.repository }}@RITMO-2914/add-slack-notifications-for-frontend
 
       - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "backend-" )
@@ -58,6 +59,7 @@ jobs:
           workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           name: pass-slack-data
+          repo: ${{ github.repository }}@RITMO-2914/add-slack-notifications-for-frontend
 
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
