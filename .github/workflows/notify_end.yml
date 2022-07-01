@@ -72,9 +72,9 @@ jobs:
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
-          echo "::set-output name=slack_message_ms::$GITHUB_WORKSPACE/slack_message_ts.txt"
-          echo "::set-output name=slack_channel::$GITHUB_WORKSPACE/slack_channel.txt"
-          echo "::set-output name=slack_channel_type:::$GITHUB_WORKSPACE/slack_channel_type.txt"
+          echo "::set-output name=slack_message_ms::$(<$GITHUB_WORKSPACE/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<$GITHUB_WORKSPACE/slack_channel.txt)"
+          echo "::set-output name=slack_channel_type:::$(<$GITHUB_WORKSPACE/slack_channel_type.txt)"
 
       - name: Check outputs
         run: |
