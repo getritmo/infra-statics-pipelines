@@ -68,11 +68,13 @@ jobs:
         run: |
           echo "::set-output name=slack_message_ms::$(<pass-slack-data/slack_message_ts.txt)"
           echo "::set-output name=slack_channel::$(<pass-slack-data/slack_channel.txt)"
+          echo "::set-output name=slack_channel_type:::$(<pass-slack-data/slack_channel_type.txt)"
 
       - name: Check outputs
         run: |
           echo "Slack Message Ts output > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }} "
           echo "Slack Channel output > ${{ steps.set_artifacts_outputs.outputs.slack_channel }} "
+          echo "Slack Channel Type output > ${{ steps.set_artifacts_outputs.outputs.slack_channel_type }} "
 
   notify:
     name: notify

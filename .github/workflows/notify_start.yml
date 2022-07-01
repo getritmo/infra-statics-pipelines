@@ -45,16 +45,12 @@ jobs:
         run: |
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            echo "::set-output name=slack_channel_type::frontend"
           elif grep -w -q "backend" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            echo "::set-output name=slack_channel_type::backend"
           elif grep -w -q "devops" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            echo "::set-output name=slack_channel_type::backend"
           elif grep -w -q "infra" <<< "${{ github.repository }}"; then
             echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
-            echo "::set-output name=slack_channel_type::backend"
           else
             exit 1
           fi
@@ -82,7 +78,6 @@ jobs:
     environment: ${{ inputs.ENVIRONMENT }}
     env:
       SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
-      SLACK_CHANNEL_TYPE: ${{ needs.prepare.outputs.slack_channel_type }}
       SLACK_ARTIFACT: ${{ needs.prepare.outputs.slack_artifact }}
     needs:
       - prepare
@@ -120,10 +115,3 @@ jobs:
         with:
           name: pass-slack-data
           path: slack_channel.txt
-
-      - name: Upload slack_channel_type as an artifact
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: pass-slack-data
-          path: slack_channel_type.txt
