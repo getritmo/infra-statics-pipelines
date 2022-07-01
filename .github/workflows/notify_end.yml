@@ -110,35 +110,24 @@ jobs:
       DISTRIBUTE_STATUS: ${{ needs.prepare.outputs.distribute_status }}
       TAG_STATUS: ${{ needs.prepare.outputs.tag_status }}
     steps:
-      - name: Select notification outcome
+      - name: Select notification reaction
+        id: notify_reaction
         run: |
-          if grep -w -q "success" <<< "${{ env.BUILD_STATUS }}"; then
-            echo "::set-output name=notify_status::thumsbup"
+          if grep -w -q "success" <<< "${{ env.DISTRIBUTE_STATUS }}"; then
+            echo "::set-output name=reaction::thumsbup"
           elif grep -w -q "success" <<< "${{ env.DEPLOY_STATUS }}"; then
-            echo "::set-output name=notify_status::thumsbup"
+            echo "::set-output name=reaction::thumsbup"
+          elif grep -w -q "success" <<< "${{ env.TAG_STATUS }}"; then
+            echo "::set-output name=reaction::thumsbup"
           else
-            echo "::set-output name=environment::sandbox"
+            echo "::set-output name=reaction::emofire"
           fi
       - name: Notify end
-        if: needs.deploy.outputs.deployment_status == 'success'
         id: slack_notify_good
         uses: archive/github-actions-slack@master
         with:
           slack-function: send-reaction
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-channel: ${{ env.SLACK_CHANNEL }}
-          slack-emoji-name: thumbsup
+          slack-emoji-name: ${{ steps.notify_reaction.outputs.reaction }}
           slack-message-timestamp: ${{ env.SLACK_MESSAGE_TS }}
-
-      - name: Notify BAD
-        if: needs.deploy.outputs.deployment_status == 'failure'
-        id: slack_notify_bad
-        uses: archive/github-actions-slack@master
-        with:
-          slack-function: send-reaction
-          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
-          slack-channel: ${{ env.SLACK_CHANNEL }}
-          slack-emoji-name: elmofire
-          slack-message-timestamp: ${{ env.SLACK_MESSAGE_TS }}
-
-
