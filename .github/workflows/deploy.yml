@@ -101,7 +101,7 @@ jobs:
 
       - name: Publish statics
         id: publish-statics
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: app-statics
           path: ${{ inputs.BUILD_PATH }}
