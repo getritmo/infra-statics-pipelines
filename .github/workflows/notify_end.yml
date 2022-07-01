@@ -71,25 +71,26 @@ jobs:
           path: ./slack_data
           repo: ${{ github.repository }}
 
-      - name: DEBUG > Tree
-        run: |
-          tree ./
-
-
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ms::$(<$PWD/slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_message_ts::$(<$PWD/slack_data/slack_message_ts.txt)"
           echo "::set-output name=slack_channel::$(<$PWD/slack_data/slack_channel.txt)"
-          echo "::set-output name=slack_channel_type:::$(<$PWD/slack_data/slack_channel_type.txt)"
+          echo "::set-output name=build_status::$(<$PWD/slack_data/build_status.txt)"
+          echo "::set-output name=deploy_status::$(<$PWD/slack_data/deploy_status.txt)"
+          echo "::set-output name=distribute_status::$(<$PWD/slack_data/distribute_status.txt)"
+          echo "::set-output name=tag_status::$(<$PWD/slack_data/tag_status.txt)"
 
       - name: Check outputs
         run: |
           ls -alrt
-          echo "Slack Message Ts output > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }} "
-          echo "Slack Channel output > ${{ steps.set_artifacts_outputs.outputs.slack_channel }} "
-          echo "Slack Channel Type output > ${{ steps.set_artifacts_outputs.outputs.slack_channel_type }} "
+          echo "Slack message ts > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }}"
+          echo "Slack channel > ${{ steps.set_artifacts_outputs.outputs.slack_channel }}"
+          echo "Build status > ${{ steps.set_artifacts_outputs.outputs.build_status }}"
+          echo "Deploy status > ${{ steps.set_artifacts_outputs.outputs.deploy_status }}"
+          echo "Distribute status > ${{ steps.set_artifacts_outputs.outputs.distribute_status }}"
+          echo "tag status > ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
 
   notify:
     name: notify
