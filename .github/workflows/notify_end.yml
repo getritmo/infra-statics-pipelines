@@ -47,8 +47,7 @@ jobs:
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow_conclusion:
-            - completed
+          workflow_conclusion: completed
           search_artifacts: true
           workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
@@ -59,8 +58,7 @@ jobs:
         if: startsWith( ${{ github.repository }}, "backend-" )
         uses: dawidd6/action-download-artifact@v2
         with:
-          workflow_conclusion:
-            - completed
+          workflow_conclusion: completed
           search_artifacts: true
           workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
