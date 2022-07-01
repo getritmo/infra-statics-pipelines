@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || input.BRANCH }}"
+      SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || 'false' }}"
     outputs:
       slack_channel: ${{ steps.env_select.outputs.slack_channel }}
       slack_channel_type: ${{ steps.env_select.outputs.slack_channel_type }}
@@ -61,8 +61,6 @@ jobs:
           if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
             echo "Image version mode enabled"
             echo "::set-output name=slack_artifact::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
-            echo "::set-output name=slack_artifact_notify::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
-
           else
             echo "Branch mode enabled"
             echo "::set-output name=slack_artifact::* - Branch:* ${{ inputs.BRANCH }}"
