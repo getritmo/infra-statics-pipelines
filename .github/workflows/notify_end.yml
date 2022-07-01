@@ -46,6 +46,8 @@ jobs:
       - name: Download pass-slack-data artifact
         if: startsWith( ${{ github.repository }}, "frontend-" )
         uses: dawidd6/action-download-artifact@v2
+        #nasty behavior but....
+        continue-on-error: true
         with:
           workflow_conclusion: completed
           search_artifacts: true
@@ -55,8 +57,10 @@ jobs:
           repo: ${{ github.repository }}
 
       - name: Download pass-slack-data artifact
-        if: startsWith( ${{ github.repository }}, "backend-" )
+        if: startsWith( ${{ github.repository }}, "backend-" ) || contains( ${{ github.repositoy }}, 'devops')
         uses: dawidd6/action-download-artifact@v2
+        #nasty behavior but....
+        continue-on-error: true
         with:
           workflow_conclusion: completed
           search_artifacts: true
