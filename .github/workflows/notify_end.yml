@@ -80,9 +80,9 @@ jobs:
         id: set_artifacts_outputs
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ms::$($GITHUB_WORKSPACE/slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(tree $PWD)"
-          echo "::set-output name=slack_channel_type:::$(cat ./slack_data/slack_channel_type.txt)"
+          echo "::set-output name=slack_message_ms::$(<$GITHUB_WORKSPACE/slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<$PWD/slack_data/slack_channel.txt)"
+          echo "::set-output name=slack_channel_type:::$(< cat $PWD/slack_data/slack_channel_type.txt)"
 
       - name: Check outputs
         run: |
