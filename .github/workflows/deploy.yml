@@ -163,5 +163,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: pass_slack_data
+          name: pass-slack-data
           path: distribute_status.txt
