@@ -53,7 +53,7 @@ jobs:
           search_artifacts: true
           workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          path: slack_data
+          path: ./slack_data
           name: pass-slack-data
           repo: ${{ github.repository }}
 
@@ -68,7 +68,7 @@ jobs:
           workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           name: pass-slack-data
-          path: slack_data
+          path: ./slack_data
           repo: ${{ github.repository }}
 
       - name: DEBUG > Tree
@@ -79,9 +79,9 @@ jobs:
       - name: Convert artifacts to outputs
         id: set_artifacts_outputs
         run: |
-          echo "::set-output name=slack_message_ms::$(<slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(<slack_data/slack_channel.txt)"
-          echo "::set-output name=slack_channel_type:::$(<slack_data/slack_channel_type.txt)"
+          echo "::set-output name=slack_message_ms::$(<./slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<./slack_data/slack_channel.txt)"
+          echo "::set-output name=slack_channel_type:::$(<./slack_data/slack_channel_type.txt)"
 
       - name: Check outputs
         run: |
