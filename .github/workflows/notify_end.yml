@@ -31,6 +31,10 @@ jobs:
     outputs:
       slack_message_ts: ${{ steps.set_artifacts_outputs.outputs.slack_message_ms }}
       slack_channel: ${{ steps.set_artifacts_outputs.outputs.slack_message }}
+      build_status: ${{ steps.set_artifacts_outputs.outputs.build_status }}
+      deploy_status: ${{ steps.set_artifacts_outputs.outputs.deploy_status }}
+      distribute_status: ${{ steps.set_artifacts_outputs.outputs.distribute_status }}
+      tag_status: ${{ steps.set_artifacts_outputs.outputs.tag_status }}
     steps:
       - name: Get the artifacts from the right worfklow
         id: select_environment
@@ -101,8 +105,21 @@ jobs:
     env:
       SLACK_MESSAGE_TS: ${{ needs.prepare.outputs.slack_message_ts }}
       SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
+      BUILD_STATUS: ${{ needs.prepare.outputs.outputs.build_status }}
+      DEPLOY_STATUS: ${{  needs.prepare.outputs.deploy_status }}
+      DISTRIBUTE_STATUS: ${{ needs.prepare.outputs.distribute_status }}
+      TAG_STATUS: ${{ needs.prepare.outputs.tag_status }}
     steps:
-      - name: Notify GOOD
+      - name: Select notification outcome
+        run: |
+          if grep -w -q "success" <<< "${{ env.BUILD_STATUS }}"; then
+            echo "::set-output name=notify_status::thumsbup"
+          elif grep -w -q "success" <<< "${{ env.DEPLOY_STATUS }}"; then
+            echo "::set-output name=notify_status::thumsbup"
+          else
+            echo "::set-output name=environment::sandbox"
+          fi
+      - name: Notify end
         if: needs.deploy.outputs.deployment_status == 'success'
         id: slack_notify_good
         uses: archive/github-actions-slack@master
