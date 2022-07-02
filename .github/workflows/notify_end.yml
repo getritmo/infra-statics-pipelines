@@ -94,7 +94,7 @@ jobs:
           echo "Build status > ${{ steps.set_artifacts_outputs.outputs.build_status }}"
           echo "Deploy status > ${{ steps.set_artifacts_outputs.outputs.deploy_status }}"
           echo "Distribute status > ${{ steps.set_artifacts_outputs.outputs.distribute_status }}"
-          echo "tag status > ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
+          echo "Tag status > ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
 
   notify:
     name: notify
