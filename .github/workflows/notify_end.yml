@@ -89,12 +89,12 @@ jobs:
       - name: Check outputs
         run: |
           ls -alrt
-          echo "Slack message ts > ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }}"
-          echo "Slack channel > ${{ steps.set_artifacts_outputs.outputs.slack_channel }}"
-          echo "Build status > ${{ steps.set_artifacts_outputs.outputs.build_status }}"
-          echo "Deploy status > ${{ steps.set_artifacts_outputs.outputs.deploy_status }}"
+          echo "Slack message ts >  ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }}"
+          echo "Slack channel >     ${{ steps.set_artifacts_outputs.outputs.slack_channel }}"
+          echo "Build status >      ${{ steps.set_artifacts_outputs.outputs.build_status }}"
+          echo "Deploy status >     ${{ steps.set_artifacts_outputs.outputs.deploy_status }}"
           echo "Distribute status > ${{ steps.set_artifacts_outputs.outputs.distribute_status }}"
-          echo "Tag status > ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
+          echo "Tag status >        ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
 
   notify:
     name: notify
