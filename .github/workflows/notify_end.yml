@@ -29,12 +29,12 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
-      slack_message_ts: ${{ steps.set_artifacts_outputs.outputs.slack_message_ms }}
-      slack_channel: ${{ steps.set_artifacts_outputs.outputs.slack_channel }}
-      build_status: ${{ steps.set_artifacts_outputs.outputs.build_status }}
-      deploy_status: ${{ steps.set_artifacts_outputs.outputs.deploy_status }}
-      distribute_status: ${{ steps.set_artifacts_outputs.outputs.distribute_status }}
-      tag_status: ${{ steps.set_artifacts_outputs.outputs.tag_status }}
+      build_status:      ${{ steps.set_artifacts.outputs.build_status }}
+      deploy_status:     ${{ steps.set_artifacts.outputs.deploy_status }}
+      distribute_status: ${{ steps.set_artifacts.outputs.distribute_status }}
+      tag_status:        ${{ steps.set_artifacts.outputs.tag_status }}
+      slack_message_ts:  ${{ steps.set_artifacts.outputs.slack_message_ms }}
+      slack_channel:     ${{ steps.set_artifacts.outputs.slack_channel }}
     steps:
       - name: Get the artifacts from the right worfklow
         id: select_environment
@@ -76,25 +76,25 @@ jobs:
           repo: ${{ github.repository }}
 
       - name: Convert artifacts to outputs
-        id: set_artifacts_outputs
+        id: set_artifacts
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ts::$(<$PWD/slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(<$PWD/slack_data/slack_channel.txt)"
-          echo "::set-output name=build_status::$(<$PWD/slack_data/build_status.txt)"
-          echo "::set-output name=deploy_status::$(<$PWD/slack_data/deploy_status.txt)"
-          echo "::set-output name=distribute_status::$(<$PWD/slack_data/distribute_status.txt)"
-          echo "::set-output name=tag_status::$(<$PWD/slack_data/tag_status.txt)"
+          echo "::set-output name=slack_message_ts::  $(<$PWD/slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::     $(<$PWD/slack_data/slack_channel.txt)"
+          echo "::set-output name=build_status::      $(<$PWD/slack_data/build_status.txt)"
+          echo "::set-output name=deploy_status::     $(<$PWD/slack_data/deploy_status.txt)"
+          echo "::set-output name=distribute_status:: $(<$PWD/slack_data/distribute_status.txt)"
+          echo "::set-output name=tag_status::        $(<$PWD/slack_data/tag_status.txt)"
 
       - name: Check outputs
         run: |
           ls -alrt
-          echo "Slack message ts >  ${{ steps.set_artifacts_outputs.outputs.slack_message_ts }}"
-          echo "Slack channel >     ${{ steps.set_artifacts_outputs.outputs.slack_channel }}"
-          echo "Build status >      ${{ steps.set_artifacts_outputs.outputs.build_status }}"
-          echo "Deploy status >     ${{ steps.set_artifacts_outputs.outputs.deploy_status }}"
-          echo "Distribute status > ${{ steps.set_artifacts_outputs.outputs.distribute_status }}"
-          echo "Tag status >        ${{ steps.set_artifacts_outputs.outputs.tag_status }}"
+          echo "Slack message ts >  ${{ steps.set_artifacts.outputs.slack_message_ts }}"
+          echo "Slack channel >     ${{ steps.set_artifacts.outputs.slack_channel }}"
+          echo "Build status >      ${{ steps.set_artifacts.outputs.build_status }}"
+          echo "Deploy status >     ${{ steps.set_artifacts.outputs.deploy_status }}"
+          echo "Distribute status > ${{ steps.set_artifacts.outputs.distribute_status }}"
+          echo "Tag status >        ${{ steps.set_artifacts.outputs.tag_status }}"
 
   notify:
     name: notify
