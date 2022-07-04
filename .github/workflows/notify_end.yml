@@ -103,13 +103,18 @@ jobs:
       - prepare
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      SLACK_MESSAGE_TS: ${{ needs.prepare.outputs.slack_message_ts }}
-      SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
-      BUILD_STATUS: ${{ needs.prepare.outputs.outputs.build_status }}
-      DEPLOY_STATUS: ${{  needs.prepare.outputs.deploy_status }}
-      DISTRIBUTE_STATUS: ${{ needs.prepare.outputs.distribute_status }}
-      TAG_STATUS: ${{ needs.prepare.outputs.tag_status }}
+      SLACK_MESSAGE_TS:   ${{ needs.prepare.outputs.slack_message_ts }}
+      SLACK_CHANNEL:      ${{ needs.prepare.outputs.slack_channel }}
+      BUILD_STATUS:       ${{ needs.prepare.outputs.outputs.build_status }}
+      DEPLOY_STATUS:      ${{ needs.prepare.outputs.deploy_status }}
+      DISTRIBUTE_STATUS:  ${{ needs.prepare.outputs.distribute_status }}
+      TAG_STATUS:         ${{ needs.prepare.outputs.tag_status }}
     steps:
+      - name: DEBUG
+        shell: bash
+        run: |
+          printenv
+
       - name: Select notification reaction
         id: notify_reaction
         run: |
