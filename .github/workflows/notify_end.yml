@@ -33,7 +33,7 @@ jobs:
       deploy_status:     ${{ steps.set_artifacts.outputs.deploy_status }}
       distribute_status: ${{ steps.set_artifacts.outputs.distribute_status }}
       tag_status:        ${{ steps.set_artifacts.outputs.tag_status }}
-      slack_message_ts:  ${{ steps.set_artifacts.outputs.slack_message_ms }}
+      slack_message_ts:  ${{ steps.set_artifacts.outputs.slack_message_ts }}
       slack_channel:     ${{ steps.set_artifacts.outputs.slack_channel }}
     steps:
       - name: Get the artifacts from the right worfklow
@@ -104,6 +104,11 @@ jobs:
     needs:
       - prepare
     environment: ${{ inputs.ENVIRONMENT }}
+    env:
+      BUILD_STATUS:       ${{ needs.prepare.outputs.build_status }}
+      DEPLOY_STATUS:      ${{ needs.prepare.outputs.deploy_status }}
+      DISTRIBUTE_STATUS:  ${{ needs.prepare.outputs.distribute_status }}
+      TAG_STATUS:         ${{ needs.prepare.outputs.tag_status }}
     steps:
       - name: DEBUG
         shell: bash
@@ -130,4 +135,4 @@ jobs:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-channel: ${{ needs.prepare.outputs.slack_channel}}
           slack-emoji-name: ${{ steps.notify_reaction.outputs.reaction }}
-          slack-message-timestamp: ${{ needs.prepare.outputs.slack_timestamp_ts }}
+          slack-message-timestamp: ${{ needs.prepare.outputs.slack_message_ts }}
