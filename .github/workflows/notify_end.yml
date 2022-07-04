@@ -77,16 +77,18 @@ jobs:
 
       - name: Convert artifacts to outputs
         id: set_artifacts
+        shell: bash
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ts::  $(<$PWD/slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::     $(<$PWD/slack_data/slack_channel.txt)"
-          echo "::set-output name=build_status::      $(<$PWD/slack_data/build_status.txt)"
-          echo "::set-output name=deploy_status::     $(<$PWD/slack_data/deploy_status.txt)"
-          echo "::set-output name=distribute_status:: $(<$PWD/slack_data/distribute_status.txt)"
-          echo "::set-output name=tag_status::        $(<$PWD/slack_data/tag_status.txt)"
+          echo "::set-output name=slack_message_ts::$(<$PWD/slack_data/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<$PWD/slack_data/slack_channel.txt)"
+          echo "::set-output name=build_status::$(<$PWD/slack_data/build_status.txt)"
+          echo "::set-output name=deploy_status::$(<$PWD/slack_data/deploy_status.txt)"
+          echo "::set-output name=distribute_status::$(<$PWD/slack_data/distribute_status.txt)"
+          echo "::set-output name=tag_status::$(<$PWD/slack_data/tag_status.txt)"
 
       - name: Check outputs
+        shell: bash
         run: |
           ls -alrt
           echo "Slack message ts >  ${{ steps.set_artifacts.outputs.slack_message_ts }}"
