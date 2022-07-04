@@ -128,4 +128,4 @@ jobs:
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
           slack-channel: ${{ needs.prepare.outputs.slack_channel}}
           slack-emoji-name: ${{ steps.notify_reaction.outputs.reaction }}
-          slack-message-timestamp: ${{ needs.prepare.outputs.slack_channel_ts }}
+          slack-message-timestamp: ${{ needs.prepare.outputs.slack_timestamp_ts }}
