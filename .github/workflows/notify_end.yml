@@ -102,13 +102,6 @@ jobs:
     needs:
       - prepare
     environment: ${{ inputs.ENVIRONMENT }}
-    env:
-      SLACK_MESSAGE_TS:   ${{ needs.prepare.outputs.slack_message_ts }}
-      SLACK_CHANNEL:      ${{ needs.prepare.outputs.slack_channel }}
-      BUILD_STATUS:       ${{ needs.prepare.outputs.outputs.build_status }}
-      DEPLOY_STATUS:      ${{ needs.prepare.outputs.deploy_status }}
-      DISTRIBUTE_STATUS:  ${{ needs.prepare.outputs.distribute_status }}
-      TAG_STATUS:         ${{ needs.prepare.outputs.tag_status }}
     steps:
       - name: DEBUG
         shell: bash
@@ -133,6 +126,6 @@ jobs:
         with:
           slack-function: send-reaction
           slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
-          slack-channel: ${{ env.SLACK_CHANNEL }}
+          slack-channel: ${{ needs.prepare.outputs.slack_channel}}
           slack-emoji-name: ${{ steps.notify_reaction.outputs.reaction }}
-          slack-message-timestamp: ${{ env.SLACK_MESSAGE_TS }}
+          slack-message-timestamp: ${{ needs.prepare.outputs.slack_channel_ts }}
