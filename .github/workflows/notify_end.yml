@@ -50,7 +50,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: pass-slack-data
-          path: ./slack_data
+         # path: ./slack_data
 
       # - name: Download pass-slack-data artifact
       #   if: startsWith( ${{ github.repository }}, "frontend-" )
@@ -89,12 +89,12 @@ jobs:
         shell: bash
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ts::$(<$PWD/slack_data/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(<$PWD/slack_data/slack_channel.txt)"
-          echo "::set-output name=build_status::$(<$PWD/slack_data/build_status.txt)"
-          echo "::set-output name=deploy_status::$(<$PWD/slack_data/deploy_status.txt)"
-          echo "::set-output name=distribute_status::$(<$PWD/slack_data/distribute_status.txt)"
-          echo "::set-output name=tag_status::$(<$PWD/slack_data/tag_status.txt)"
+          echo "::set-output name=slack_message_ts::$(<$PWD/slack_message_ts.txt)"
+          echo "::set-output name=slack_channel::$(<$PWD/slack_channel.txt)"
+          echo "::set-output name=build_status::$(<$PWD/build_status.txt)"
+          echo "::set-output name=deploy_status::$(<$PWD/deploy_status.txt)"
+          echo "::set-output name=distribute_status::$(<$PWD/distribute_status.txt)"
+          echo "::set-output name=tag_status::$(<$PWD/tag_status.txt)"
 
       - name: Check outputs
         shell: bash
