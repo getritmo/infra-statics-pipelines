@@ -20,14 +20,6 @@ on:
         required: true
       SLACK_APP_BENDER_TOKEN:
         required: true
-    outputs:
-      slack_message_ts:
-        description: "The timestamp of the message to add reaction"
-        value: ${{ jobs.notify.outputs.slack_message_ts }}
-      slack_channel_id:
-        description: "Channel where reaction and notification are going to be sent"
-        value: ${{ jobs.notify.outputs.slack_channel_id }}
-
 name: notify start
 
 jobs:
