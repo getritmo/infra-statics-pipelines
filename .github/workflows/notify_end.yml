@@ -53,7 +53,7 @@ jobs:
         #INFO Need to do that because if not we need a lot more of ternary
         continue-on-error: true
         with:
-          workflow_conclusion: in_progress
+          #workflow_conclusion: in_progress
           search_artifacts: true
           workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
@@ -67,7 +67,7 @@ jobs:
         #INFO Need to do that because if not we need a lot more of ternary
         continue-on-error: true
         with:
-          workflow_conclusion: in_progress
+#          workflow_conclusion: in_progress
           search_artifacts: true
           workflow: service-${{ steps.select_environment.outputs.environment }}.yml
           github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
