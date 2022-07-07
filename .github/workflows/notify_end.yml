@@ -50,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: pass-slack-data
+          path: ./slack_data
 
       # - name: Download pass-slack-data artifact
       #   if: startsWith( ${{ github.repository }}, "frontend-" )

@@ -20,6 +20,13 @@ on:
         required: true
       SLACK_APP_BENDER_TOKEN:
         required: true
+    outputs:
+      slack_message_ts:
+        description: "The timestamp of the message to add reaction"
+        value: ${{ jobs.notify.outputs.slack_message_ts }}
+      slack_channel_id:
+        description: "Channel where reaction and notification are going to be sent"
+        value: ${{ jobs.notify.outputs.slack_channel_id }}
 
 name: notify start
 
@@ -77,6 +84,9 @@ jobs:
     env:
       SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
       SLACK_ARTIFACT: ${{ needs.prepare.outputs.slack_artifact }}
+    outputs:
+      slack_message_ts: ${{ steps.record_sent_notification.outputs.slack_message_ts }}
+      slack_channel_id: ${{ steps.record_sent_notification.outputs.slack_channel_id }}
     needs:
       - prepare
     steps:
@@ -95,9 +105,12 @@ jobs:
 
       - name: Record job and notification data
         if: always()
+        id: record_sent_notification
         run: |
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
+          echo "::set-output name=slack_message_ts::${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }}"
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }} > slack_channel.txt
+          echo "::set-output name=slack_channel_id::${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }}"
           echo ${{ env.SLACK_CHANNEL_TYPE }} > slack_channel_type.txt
 
       - name: Upload slack_message_ts as an artifact
