@@ -46,38 +46,42 @@ jobs:
           else
             echo "::set-output name=environment::sandbox"
           fi
-
       - name: Download pass-slack-data artifact
-        if: startsWith( ${{ github.repository }}, "frontend-" )
-        uses: dawidd6/action-download-artifact@v2
-        #INFO Need to do that because if not we need a lot more of ternary
-        continue-on-error: true
+        uses: actions/download-artifact@v3
         with:
-          workflow_conclusion:
-          - in_progress
-          - queued
-          search_artifacts: true
-          workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
-          github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          path: ./slack_data
           name: pass-slack-data
-          repo: ${{ github.repository }}
 
-      - name: Download pass-slack-data artifact
-        if: startsWith( ${{ github.repository }}, "backend-" ) || contains( ${{ github.repositoy }}, 'devops')
-        uses: dawidd6/action-download-artifact@v2
-        #INFO Need to do that because if not we need a lot more of ternary
-        continue-on-error: true
-        with:
-          workflow_conclusion:
-          - in_progress
-          - queued
-          search_artifacts: true
-          workflow: service-${{ steps.select_environment.outputs.environment }}.yml
-          github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
-          name: pass-slack-data
-          path: ./slack_data
-          repo: ${{ github.repository }}
+      # - name: Download pass-slack-data artifact
+      #   if: startsWith( ${{ github.repository }}, "frontend-" )
+      #   uses: dawidd6/action-download-artifact@v2
+      #   #INFO Need to do that because if not we need a lot more of ternary
+      #   continue-on-error: true
+      #   with:
+      #     workflow_conclusion:
+      #     - in_progress
+      #     - queued
+      #     search_artifacts: true
+      #     workflow: statics-${{ steps.select_environment.outputs.environment }}.yml
+      #     github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+      #     path: ./slack_data
+      #     name: pass-slack-data
+      #     repo: ${{ github.repository }}
+
+      # - name: Download pass-slack-data artifact
+      #   if: startsWith( ${{ github.repository }}, "backend-" ) || contains( ${{ github.repositoy }}, 'devops')
+      #   uses: dawidd6/action-download-artifact@v2
+      #   #INFO Need to do that because if not we need a lot more of ternary
+      #   continue-on-error: true
+      #   with:
+      #     workflow_conclusion:
+      #     - in_progress
+      #     - queued
+      #     search_artifacts: true
+      #     workflow: service-${{ steps.select_environment.outputs.environment }}.yml
+      #     github_token: ${{ secrets.PRIVATE_REPO_ACCESS }}
+      #     name: pass-slack-data
+      #     path: ./slack_data
+      #     repo: ${{ github.repository }}
 
       - name: Convert artifacts to outputs
         id: set_artifacts
