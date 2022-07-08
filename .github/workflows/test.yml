@@ -57,3 +57,14 @@ jobs:
           parallel: false
           group: "Frontend - Chrome"
           tag: ${{ inputs.ENVIRONMENT }}
+      - name: Record job status
+        if: always()
+        run: |
+          echo ${{ job.status }} > test_status.txt
+
+      - name: Upload jobstatus as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass-slack-data
+          path: test_status.txt

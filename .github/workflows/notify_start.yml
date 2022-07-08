@@ -1,0 +1,120 @@
+---
+on:
+  workflow_call:
+    inputs:
+      BRANCH:
+        required: false
+        type: string
+        default: "main"
+      ENVIRONMENT:
+        required: true
+        type: string
+    secrets:
+      AWS_ACCESS_KEY_ID:
+        required: true
+      AWS_ACCOUNT_ID:
+        required: true
+      AWS_REGION:
+        required: true
+      AWS_SECRET_ACCESS_KEY:
+        required: true
+      SLACK_APP_BENDER_TOKEN:
+        required: true
+name: notify start
+
+jobs:
+  prepare:
+    name: prepare
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    env:
+      SLACK_IMAGE_VERSION: "${{ github.event.client_payload.slash_command.args.named.image_version || 'false' }}"
+    outputs:
+      slack_channel: ${{ steps.env_select.outputs.slack_channel }}
+      slack_channel_type: ${{ steps.env_select.outputs.slack_channel_type }}
+      slack_artifact: ${{ steps.branch_image_select.outputs.slack_artifact }}
+    steps:
+      - name: Set environment in uppercase
+        id: uppercase_environment
+        uses: ASzc/change-string-case-action@v2
+        with:
+          string: ${{ inputs.ENVIRONMENT }}
+      - name: Select Back/Front/Infra/Devops environment
+        id: env_select
+        run: |
+          if grep -w -q "frontend" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+          elif grep -w -q "backend" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+          elif grep -w -q "devops" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+          elif grep -w -q "infra" <<< "${{ github.repository }}"; then
+            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+          else
+            exit 1
+          fi
+      - name: Select between branch or image mode x
+        #some shell magic >  https://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
+        id: branch_image_select
+        run: |
+          if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
+            echo "Image version mode enabled"
+            echo "::set-output name=slack_artifact::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
+          else
+            echo "Branch mode enabled"
+            echo "::set-output name=slack_artifact::* - Branch:* ${{ inputs.BRANCH }}"
+          fi
+
+      - name: DEBUG > print envvars
+        run: |
+          echo "SLACK CHANNEL > ${{ steps.env_select.outputs.slack_channel }}"
+
+  notify:
+    name: notify
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT }}
+    env:
+      SLACK_CHANNEL: ${{ needs.prepare.outputs.slack_channel }}
+      SLACK_ARTIFACT: ${{ needs.prepare.outputs.slack_artifact }}
+    outputs:
+      slack_message_ts: ${{ steps.record_sent_notification.outputs.slack_message_ts }}
+      slack_channel_id: ${{ steps.record_sent_notification.outputs.slack_channel_id }}
+    needs:
+      - prepare
+    steps:
+      - name: DEBUG > print envvars
+        run: |
+          echo "SLACK CHANNEL > ${{ needs.prepare.outputs.slack_channel }}"
+
+      - name: Notify to Slack
+        # using this github-action https://github.com/archive/github-actions-slack
+        id: slack_notify
+        uses: archive/github-actions-slack@master
+        with:
+          slack-channel: ${{ secrets[env.SLACK_CHANNEL] }}
+          slack-bot-user-oauth-access-token: ${{ secrets.SLACK_APP_BENDER_TOKEN }}
+          slack-text: "*Deploying* \n* - Repo:* ${{ github.repository }}\n${{ env.SLACK_ARTIFACT }}\n* - Environment:* ${{ inputs.ENVIRONMENT }}\n* - By:* ${{ github.actor }}\n"
+
+      - name: Record job and notification data
+        if: always()
+        id: record_sent_notification
+        run: |
+          echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
+          echo "::set-output name=slack_message_ts::${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }}"
+          echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }} > slack_channel.txt
+          echo "::set-output name=slack_channel_id::${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }}"
+          echo ${{ env.SLACK_CHANNEL_TYPE }} > slack_channel_type.txt
+
+      - name: Upload slack_message_ts as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass-slack-data
+          path: slack_message_ts.txt
+
+      - name: Upload slack_channel as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass-slack-data
+          path: slack_channel.txt

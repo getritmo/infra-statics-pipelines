@@ -47,3 +47,15 @@ jobs:
         with:
           repo-token: ${{ secrets.PRIVATE_REPO_ACCESS }}
           tag: ${{ steps.date.outputs.date }}-${{ steps.last_successful_commit.outputs.commit_hash }}
+
+      - name: Record job status
+        if: always()
+        run: |
+          echo ${{ job.status }} > tag_status.txt
+
+      - name: Upload jobstatus as an artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: pass-slack-data
+          path: tag_status.txt
