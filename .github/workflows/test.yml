@@ -50,7 +50,8 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Start json-server
-        run: yarn fake:api
+        run: |
+          yarn fake:api
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
         uses: cypress-io/github-action@v4
