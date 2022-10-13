@@ -52,9 +52,11 @@ jobs:
       - name: Start json-server
         run: |
           yarn fake:api &
+        env:
+          PORT: 3030
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
         with:
