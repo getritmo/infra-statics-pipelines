@@ -60,6 +60,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
         with:
+          install: false
           working-directory: ./cypress
           build: yarn build
           start: yarn start
