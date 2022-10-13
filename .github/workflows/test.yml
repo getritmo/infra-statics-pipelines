@@ -48,7 +48,7 @@ jobs:
         with:
           node-version: ${{ inputs.NODE_VERSION }}
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: yarn install --immutable --immutable-cache --check-cache
       - name: Start json-server
         run: |
           yarn fake:api &
