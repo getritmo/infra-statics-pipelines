@@ -64,7 +64,7 @@ jobs:
           working-directory: ./cypress
           build: yarn build
           start: yarn start
-          config-file: ./${{ inputs.ENVIRONMENT }}-cypress.config.js
+          config-file: ${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000, http://localhost:3030"
           wait-on-timeout: 120
           browser: chrome
