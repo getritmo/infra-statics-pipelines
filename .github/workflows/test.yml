@@ -40,14 +40,17 @@ jobs:
           mode: "cypress.${{ inputs.ENVIRONMENT }}"
       - name: Debug variables
         run: printenv
+      - name: Start json-server in the background
+        run: yarn fake:api
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
         with:
+          working-directory: ./cypress
           build: yarn build
-          command: yarn start:testing
+          start: yarn start
           config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000, http://localhost:3030"
           wait-on-timeout: 120
