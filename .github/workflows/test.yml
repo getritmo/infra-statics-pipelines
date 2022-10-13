@@ -12,7 +12,10 @@ on:
       ENVIRONMENT:
         required: true
         type: string
-
+      NODE_VERSION:
+        default: "16"
+        required: false
+        type: string
     secrets:
       AWS_ACCESS_KEY_ID:
         required: true
@@ -40,7 +43,11 @@ jobs:
           mode: "cypress.${{ inputs.ENVIRONMENT }}"
       - name: Debug variables
         run: printenv
-      - name: Start json-server in the background
+      - name: setup node environment
+        uses: actions/setup-node@v
+        with:
+          node-version: ${{ inputs.NODE_VERSION }}
+      - name: Start json-server
         run: yarn fake:api
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
