@@ -56,7 +56,7 @@ jobs:
           PORT: 3030
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
         with:
@@ -64,7 +64,7 @@ jobs:
           working-directory: ./cypress
           build: yarn build
           start: yarn start
-          config-file: cypress/${{ inputs.ENVIRONMENT }}-cypress.config.js
+          config-file: ${{ inputs.ENVIRONMENT }}-cypress.config.js
           wait-on: "http://localhost:3000, http://localhost:3030"
           wait-on-timeout: 120
           browser: chrome
