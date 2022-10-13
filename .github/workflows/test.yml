@@ -44,7 +44,7 @@ jobs:
       - name: Debug variables
         run: printenv
       - name: setup node environment
-        uses: actions/setup-node@v
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.NODE_VERSION }}
       - name: Start json-server
