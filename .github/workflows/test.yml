@@ -59,6 +59,7 @@ jobs:
         uses: cypress-io/github-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           install: false
           working-directory: ./cypress
