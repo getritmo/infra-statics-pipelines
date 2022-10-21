@@ -56,9 +56,10 @@ jobs:
           PORT: 3030
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         with:
           install: false
           working-directory: ./cypress
