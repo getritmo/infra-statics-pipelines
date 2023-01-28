@@ -25,7 +25,7 @@
         required: false
         type: string
       NODE_VERSION:
-        default: "16"
+        default: "16.x"
         required: false
         type: string
       STATICS_S3_BUCKET:
@@ -87,13 +87,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: setup node environment
-        uses: actions/setup-node@v2
+      - name: Setup node environment
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 
-      - name: node build and install
-        run: yarn install && yarn build:${{ inputs.ENVIRONMENT }}
+      - name: Update .npmrc
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PRIVATE_REPO_ACCESS }}" > .npmrc
+
+      - name: Install dependencies
+        run: yarn install
+      - name: Make a build
+        run: yarn build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
