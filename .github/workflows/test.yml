@@ -49,6 +49,9 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}
       - name: Install dependencies
         run: yarn install --immutable --immutable-cache --check-cache
+        env:
+          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+
       - name: Start json-server
         run: |
           yarn fake:api &
@@ -60,7 +63,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
         with:
           install: false
