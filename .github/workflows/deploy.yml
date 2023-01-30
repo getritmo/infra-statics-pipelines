@@ -89,7 +89,7 @@ jobs:
 
       - name: Update .npmrc
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }}" > .npmrc
 
       - name: Install dependencies
         run: yarn install
