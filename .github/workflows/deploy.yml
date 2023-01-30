@@ -69,11 +69,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
-      - name: Give GitHub Actions access to private repo
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SECRET_REPO_DEPLOY_KEY }}
-
       - name: Checkout project repo
         uses: actions/checkout@v2
         id: checkout_repo
