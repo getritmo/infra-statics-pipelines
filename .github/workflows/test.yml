@@ -60,6 +60,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+
         with:
           install: false
           working-directory: ./cypress
