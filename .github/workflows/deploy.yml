@@ -85,11 +85,9 @@ jobs:
       - name: Setup node environment
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ inputs.NODE_VERSION }}
-        #   registry-url: "https://npm.pkg.github.com"
-        #   scope: "@getritmo"
-        # env:
-        #   RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+          node-version: ${{ inputs.NODE_VERSION }}\
+
+      - name: Append data to .nvmrc
         run: echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
         run: cat .npmrc
 
