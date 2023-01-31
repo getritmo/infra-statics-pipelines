@@ -83,7 +83,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup node environment
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ inputs.NODE_VERSION }}\
 
