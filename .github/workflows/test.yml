@@ -33,6 +33,8 @@ on:
 name: Testing Cypress
 jobs:
   cypress-run:
+    env:
+      RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,21 +54,19 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable --immutable-cache --check-cache
-        env:
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
       - name: Start json-server
         run: |
           yarn fake:api &
         env:
           PORT: 3030
+
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
         uses: cypress-io/github-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
         with:
           install: false
           working-directory: ./cypress
@@ -80,6 +80,7 @@ jobs:
           parallel: false
           group: "Frontend - Chrome"
           tag: ${{ inputs.ENVIRONMENT }}
+
       - name: Record job status
         if: always()
         run: |
