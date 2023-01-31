@@ -1,5 +1,4 @@
----
-"on":
+on:
   workflow_call:
     inputs:
       API_DOC_S3_BUCKET:
@@ -42,6 +41,8 @@
         required: true
       PRIVATE_REPO_ACCESS:
         required: true
+      RITMO_ACCESS_TOKEN:
+        required: true
 
 name: Statics deploy
 
@@ -59,18 +60,20 @@ jobs:
         id: env_prefix_enabled
         run: |
           if [[ "${{ inputs.ENV_PREFIX_ENABLED }}" == *"rue" ]]; then
-            echo "::set-output name=env_prefix::/${{ inputs.ENVIRONMENT }}/"
+            echo "env_prefix=/${{ inputs.ENVIRONMENT }}/" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=env_prefix::"
+            echo "env_prefix::" >> $GITHUB_OUTPUT
           fi
 
   build:
+    env:
+      RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
     name: build
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     steps:
       - name: Checkout project repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         id: checkout_repo
         with:
           ref: ${{ inputs.BRANCH || 'main' }}
@@ -89,15 +92,13 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        env:
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
       - name: Make a build
         run: yarn build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
-        run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
       - name: Check outputs
         run: |
