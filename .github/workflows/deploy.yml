@@ -83,9 +83,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup node environment
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ inputs.NODE_VERSION }}\
+          node-version: ${{ inputs.NODE_VERSION }}
 
       - name: Append data to .nvmrc
         run: |
