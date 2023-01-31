@@ -86,6 +86,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.NODE_VERSION }}
+          registry-url: 'https://npm.pkg.github.com'
+          scrope: @getritmo
+        env:
+          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
       - name: Install dependencies
         run: |
