@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ inputs.BRANCH || 'main' }}
       - name: Generatin env_vars
@@ -63,7 +63,7 @@ jobs:
 
       - name: Cypress run
         if: ${{ inputs.TESTING_ENABLED != 'false' }}
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.PRIVATE_REPO_ACCESS }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
