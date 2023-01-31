@@ -43,13 +43,13 @@ jobs:
         id: env_select
         run: |
           if grep -w -q "frontend" <<< "${{ github.repository }}"; then
-            echo "::set-output name=slack_channel::SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "slack_channel=SLACK_FRONTEND_${{ steps.uppercase_environment.outputs.uppercase }}" >> $GITHUB_OUTPUT
           elif grep -w -q "backend" <<< "${{ github.repository }}"; then
-            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "slack_channel=SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}" >> $GITHUB_OUTPUT
           elif grep -w -q "devops" <<< "${{ github.repository }}"; then
-            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "slack_channel=SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}" >> $GITHUB_OUTPUT
           elif grep -w -q "infra" <<< "${{ github.repository }}"; then
-            echo "::set-output name=slack_channel::SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}"
+            echo "slack_channel=SLACK_BACKEND_${{ steps.uppercase_environment.outputs.uppercase }}" >> $GITHUB_OUTPUT
           else
             exit 1
           fi
@@ -59,10 +59,10 @@ jobs:
         run: |
           if [ -z ${SLACK_IMAGE_VERSION+x} ]; then
             echo "Image version mode enabled"
-            echo "::set-output name=slack_artifact::* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}"
+            echo "slack_artifact=* - Image version:* ${{  env.SLACK_IMAGE_VERSION }}" >> $GITHUB_OUTPUT
           else
             echo "Branch mode enabled"
-            echo "::set-output name=slack_artifact::* - Branch:* ${{ inputs.BRANCH }}"
+            echo "slack_artifact=* - Branch:* ${{ inputs.BRANCH }}" >> $GITHUB_OUTPUT
           fi
 
       - name: DEBUG > print envvars
@@ -100,9 +100,9 @@ jobs:
         id: record_sent_notification
         run: |
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }} > slack_message_ts.txt
-          echo "::set-output name=slack_message_ts::${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }}"
+          echo "slack_message_ts=${{ fromJson(steps.slack_notify.outputs.slack-result).response.message.ts }}" >> $GITHUB_OUTPUT
           echo ${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }} > slack_channel.txt
-          echo "::set-output name=slack_channel_id::${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }}"
+          echo "slack_channel_id=${{ fromJson(steps.slack_notify.outputs.slack-result).response.channel }}" >> $GITHUB_OUTPUT
           echo ${{ env.SLACK_CHANNEL_TYPE }} > slack_channel_type.txt
 
       - name: Upload slack_message_ts as an artifact
