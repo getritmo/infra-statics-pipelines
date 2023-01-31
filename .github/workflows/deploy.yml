@@ -87,7 +87,7 @@ jobs:
         with:
           node-version: ${{ inputs.NODE_VERSION }}
           registry-url: 'https://npm.pkg.github.com'
-          scrope: @getritmo
+          scope: @getritmo
         env:
           RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
