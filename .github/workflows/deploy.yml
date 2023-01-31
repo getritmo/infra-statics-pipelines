@@ -86,21 +86,18 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.NODE_VERSION }}
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@getritmo"
-        env:
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+        #   registry-url: "https://npm.pkg.github.com"
+        #   scope: "@getritmo"
+        # env:
+        #   RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+        run: echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
+        run: cat .npmrc
 
       - name: Install dependencies
-        run: |
-          yarn install
-        env:
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
+        run: yarn install
 
       - name: Make a build
         run: yarn build:${{ inputs.ENVIRONMENT }}
-        env:
-          RITMO_ACCESS_TOKEN: ${{ secrets.RITMO_ACCESS_TOKEN }}
 
       - name: Set outputs
         id: vars
