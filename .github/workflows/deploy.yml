@@ -88,8 +88,10 @@ jobs:
           node-version: ${{ inputs.NODE_VERSION }}\
 
       - name: Append data to .nvmrc
-        run: echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
-        run: cat .npmrc
+        run: |
+          cat .npmrc
+          echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
+          cat .npmrc
 
       - name: Install dependencies
         run: yarn install
