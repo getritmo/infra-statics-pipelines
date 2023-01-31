@@ -29,39 +29,39 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
     outputs:
-      build_status:      ${{ steps.set_artifacts.outputs.build_status }}
-      deploy_status:     ${{ steps.set_artifacts.outputs.deploy_status }}
+      build_status: ${{ steps.set_artifacts.outputs.build_status }}
+      deploy_status: ${{ steps.set_artifacts.outputs.deploy_status }}
       distribute_status: ${{ steps.set_artifacts.outputs.distribute_status }}
-      tag_status:        ${{ steps.set_artifacts.outputs.tag_status }}
-      slack_message_ts:  ${{ steps.set_artifacts.outputs.slack_message_ts }}
-      slack_channel:     ${{ steps.set_artifacts.outputs.slack_channel }}
+      tag_status: ${{ steps.set_artifacts.outputs.tag_status }}
+      slack_message_ts: ${{ steps.set_artifacts.outputs.slack_message_ts }}
+      slack_channel: ${{ steps.set_artifacts.outputs.slack_channel }}
     steps:
       - name: Get the artifacts from the right worfklow
         id: select_environment
         run: |
           if grep -w -q "pro" <<< "${{ inputs.ENVIRONMENT }}"; then
-            echo "::set-output name=environment::production"
+            echo "environment=production" >> $GITHUB_OUTPUT
           elif grep -w -q "sta" <<< "${{ inputs.ENVIRONMENT }}"; then
-            echo "::set-output name=environment::staging"
+            echo "environment=staging" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=environment::sandbox"
+            echo "environment=sandbox" >> $GITHUB_OUTPUT
           fi
       - name: Download pass-slack-data artifact
         uses: actions/download-artifact@v3
         with:
           name: pass-slack-data
-          
+
       - name: Convert artifacts to outputs
         id: set_artifacts
         shell: bash
         run: |
           ls -alrt
-          echo "::set-output name=slack_message_ts::$(<$PWD/slack_message_ts.txt)"
-          echo "::set-output name=slack_channel::$(<$PWD/slack_channel.txt)"
-          echo "::set-output name=build_status::$(<$PWD/build_status.txt)"
-          echo "::set-output name=deploy_status::$(<$PWD/deploy_status.txt)"
-          echo "::set-output name=distribute_status::$(<$PWD/distribute_status.txt)"
-          echo "::set-output name=tag_status::$(<$PWD/tag_status.txt)"
+          echo "slack_message_ts=$(<$PWD/slack_message_ts.txt)" >> $GITHUB_OUTPUT
+          echo "slack_channel=$(<$PWD/slack_channel.txt)" >> $GITHUB_OUTPUT
+          echo "build_status=$(<$PWD/build_status.txt)" >> $GITHUB_OUTPUT
+          echo "deploy_status=$(<$PWD/deploy_status.txt)" >> $GITHUB_OUTPUT
+          echo "distribute_status=$(<$PWD/distribute_status.txt)" >> $GITHUB_OUTPUT
+          echo "tag_status=$(<$PWD/tag_status.txt)" >> $GITHUB_OUTPUT
 
       - name: Check outputs
         shell: bash
@@ -81,10 +81,10 @@ jobs:
       - prepare
     environment: ${{ inputs.ENVIRONMENT }}
     env:
-      BUILD_STATUS:       ${{ needs.prepare.outputs.build_status }}
-      DEPLOY_STATUS:      ${{ needs.prepare.outputs.deploy_status }}
-      DISTRIBUTE_STATUS:  ${{ needs.prepare.outputs.distribute_status }}
-      TAG_STATUS:         ${{ needs.prepare.outputs.tag_status }}
+      BUILD_STATUS: ${{ needs.prepare.outputs.build_status }}
+      DEPLOY_STATUS: ${{ needs.prepare.outputs.deploy_status }}
+      DISTRIBUTE_STATUS: ${{ needs.prepare.outputs.distribute_status }}
+      TAG_STATUS: ${{ needs.prepare.outputs.tag_status }}
     steps:
       - name: DEBUG
         shell: bash
@@ -95,13 +95,13 @@ jobs:
         id: notify_reaction
         run: |
           if grep -w -q "success" <<< "${{ env.DISTRIBUTE_STATUS }}"; then
-            echo "::set-output name=reaction::thumbsup"
+            echo "reaction=thumbsup" >> $GITHUB_OUTPUT
           elif grep -w -q "success" <<< "${{ env.DEPLOY_STATUS }}"; then
-            echo "::set-output name=reaction::thumsbup"
+            echo "reaction=thumsbup" >> $GITHUB_OUTPUT
           elif grep -w -q "success" <<< "${{ env.TAG_STATUS }}"; then
-            echo "::set-output name=reaction::thumbsup"
+            echo "reaction=thumbsup" >> $GITHUB_OUTPUT
           else
-            echo "::set-output name=reaction::elmofire"
+            echo "reaction=elmofire" >> $GITHUB_OUTPUT
           fi
       - name: Notify end
         id: slack_notify_good
