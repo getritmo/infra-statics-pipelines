@@ -90,11 +90,14 @@ jobs:
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+
       - name: Install dependencies
-        run: yarn install
+        run: bun install
 
       - name: Make a build
-        run: yarn build:${{ inputs.ENVIRONMENT }}
+        run: bun run build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
