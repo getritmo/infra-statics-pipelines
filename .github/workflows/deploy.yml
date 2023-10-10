@@ -92,7 +92,9 @@ jobs:
 
       - name: Append data to .nvmrc
         run: |
+          cat .npmrc
           echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
+          cat .npmrc
 
       - name: Install dependencies
         run: yarn install
