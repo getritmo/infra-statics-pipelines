@@ -93,6 +93,10 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
 
+      - name: Replace token placeholder in bunfig.toml
+        run: |
+          sed -i "s|\${RITMO_ACCESS_TOKEN}|${{ secrets.RITMO_ACCESS_TOKEN }}|g" bunfig.toml
+
       - name: Install dependencies
         run: bun install
 
