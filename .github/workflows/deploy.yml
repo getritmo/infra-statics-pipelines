@@ -90,11 +90,17 @@ jobs:
         with:
           node-version: ${{ inputs.NODE_VERSION }}
 
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Append data to .nvmrc
+        run: echo //npm.pkg.github.com/:_authToken=${{ secrets.RITMO_ACCESS_TOKEN }} > .npmrc
+
       - name: Install dependencies
-        run: yarn install
+        run: bun install
 
       - name: Make a build
-        run: yarn build:${{ inputs.ENVIRONMENT }}
+        run: bun run build:${{ inputs.ENVIRONMENT }}
 
       - name: Set outputs
         id: vars
