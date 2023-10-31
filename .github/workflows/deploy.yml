@@ -135,6 +135,7 @@ jobs:
     name: distribute
     runs-on: ubuntu-latest
     environment: ${{ inputs.ENVIRONMENT }}
+    if: ${{ inputs.ENVIRONMENT == 'pro' }}
     needs: [prepare, build]
     steps:
       - name: Download artifacts
